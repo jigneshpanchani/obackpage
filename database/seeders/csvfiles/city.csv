@@ -1,0 +1,855 @@
+id,continent_id,country_state_id,city
+1,1,1,Auburn
+2,1,1,Birmingham
+3,1,1,Dothan
+4,1,1,Gadsden
+5,1,1,Huntsville
+6,1,1,Mobile
+7,1,1,Montgomery
+8,1,1,Muscle Shoals
+9,1,1,Tuscaloosa
+10,1,2,Anchorage
+11,1,2,Fairbanks
+12,1,2,Juneau
+13,1,2,Kenai Peninsula
+14,1,3,Flagstaff/Sedona
+15,1,3,Mohave County
+16,1,3,Phoenix
+17,1,3,Prescott
+18,1,3,Show Low
+19,1,3,Sierra Vista
+20,1,3,Tucson
+21,1,3,Yuma
+22,1,4,Fayetteville
+23,1,4,Fort Smith
+24,1,4,Jonesboro
+25,1,4,Little Rock
+26,1,5,Bakersfield
+27,1,5,Chico
+28,1,5,Fresno
+29,1,5,Humboldt County
+30,1,5,Imperial County
+31,1,5,Inland Empire
+32,1,5,Long Beach
+33,1,5,Los Angeles
+34,1,5,Mendocino
+35,1,5,Merced
+36,1,5,Modesto
+37,1,5,Monterey
+38,1,5,North Bay
+39,1,5,Oakland/East Bay
+40,1,5,Orange County
+41,1,5,Palm Springs
+42,1,5,Palmdale/Lancaster
+43,1,5,Palo Alto
+44,1,5,Redding
+45,1,5,Sacramento
+46,1,5,San Diego
+47,1,5,San Fernando Valley
+48,1,5,San Francisco
+49,1,5,San Gabriel Valley
+50,1,5,San Jose
+51,1,5,San Luis Obispo
+52,1,5,San Mateo
+53,1,5,Santa Barbara
+54,1,5,Cruz
+55,1,5,Santa Maria
+56,1,5,Siskiyou
+57,1,5,Stockton
+58,1,5,Susanville
+59,1,5,Ventura
+60,1,5,Visalia
+61,1,6,Boulder
+62,1,6,Colorado Springs
+63,1,6,Denver
+64,1,6,Fort Collins
+65,1,6,Pueblo
+66,1,6,Rockies
+67,1,6,Western Slope
+68,1,7,Bridgeport
+69,1,7,Eastern Connecticut
+70,1,7,Hartford
+71,1,7,New Haven
+72,1,7,Northwest Connecticut
+73,1,8,Delaware
+74,1,9,Northern Virginia
+75,1,9,Annandale
+76,1,9,Southern Maryland
+77,1,9,Washington D.C.
+78,1,10,Daytona
+79,1,10,Fort Lauderdale
+80,1,10,Fort Myers
+81,1,10,Gainesville
+82,1,10,Jacksonville
+83,1,10,Keys
+84,1,10,Lakeland
+85,1,10,Miami
+86,1,10,Ocala
+87,1,10,Okaloosa
+88,1,10,Orlando
+89,1,10,Palm Bay
+90,1,10,Panama City
+91,1,10,Pensacola
+92,1,10,Sarasota/Bradenton
+93,1,10,Space Coast
+94,1,10,St. Augustine
+95,1,10,Tallahassee
+96,1,10,Tampa
+97,1,10,Treasure Coast
+98,1,10,West Palm Beach
+99,1,11,Albany
+100,1,11,Athens
+101,1,11,Atlanta
+102,1,11,Augusta
+103,1,11,Brunswick
+104,1,11,Columbus
+105,1,11,Macon
+106,1,11,Northwest Georgia
+107,1,11,Savannah
+108,1,11,Statesboro
+109,1,11,Valdosta
+110,1,12,Big Island
+111,1,12,Honolulu
+112,1,12,Kauai
+113,1,12,Maui
+114,1,13,Boise
+115,1,13,East Idaho
+116,1,13,Lewiston
+117,1,13,Twin Falls
+118,1,14,Bloomington
+119,1,14,Carbondale
+120,1,14,Chambana
+121,1,14,Chicago
+122,1,14,Decatur
+123,1,14,La Salle County
+124,1,14,Mattoon
+125,1,14,Peoria
+126,1,14,Rockford
+127,1,14,Springfield
+128,1,14,Western Illinois
+129,1,15,Bloomington
+130,1,15,Evansville
+131,1,15,Ft Wayne
+132,1,15,Indianapolis
+133,1,15,Kokomo
+134,1,15,Lafayette
+135,1,15,Muncie
+136,1,15,Richmond
+137,1,15,South Bend
+138,1,15,Terre Haute
+139,1,16,Ames
+140,1,16,Cedar Rapids
+141,1,16,Desmoines
+142,1,16,Dubuque
+143,1,16,Fort Dodge
+144,1,16,Iowa City
+145,1,16,Mason City
+146,1,16,Quad Cities
+147,1,16,Sioux City
+148,1,16,Southeast Iowa
+149,1,16,Waterloo
+150,1,17,Lawrence
+151,1,17,Manhattan
+152,1,17,Salina
+153,1,17,Topeka
+154,1,17,Wichita
+155,1,18,Bowling Green
+156,1,18,Eastern Kentucky
+157,1,18,Lexington
+158,1,18,Louisville
+159,1,18,Owensboro
+160,1,18,Western Kentucky
+161,1,19,Alexandria
+162,1,19,Baton Rouge
+163,1,19,Houma
+164,1,19,Lafayette
+165,1,19,Lake Charles
+166,1,19,Monroe
+167,1,19,New Orleans
+168,1,19,Shreveport
+169,1,20,Maine
+170,1,21,Annapolis
+171,1,21,Baltimore
+172,1,21,Cumberland Valley
+173,1,21,Eastern Shore
+174,1,21,Frederick
+175,1,21,Western Maryland
+176,1,22,Boston
+177,1,22,Brockton
+178,1,22,Cape Cod
+179,1,22,Lowell
+180,1,22,South Coast
+181,1,22,Springfield
+182,1,22,Worcester
+183,1,23,Ann Arbor
+184,1,23,Battle Creek
+185,1,23,Central Michigan
+186,1,23,Detroit
+187,1,23,Flint
+188,1,23,Grand Rapids
+189,1,23,Holland
+190,1,23,Jackson
+191,1,23,Kalamazoo
+192,1,23,Lansing
+193,1,23,Monroe
+194,1,23,Muskegon
+195,1,23,Northern Michigan
+196,1,23,Port Huron
+197,1,23,Saginaw
+198,1,23,Southwest Michigan
+199,1,23,Upper Peninsula
+200,1,24,Bemidji
+201,1,24,Brainerd
+202,1,24,Duluth
+203,1,24,Mankato
+204,1,24,Minneapolis / St. Paul
+205,1,24,Rochester
+206,1,24,St. Cloud
+207,1,25,Biloxi
+208,1,25,Hattiesburg
+209,1,25,Jackson
+210,1,25,Meridian
+211,1,25,North Mississippi
+212,1,25,Southwest Mississippi
+213,1,26,Columbia/Jeff City
+214,1,26,Joplin
+215,1,26,Kansas City
+216,1,26,Kirksville
+217,1,26,Lake Of The Ozarks
+218,1,26,Southeast Missouri
+219,1,26,Springfield
+220,1,26,St Joseph
+221,1,26,St. Louis
+222,1,27,Billings
+223,1,27,Bozeman
+224,1,27,Butte
+225,1,27,Great Falls
+226,1,27,Helena
+227,1,27,Kalispell
+228,1,27,Missoula
+229,1,28,Grand Island
+230,1,28,Lincoln
+231,1,28,North Platte
+232,1,28,Omaha
+233,1,28,Scottsbluff
+234,1,29,Elko
+235,1,29,Las Vegas
+236,1,29,Reno
+237,1,30,New Hampshire
+238,1,31,Central Jersey
+239,1,31,Jersey Shore
+240,1,31,Lakewood
+241,1,31,North Jersey
+242,1,31,South Jersey
+243,1,32,Albuquerque
+244,1,32,Clovis / Portales
+245,1,32,Farmington
+246,1,32,Las Cruces
+247,1,32,Roswell / Carlsbad
+248,1,32,Santa Fe/Taos
+249,1,33,New York
+250,1,33,Albany
+251,1,33,Binghamton
+252,1,33,Bronx
+253,1,33,Brooklyn
+254,1,33,Buffalo
+255,1,33,Catskills
+256,1,33,Chautauqua
+257,1,33,Elmira
+258,1,33,Fairfield
+259,1,33,Finger Lakes
+260,1,33,Glens Falls
+261,1,33,Hudson Valley
+262,1,33,Ithaca
+263,1,33,Long Island
+264,1,33,Manhattan
+265,1,33,Oneonta
+266,1,33,Plattsburgh
+267,1,33,Potsdam
+268,1,33,Queens
+269,1,33,Rochester
+270,1,33,Staten Island
+271,1,33,Syracuse
+272,1,33,Twin Tiers
+273,1,33,Utica
+274,1,33,Watertown
+275,1,33,Westchester
+276,1,34,Asheville
+277,1,34,Boone
+278,1,34,Charlotte
+279,1,34,Eastern
+280,1,34,Fayetteville
+281,1,34,Greensboro
+282,1,34,Hickory
+283,1,34,High Point
+284,1,34,Outer Banks
+285,1,34,Raleigh-Durham
+286,1,34,Wilmington
+287,1,34,Winston-Salem
+288,1,35,Bismarck
+289,1,35,Fargo
+290,1,35,Grand Forks
+291,1,35,Minot
+292,1,36,Akron/Canton
+293,1,36,Ashtabula
+294,1,36,Athens
+295,1,36,Chillicothe
+296,1,36,Cincinnati
+297,1,36,Cleveland
+298,1,36,Columbus
+299,1,36,Dayton
+300,1,36,Huntington/Ashland
+301,1,36,Lima/Findlay
+302,1,36,Mansfield
+303,1,36,Sandusky
+304,1,36,Toledo
+305,1,36,Tuscarawas County
+306,1,36,Youngstown
+307,1,36,Zanesville/Cambridge
+308,1,37,Lawton
+309,1,37,Norman
+310,1,37,Oklahoma City
+311,1,37,Stillwater
+312,1,37,Tulsa
+313,1,38,Bend
+314,1,38,Corvallis
+315,1,38,East Oregon
+316,1,38,Eugene
+317,1,38,Klamath Falls
+318,1,38,Medford
+319,1,38,Oregon Coast
+320,1,38,Portland
+321,1,38,Roseburg
+322,1,38,Salem
+323,1,39,Allentown
+324,1,39,Altoona
+325,1,39,Chambersburg
+326,1,39,Erie
+327,1,39,Harrisburg
+328,1,39,Lancaster
+329,1,39,Meadville
+330,1,39,Penn State
+331,1,39,Philadelphia
+332,1,39,Pittsburgh
+333,1,39,Poconos
+334,1,39,Reading
+335,1,39,Scranton
+336,1,39,Williamsport
+337,1,39,York
+338,1,40,Providence
+339,1,40,Warwick
+340,1,41,Charleston
+341,1,41,Columbia
+342,1,41,Florence
+343,1,41,Greenville
+344,1,41,Hilton Head
+345,1,41,Myrtle Beach
+346,1,42,Aberdeen
+347,1,42,Pierre
+348,1,42,Rapid City
+349,1,42,Sioux Falls
+350,1,43,Chattanooga
+351,1,43,Clarksville
+352,1,43,Cookeville
+353,1,43,Johnson City
+354,1,43,Knoxville
+355,1,43,Memphis
+356,1,43,Nashville
+357,1,43,Tri-Cities
+358,1,44,Abilene
+359,1,44,Amarillo
+360,1,44,Austin
+361,1,44,Beaumont
+362,1,44,Brownsville
+363,1,44,College Station
+364,1,44,Corpus Christi
+365,1,44,Dallas
+366,1,44,Del Rio
+367,1,44,Denton
+368,1,44,El Paso
+369,1,44,Fort Worth
+370,1,44,Galveston
+371,1,44,Houston
+372,1,44,Huntsville
+373,1,44,Killeen
+374,1,44,Laredo
+375,1,44,Longview
+376,1,44,Lubbock
+377,1,44,Mcallen
+378,1,44,Mid Cities
+379,1,44,Odessa
+380,1,44,San Antonio
+381,1,44,San Marcos
+382,1,44,Texarkana
+383,1,44,Texoma
+384,1,44,Tyler
+385,1,44,Victoria
+386,1,44,Waco
+387,1,44,Wichita Falls
+388,1,44,Tomball
+389,1,44,Conroe
+390,1,44,Woodland
+391,1,45,Logan
+392,1,45,Ogden
+393,1,45,Provo
+394,1,45,Salt Lake City
+395,1,45,St. George
+396,1,46,Vermont
+397,1,47,Charlottesville
+398,1,47,Chesapeake
+399,1,47,Danville
+400,1,47,Fredericksburg
+401,1,47,Hampton
+402,1,47,Harrisonburg
+403,1,47,Lynchburg
+404,1,47,New River Valley
+405,1,47,Newport News
+406,1,47,Norfolk
+407,1,47,Portsmouth
+408,1,47,Richmond
+409,1,47,Roanoke
+410,1,47,Southwest Virginia
+411,1,47,Suffolk
+412,1,47,Virginia Beach
+413,1,48,Bellingham
+414,1,48,Everett
+415,1,48,Moses Lake
+416,1,48,Mt. Vernon
+417,1,48,Olympia
+418,1,48,Pullman
+419,1,48,Seattle
+420,1,48,Spokane / Coeur D'Alene
+421,1,48,Tacoma
+422,1,48,Tri-Cities
+423,1,48,Wenatchee
+424,1,48,Yakima
+425,1,49,Charleston
+426,1,49,Huntington
+427,1,49,Martinsburg
+428,1,49,Morgantown
+429,1,49,Parkersburg
+430,1,49,Southern West Virginia
+431,1,49,Wheeling
+432,1,50,Appleton
+433,1,50,Eau Claire
+434,1,50,Green Bay
+435,1,50,Janesville
+436,1,50,La Crosse
+437,1,50,Madison
+438,1,50,Milwaukee
+439,1,50,Racine
+440,1,50,Sheboygan
+441,1,50,Wausau
+442,1,51,Wyoming
+443,2,52,Calgary
+444,2,52,Edmonton
+445,2,52,Ft Mcmurray
+446,2,52,Grande Prairie
+447,2,52,Lethbridge
+448,2,52,Medicine Hat
+449,2,52,Red Deer
+450,2,52,St. Albert
+451,2,53,Abbotsford
+452,2,53,Cariboo
+453,2,53,Comox Valley
+454,2,53,Cranbrook
+455,2,53,Kamloops
+456,2,53,Kelowna
+457,2,53,Nanaimo
+458,2,53,Peace River Country
+459,2,53,Prince George
+460,2,53,Skeena
+461,2,53,Sunshine Coast
+462,2,53,Vancouver
+463,2,53,Victoria
+464,2,53,Whistler
+465,2,54,Brandon
+466,2,54,Winnipeg
+467,2,55,Fredericton
+468,2,55,Moncton
+469,2,55,St. John
+470,2,56,Newfoundland and Labrador
+471,2,57,Northwest Territories
+472,2,58,Halifax
+473,2,59,Barrie
+474,2,59,Belleville
+475,2,59,Brantford
+476,2,59,Chatham
+477,2,59,Cornwall
+478,2,59,Guelph
+479,2,59,Hamilton
+480,2,59,Kingston
+481,2,59,Kitchener
+482,2,59,London
+483,2,59,Niagara
+484,2,59,Ottawa
+485,2,59,Owen Sound
+486,2,59,Peterborough
+487,2,59,Sarnia
+488,2,59,Sault Ste Marie
+489,2,59,Sudbury
+490,2,59,Thunder Bay
+491,2,59,Toronto
+492,2,59,Windsor
+493,2,60,Montreal
+494,2,60,Quebec City
+495,2,60,Saguenay
+496,2,60,Sherbrooke
+497,2,60,Trois-Rivi
+498,2,60,Prince Albert
+499,2,61,Regina
+500,2,61,Saskatoon
+501,2,62,Yukon
+502,3,63,Tiran
+503,3,64,Graz
+504,3,64,Innsbruck
+505,3,64,Linz
+506,3,64,Salzburg
+507,3,64,Wien
+508,3,65,Minsk
+509,3,66,Antwerp
+510,3,66,Bruges
+511,3,66,Brussel
+512,3,66,Charleroi
+513,3,66,Ghent
+514,3,66,Liege
+515,3,66,Namur
+516,3,67,Sarajevo
+517,3,68,Balgariya
+518,3,69,Zagreb
+519,3,70,Limassol
+520,3,70,Nicosia
+521,3,71,Brno
+522,3,71,Ceske Budejovice
+523,3,71,Liberec
+524,3,71,Olomouc
+525,3,71,Ostrava
+526,3,71,Plzen
+527,3,71,Praha
+528,3,72,Aarhus
+529,3,72,Kobenhavn
+530,3,73,Tallinn
+531,3,74,Helsinki
+532,3,75,Bordeaux
+533,3,75,Bretagne
+534,3,75,Corse
+535,3,75,Departements D'Outre Mer
+536,3,75,Grenoble
+537,3,75,Lille
+538,3,75,Loire
+539,3,75,Lyon
+540,3,75,Marseille
+541,3,75,Montpellier
+542,3,75,Nantes
+543,3,75,Nice
+544,3,75,Normandie
+545,3,75,Paris
+546,3,75,Strasbourg
+547,3,75,Toulouse
+548,3,76,Berlin
+549,3,76,Bodensee
+550,3,76,Bremen
+551,3,76,Dortmund
+552,3,76,Dresden
+553,3,76,Dusseldorf
+554,3,76,Essen
+555,3,76,Frankfurt
+556,3,76,Freiburg
+557,3,76,Hamburg
+558,3,76,Hannover
+559,3,76,Heidelberg
+560,3,76,Kaiserslautern
+561,3,76,Karlsruhe
+562,3,76,Kiel
+563,3,76,Koln
+564,3,76,Leipzig
+565,3,76,Lubeck
+566,3,76,Mannheim
+567,3,76,Munchen
+568,3,76,Nurnberg
+569,3,76,Rostock
+570,3,76,Saarbr
+571,3,76,Schwerin
+572,3,76,Stuttgart
+573,3,77,Athens
+574,3,77,Crete
+575,3,77,Patras
+576,3,77,Thessaloniki
+577,3,78,Budapest
+578,3,78,Debrecen
+579,3,78,Miskolc
+580,3,78,Szeged
+581,3,79,Iceland
+582,3,80,Cork
+583,3,80,Derry
+584,3,80,Dublin
+585,3,80,Galway
+586,3,80,Limerick
+587,3,80,Lisburn
+588,3,80,Waterford
+589,3,81,Bari
+590,3,81,Bologna
+591,3,81,Brescia
+592,3,81,Calabria
+593,3,81,Firenze
+594,3,81,Forli-Cesena
+595,3,81,Genova
+596,3,81,Milano
+597,3,81,Napoli
+598,3,81,Perugia
+599,3,81,Roma
+600,3,81,Sardegna
+601,3,81,Sicilia
+602,3,81,Torino
+603,3,81,Trieste
+604,3,81,Venezia
+605,3,82,Prishtin
+606,3,83,Riga
+607,3,84,Vilnius
+608,3,85,Luxembourg
+609,3,86,?k?n??
+610,3,87,Malta
+611,3,88,Monaco
+612,3,89,Podgorica
+613,3,90,Amsterdam
+614,3,90,Den Haag
+615,3,90,Eindhoven
+616,3,90,Groningen
+617,3,90,Rotterdam
+618,3,90,Utrecht
+619,3,91,Bergen
+620,3,91,Oslo
+621,3,92,Bialystok
+622,3,92,Bydgoszcz
+623,3,92,Gdansk
+624,3,92,Katowice
+625,3,92,Krakow
+626,3,92,Lodz
+627,3,92,Lublin
+628,3,92,Poznan
+629,3,92,Szczecin
+630,3,92,Warszawa
+631,3,92,Wroclaw
+632,3,93,Braga
+633,3,93,Coimbra
+634,3,93,Faro / Algarve
+635,3,93,Lisboa
+636,3,93,Madeira
+637,3,93,Porto
+638,3,94,Brasov
+639,3,94,Bucuresti
+640,3,94,Cluj-Napoca
+641,3,94,Constanta
+642,3,94,Craiova
+643,3,94,Galati
+644,3,94,Iasi
+645,3,94,Timisoara
+646,3,95,Moskva
+647,3,95,Sankt-Peterburg
+648,3,96,Beograd
+649,3,97,Bratislava
+650,3,97,Kosice
+651,3,98,Alicante
+652,3,98,Barcelona
+653,3,98,Bilbao
+654,3,98,Cadiz
+655,3,98,Canarias
+656,3,98,Coru
+657,3,98,Granada
+658,3,98,Ibiza
+659,3,98,Madrid
+660,3,98,Malaga
+661,3,98,Mallorca
+662,3,98,Murcia
+663,3,98,Oviedo
+664,3,98,Salamanca
+665,3,98,San Sebasti
+666,3,98,Sevilla
+667,3,98,Valencia
+668,3,98,Valladolid
+669,3,98,Zaragoza
+670,3,99,Goteborg
+671,3,99,Helsingborg
+672,3,99,Jonkoping
+673,3,99,Malmo
+674,3,99,Norrkoping
+675,3,99,Orebro
+676,3,99,Stockholm
+677,3,99,Umea
+678,3,99,Uppsala
+679,3,99,Vasteras
+680,3,100,Basel
+681,3,100,Bern
+682,3,100,Geneve
+683,3,100,Lausanne
+684,3,100,Lugano
+685,3,100,Zurich
+686,3,101,Dnipropetrovsk
+687,3,101,Donetsk
+688,3,101,Kharkiv
+689,3,101,Kyiv
+690,3,101,Lviv
+691,3,101,Odessa
+692,3,101,Zaporizhia
+693,3,102,Aberdeen
+694,3,102,Bath
+695,3,102,Belfast
+696,3,102,Birmingham
+697,3,102,Brighton
+698,3,102,Bristol
+699,3,102,Cambridge
+700,3,102,Devon
+701,3,102,East Anglia
+702,3,102,East Midlands
+703,3,102,Edinburgh
+704,3,102,Essex
+705,3,102,Glasgow
+706,3,102,Hampshire
+707,3,102,Kent
+708,3,102,Leeds
+709,3,102,Liverpool
+710,3,102,London
+711,3,102,Manchester
+712,3,102,Newcastle
+713,3,102,Oxford
+714,3,102,Sheffield
+715,3,102,Wales
+716,4,103,Adelaide
+717,4,103,Brisbane
+718,4,103,Cairns
+719,4,103,Canberra
+720,4,103,Darwin
+721,4,103,Gold Coast
+722,4,103,Hobart
+723,4,103,Launceston
+724,4,103,Melbourne
+725,4,103,Newcastle
+726,4,103,Perth
+727,4,103,Sydney
+728,4,103,Toowoomba
+729,4,103,Townsville
+730,4,103,Wollongong
+731,4,104,Guam
+732,4,105,Auckland
+733,4,105,Christchurch
+734,4,105,Dunedin
+735,4,105,Hamilton
+736,4,105,Invercargill
+737,4,105,Napier-Hastings
+738,4,105,Nelson
+739,4,105,Northland
+740,4,105,Tauranga
+741,4,105,Wellington
+742,5,106,Buenos Aires
+743,5,106,Cordoba
+744,5,106,Laplata
+745,5,106,Mendoza
+746,5,106,Rosario
+747,5,106,Salta
+748,5,106,South Argentina
+749,5,106,Tucuman
+750,5,107,Belize
+751,5,108,La Paz
+752,5,109,Bahia
+753,5,109,Belem
+754,5,109,Belo Horizonte
+755,5,109,Brasilia
+756,5,109,Curitiba
+757,5,109,Fortaleza
+758,5,109,Goiania
+759,5,109,Manaus
+760,5,109,Porto Alegre
+761,5,109,Recife
+762,5,109,Rio De Janeiro
+763,5,109,Sao Paulo
+764,5,110,Bahamas
+765,5,110,Dominican Republic
+766,5,110,Jamaica
+767,5,110,Other Caribbean
+768,5,110,Puerto Rico
+769,5,110,Virgin Islands
+770,5,111,Antofagasta
+771,5,111,Chill
+772,5,111,Concepcion
+773,5,111,Iquique
+774,5,111,La Serena
+775,5,111,Montt
+776,5,111,Rancagua
+777,5,111,Santiago
+778,5,111,Talca
+779,5,111,Temuco
+780,5,111,Valparaiso
+781,5,112,Barranquilla
+782,5,112,Bogota
+783,5,112,Bucaramanga
+784,5,112,Cali
+785,5,112,Cartagena
+786,5,112,Cucuta
+787,5,112,Ibagu
+788,5,112,Medellin
+789,5,112,Neiva
+790,5,112,Pasto
+791,5,112,Pereira
+792,5,112,Santa Marta
+793,5,113,Costa Rica
+794,5,114,Ambato
+795,5,114,Cuenca
+796,5,114,Esmeraldas
+797,5,114,Guayaquil
+798,5,114,Machala
+799,5,114,Manta
+800,5,114,Quito
+801,5,114,Santo Domingo
+802,5,115,San Miguel
+803,5,115,San Salvador
+804,5,115,Santa Ana
+805,5,116,Guatemala
+806,5,117,Georgetown
+807,5,118,Tegucigalpa
+808,5,119,Acapulco
+809,5,119,Baja California
+810,5,119,Chihuahua
+811,5,119,Ciudad Ju
+812,5,119,Df
+813,5,119,Guadalajara
+814,5,119,Guanajuato
+815,5,119,Hermosillo
+816,5,119,Hidalgo
+817,5,119,Mazatl
+818,5,119,Monterrey
+819,5,119,Oaxaca
+820,5,119,Puebla
+821,5,119,Puerto Vallarta
+822,5,119,Quer
+823,5,119,San Luis Potos
+824,5,119,Tijuana
+825,5,119,Toluca
+826,5,119,Vera Cruz
+827,5,119,Yucat
+828,5,120,Managua
+829,5,121,Ciudad De Panam
+830,5,121,Col
+831,5,121,David
+832,5,122,Asunci
+833,5,123,Arequipa
+834,5,123,Chiclayo
+835,5,123,Chimbote
+836,5,123,Cusco
+837,5,123,Huancayo
+838,5,123,Iquitos
+839,5,123,Lima
+840,5,123,Piura
+841,5,123,Trujillo
+842,5,124,Paramaribo
+843,5,125,Montevideo
+844,5,126,Caracas
+845,6,127,Cameroon
+846,6,128,Cairo
+847,6,129,Abidjan
+848,6,130,Morocco
+849,6,131,Nigeria
+850,6,132,Cape Town
+851,6,132,Durban
+852,6,132,Johannesburg
+853,6,132,Port Elizabeth
+854,6,132,Pretoria

@@ -1,0 +1,133 @@
+id,continent_id,country_state
+1,1,Alabama
+2,1,Alaska
+3,1,Arizona
+4,1,Arkansas
+5,1,California
+6,1,Colorado
+7,1,Connecticut
+8,1,Delaware
+9,1,District of Columbia
+10,1,Florida
+11,1,Georgia
+12,1,Hawaii
+13,1,Idaho
+14,1,Illinois
+15,1,Indiana
+16,1,Iowa
+17,1,Kansas
+18,1,Kentucky
+19,1,Louisiana
+20,1,Maine
+21,1,Maryland
+22,1,Massachusetts
+23,1,Michigan
+24,1,Minnesota
+25,1,Mississippi
+26,1,Missouri
+27,1,Montana
+28,1,Nebraska
+29,1,Nevada
+30,1,New Hampshire
+31,1,New Jersey
+32,1,New Mexico
+33,1,New York
+34,1,North Carolina
+35,1,North Dakota
+36,1,Ohio
+37,1,Oklahoma
+38,1,Oregon
+39,1,Pennsylvania
+40,1,Rhode Island
+41,1,South Carolina
+42,1,South Dakota
+43,1,Tennessee
+44,1,Texas
+45,1,Utah
+46,1,Vermont
+47,1,Virginia
+48,1,Washington
+49,1,West Virginia
+50,1,Wisconsin
+51,1,Wyoming
+52,2,Alberta
+53,2,British Columbia
+54,2,Manitoba
+55,2,New Brunswick
+56,2,Newfoundland and Labrador
+57,2,Northwest Territories
+58,2,Nova Scotia
+59,2,Ontario
+60,2,Quebec
+61,2,Saskatchewan
+62,2,Yukon
+63,3,Albania
+64,3,Austria
+65,3,Belarus
+66,3,Belgium
+67,3,Bosnia and Herzegovina
+68,3,Bulgaria
+69,3,Croatia
+70,3,Cyprus
+71,3,Czech Republic
+72,3,Denmark
+73,3,Estonia
+74,3,Finland
+75,3,France
+76,3,Germany
+77,3,Greece
+78,3,Hungary
+79,3,Iceland
+80,3,Ireland
+81,3,Italy
+82,3,Kosovo
+83,3,Latvia
+84,3,Lithuania
+85,3,Luxembourg
+86,3,Macedonia
+87,3,Malta
+88,3,Monaco
+89,3,Montenegro
+90,3,Netherlands
+91,3,Norway
+92,3,Poland
+93,3,Portugal
+94,3,Romania
+95,3,Russia
+96,3,Serbia
+97,3,Slovakia
+98,3,Spain
+99,3,Sweden
+100,3,Switzerland
+101,3,Ukraine
+102,3,United Kingdom
+103,4,Australia
+104,4,Guam
+105,4,New Zealand
+106,5,Argentina
+107,5,Belize
+108,5,Bolivia
+109,5,Brazil
+110,5,Caribbean
+111,5,Chile
+112,5,Colombia
+113,5,Costa Rica
+114,5,Ecuador
+115,5,El Salvador
+116,5,Guatemala
+117,5,Guyana
+118,5,Honduras
+119,5,Mexico
+120,5,Nicaragua
+121,5,Panama
+122,5,Paraguay
+123,5,Peru
+124,5,Suriname
+125,5,Uruguay
+126,5,Venezuela
+127,6,Cameroon
+128,6,Egypt
+129,6,Ivory Coast
+130,6,Morocco
+131,6,Nigeria
+132,6,South Africa

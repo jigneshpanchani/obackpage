@@ -1,0 +1,92 @@
+id,category_id,sub_category
+1,1,Adult Jobs
+2,1,Bodyrubs
+3,1,Dom And Fetish
+4,1,Escorts
+5,1,Male Escorts
+6,1,TS
+7,1,Phone & Websites
+8,1,Strippers And Strip Clubs
+9,2,Auto Parts
+10,2,Auto-Truck-Rv
+11,2,Services
+12,3,Antiq.-Collectibles
+13,3,Appliances
+14,3,Boats & Motorcycles
+15,3,Business
+16,3,Clothing/Jewelry
+17,3,Computers/Electronics
+18,3,Farm/Garden
+19,3,Free
+20,3,Furniture
+21,3,Household Items
+22,3,Miscellaneous
+23,3,"Pets, Pet Supplies"
+24,3,Sports Equip
+25,3,Tickets
+26,3,Tools/Materials
+27,3,Want-Trade
+28,3,Yard Sales
+29,4,Childcare
+30,4,Classes/ Workshops
+31,4,General
+32,4,Groups
+33,4,Lost & Found
+34,4,Volunteers
+35,5,Women > Men
+36,5,Men > Men
+37,5,Men > Women
+38,5,Trans Gender
+39,5,Women > Women
+40,6,Acctg/Finance
+41,6,Admin/Office
+42,6,Computer/Technical
+43,6,Customer Service
+44,6,Domestic
+45,6,Driver/Delivery/Courier
+46,6,Education
+47,6,Focus Group/Studies
+48,6,Job Wanted/Resume
+49,6,Medical/Health
+50,6,Mgmt/Professional
+51,6,Miscellaneous
+52,6,Real Estate
+53,6,Rest/Retail/Hotel
+54,6,Sales/Mktg
+55,6,Salon/Spa
+56,6,Show Biz/Audition
+57,6,Trades/Labor
+58,7,Bars/ Clubs
+59,7,Events
+60,7,Restaurants
+61,7,Salons/ Nails/ Spas
+62,8,Available/Wanted
+63,8,Equip/Instruments
+64,8,Instruction
+65,8,Plug The Band
+66,8,Services
+67,9,Commercial
+68,9,House/Condo
+69,9,Land For Sale
+70,9,Misc
+71,9,Wanted
+72,10,Apt/Condo/House
+73,10,Commercial
+74,10,Miscellaneous
+75,10,Rentals Wanted
+76,10,Roommates
+77,10,Vacation
+78,11,Biz Opps
+79,11,Business
+80,11,Cleaning
+81,11,Computer
+82,11,Creative
+83,11,Financial
+84,11,Health & Beauty
+85,11,Home Improvement
+86,11,Labor/Moving
+87,11,Landscape/Lawn
+88,11,Legal
+89,11,Massage
+90,11,Misc.
+91,11,Real Estate
