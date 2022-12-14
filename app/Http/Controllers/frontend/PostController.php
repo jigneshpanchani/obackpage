@@ -4,6 +4,8 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Continents;
+use App\Models\CountryState;
+use App\Models\City;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -16,7 +18,11 @@ class PostController extends Controller
         return view('frontend.pages.posts.post-ad',$data);
     }
 
-    public function freeAdChooseLocation(){
+    public function freeAdChooseLocation(Request $request){
+
+        if($request->input()){
+            dd(1);
+        }
         $objContinents = new Continents();
         $data['continents'] =  $objContinents->getContinents();
         $data['css'] = array();
@@ -26,18 +32,19 @@ class PostController extends Controller
         return view('frontend.pages.posts.free-ad-choose-location',$data);
     }
 
-    public function ajaxAction(Request $request){
-
+    public function postAdds(Request $request){
         $action = $request->input('action');
-        print_r($request->input());exit;
         switch($action){
-
-            case 'getCountryState':
-
-                $objStore = new Continents();
+            case 'getCountryStateByContinent':
+                $objStore = new CountryState();
                 $result = $objStore->getCountryState($request->input('id'));
                 return json_encode($result);
                 break;
-        }
+            case 'getCityByCountryState':
+                $objStore = new City();
+                $result = $objStore->getCity($request->input('id'));
+                return json_encode($result);
+                break;
+     }
     }
 }

@@ -26,4 +26,5 @@
             @endif
         @endforeach
     @endif
+
 </head>

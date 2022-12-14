@@ -88,29 +88,29 @@
                             <span class="text-gray-900 text-2xl font-extrabold">Choose locations</span>
                         </div>
                         <div class="space-y-2 p-6">
-                            <form>
                                 <div class="form-group">
-                                    <label for="country">Country</label>
+                                    <label for="country">Continent/Country</label>
                                     <select class="form-control selectCountry" id="country-dropdown">
-                                    <option value="">Select Country</option>
-                                    @foreach ($continents as $continent)
-                                    <option value="{{$continent['id']}}">
-                                    {{$continent['continent']}}
-                                    </option>
-                                    @endforeach
-                                    </select>
-                                    </div>
-                                    <div class="form-group">
-                                    <label for="state">State</label>
-                                    <select class="form-control" id="state-dropdown">
-                                    </select>
-                                    </div>
-                                    <div class="form-group">
-                                    <label for="city">City</label>
-                                    <select class="form-control" id="city-dropdown">
+
+                                        @foreach ($continents as $continent)
+                                        <option value="{{$continent['id']}}">
+                                        {{$continent['continent']}}
+                                        </option>
+                                        @endforeach
                                     </select>
                                 </div>
-                            </form>
+                                <div class="form-group selectstate">
+                                    <label for="state">Country/State</label>
+                                    <select class="form-control state" id="state-dropdown">
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <select class="form-control" id="city-dropdown">
+
+                                    </select>
+                                </div>
                         </div>
 
                     </div>

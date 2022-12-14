@@ -25,4 +25,12 @@ class City extends Model
         return $getNearByCities;
 
     }
+
+    public function getCity($id) {
+        $query = City::from('city')
+                ->where('country_state_id', $id)
+                ->select('city', 'id')
+                ->get()->toArray();
+        return $query;
+    }
 }

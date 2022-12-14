@@ -38,7 +38,7 @@ Route::match(['get', 'post'], 'category/{city}',            ['as' => 'category',
 
 Route::match(['get', 'post'], 'post-ad',                    ['as' => 'post-ad',                   'uses' => 'frontend\PostController@postAd']);
 Route::match(['get', 'post'], 'free-ad-choose-location',    ['as' => 'free-ad-choose-location',   'uses' => 'frontend\PostController@freeAdChooseLocation']);
-Route::match(['get', 'post'], 'post-ad-ajaxAction',         ['as' => 'post-ad-ajaxAction',        'uses' => 'frontend\PostController@ajaxAction']);
+Route::match(['get', 'post'], 'post-adds-ajax',             ['as' => 'post-adds-ajax',            'uses' => 'frontend\PostController@postAdds']);
 
 
 

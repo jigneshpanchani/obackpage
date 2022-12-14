@@ -19,11 +19,6 @@
 </script>
 <script>
     var base_url = "{{ asset('/') }}";
-    $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-    });
 </script>
 <script>
     $(document).ready(function() {
