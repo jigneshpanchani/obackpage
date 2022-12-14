@@ -76,9 +76,6 @@
                             <a href="">
                                 <img style="width: 158px; height: 40px; padding-top: 2px;" alt="obackpage" title="obackpage" class="logow" src="https://obackpage.com/assets/frontend/img/logo_white.png">
                             </a>
-                            <a href="{{ route('post-ad') }}" class="flex bg-red-500 p-2 rounded">
-                                <span class="text-sm font-bold leading-5 text-white"><i class="fa fa-paper-plane" aria-hidden="true"></i> Post ad </span>
-                            </a>
                         </div>
                     </div>
                 </nav>
@@ -91,8 +88,29 @@
                             <span class="text-gray-900 text-2xl font-extrabold">Choose locations</span>
                         </div>
                         <div class="space-y-2 p-6">
-
-
+                            <form>
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <select class="form-control selectCountry" id="country-dropdown">
+                                    <option value="">Select Country</option>
+                                    @foreach ($continents as $continent)
+                                    <option value="{{$continent['id']}}">
+                                    {{$continent['continent']}}
+                                    </option>
+                                    @endforeach
+                                    </select>
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="state">State</label>
+                                    <select class="form-control" id="state-dropdown">
+                                    </select>
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="city">City</label>
+                                    <select class="form-control" id="city-dropdown">
+                                    </select>
+                                </div>
+                            </form>
                         </div>
 
                     </div>

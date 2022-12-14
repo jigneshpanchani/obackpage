@@ -16,6 +16,9 @@ class CategoryController extends Controller
         $objCity = new City();
         $data['nearByCities'] = $objCity->getNearByCities($id);
         $data['title'] = 'Home Page';
+        $data['css'] = array();
+        $data['js'] = array();
+        $data['funinit'] = array();
         return view('frontend.pages.categories.index',$data);
     }
 }

@@ -28,9 +28,9 @@
             <div class="citySidebar duration-1000 toggelfilter transition-all flex w-48 bg-white px-0">
                 <div class="flex flex-col w-full p-1">
                     <div class="p-6">
-                        <button class="flex bg-blue-900 justify-center p-2 rounded w-full">
-                            <span class="text-xl font-bold text-white"> Post ad </span>
-                        </button>
+                        <a href="{{ route('post-ad') }}" class="bg-blue-900 flex justify-center items-center p-2 rounded">
+                            <p class="text-xl font-bold text-white">Post ad</p>
+                        </a>
                     </div>
                     <a href="" class="bg-gray-200 flex justify-center items-center p-2 rounded">
                         <span class="text-gray-800 text-sm font-bold underline">Home</span>
@@ -66,9 +66,6 @@
                             <a href="">
                                 <img style="width: 158px; height: 40px; padding-top: 2px;" alt="obackpage" title="obackpage" class="logow" src="https://obackpage.com/assets/frontend/img/logo_white.png">
                             </a>
-                            <button class="flex bg-red-500 p-2 rounded">
-                                <span class="text-sm font-bold leading-5 text-white"><i class="fa fa-paper-plane" aria-hidden="true"></i> Post ad </span>
-                            </button>
                         </div>
                         <span class="flex justify-end">
                             <h1><span class="text-white text-base font-bold">Backpage Dothan | Dothan Escorts | Escorts in Dothan, Alabama</span></h1>

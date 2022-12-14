@@ -76,9 +76,6 @@
                             <a href="">
                                 <img style="width: 158px; height: 40px; padding-top: 2px;" alt="obackpage" title="obackpage" class="logow" src="https://obackpage.com/assets/frontend/img/logo_white.png">
                             </a>
-                            <a href="{{ route('post-ad') }}" class="flex bg-red-500 p-2 rounded">
-                                <span class="text-sm font-bold leading-5 text-white"><i class="fa fa-paper-plane" aria-hidden="true"></i> Post ad </span>
-                            </a>
                         </div>
                     </div>
                 </nav>

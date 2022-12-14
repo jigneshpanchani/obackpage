@@ -13,15 +13,10 @@ class HomeController extends Controller
 
         $objContinents = new Continents();
         $data['continents'] =  $objContinents->getContinents();
+        $data['css'] = array();
+        $data['js'] = array();
+        $data['funinit'] = array();
         $data['title'] = 'Home Page';
         return view('frontend.pages.homepage.index',$data);
-    }
-
-    public function freeAdChooseLocation(){
-        $objContinents = new Continents();
-        $data['continents'] =  $objContinents->getContinents();
-        $data['title'] = 'Home Page';
-        return view('frontend.pages.posts.free-ad-choose-location',$data);
-
     }
 }
