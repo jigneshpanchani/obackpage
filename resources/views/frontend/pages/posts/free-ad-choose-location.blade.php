@@ -112,6 +112,68 @@
                                 </div>
                             </form>
                         </div>
+                        {{-- post form  --}}
+                            <head>
+                                <meta name="csrf-token" content="{{ csrf_token() }}">
+                                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                            </head>
+                            <body>
+                                <div class="container mt-4">
+                                        @if(session('status'))
+                                            <div class="alert alert-success">
+                                                {{ session('status') }}
+                                            </div>
+                                        @endif
+                                    <div class="card">
+                                    <div class="card-header text-center font-weight-bold"> Write ad Post</div>
+                                    <div class="card-body">
+                                        <form name="addform" id="addform" method="post" action="{{url('free-ad-choose-location')}}">
+                                        @csrf
+                                            <div class="form-group">
+                                            <label for="exampleInputEmail1">Title:</label>
+                                            <input type="text" id="title" name="title" class="form-control" required="">
+                                            </div>
+                                            <div class="form-group">
+                                            <label for="exampleInputEmail1">Description:</label>
+                                            <textarea id="description"  name="description" class="form-control" required=""></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Age:</label>
+                                                <input type="text" id="age" name="age" class="form-control" required="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Location:</label>
+                                                <input type="text" id="location" name="location" class="form-control" required="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Contact Email:</label>
+                                                <input type="text" id="contact_email" name="contact_email" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Contact mobaile Number:</label>
+                                                <input type="text" id="mobile_number" name="mobile_number" class="form-control" required="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Add Image:</label>
+                                                <input type="file" id="post_id" name="post_id">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">City:</label>
+                                                <input type="checkbox" id="city_id" name="city_id"  value="1">
+                                                <label for="city_id">Auburn </label>
+                                            </div>
+                                            <div class="form-group">
+                                            <input type="checkbox" id="is_premium_ad" name="is_premium_ad"  value="">
+                                                <label for="is_premium_ad">By Placing this ad I agree to the <a href="url">terms of use</a> and <a href="url">privacy policy</a> </label>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>  
+                            </body>
+
 
                     </div>
                 </main>
