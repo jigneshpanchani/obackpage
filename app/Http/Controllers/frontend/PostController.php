@@ -6,7 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Continents;
 use App\Models\CountryState;
 use App\Models\City;
+use App\Models\Posts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class PostController extends Controller
 {
@@ -20,8 +23,11 @@ class PostController extends Controller
 
     public function freeAdChooseLocation(Request $request){
 
-        if($request->input()){
-            dd(1);
+
+        if ($request->isMethod('post')) {
+
+                $objPosts = new Posts();
+                $datasave = $objPosts->saveposts($request) ;
         }
         $objContinents = new Continents();
         $data['continents'] =  $objContinents->getContinents();
@@ -45,6 +51,6 @@ class PostController extends Controller
                 $result = $objStore->getCity($request->input('id'));
                 return json_encode($result);
                 break;
-     }
+        }
     }
 }
