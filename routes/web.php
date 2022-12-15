@@ -43,6 +43,18 @@ Route::match(['get', 'post'], 'free-ad-preview/{id}',       ['as' => 'free-ad-pr
 Route::match(['get', 'post'], 'post-adds-ajax',             ['as' => 'post-adds-ajax',            'uses' => 'frontend\PostController@postAdds']);
 
 
+//footerpages
+Route::match(['get', 'post'], 'about-us',                      ['as' => 'about-us',                     'uses' => 'frontend\InfoController@aboutus']);
+Route::match(['get', 'post'], 'contact',                       ['as' => 'contact',                      'uses' => 'frontend\InfoController@contact']);
+Route::match(['get', 'post'], 'privacy-policy',                ['as' => 'privacy-policy',               'uses' => 'frontend\InfoController@privacyPolicy']);
+Route::match(['get', 'post'], 'terms-of-use',                  ['as' => 'terms-of-use',                 'uses' => 'frontend\InfoController@termsOfUse']);
+Route::match(['get', 'post'], 'blog',                          ['as' => 'blog',                         'uses' => 'frontend\InfoController@blog']);
+Route::match(['get', 'post'], 'alternative-to-backpage',       ['as' => 'alternative-to-backpage',      'uses' => 'frontend\InfoController@alternativeToBackpage']);
+Route::match(['get', 'post'], 'website-similar-to-backpage',   ['as' => 'website-similar-to-backpage',  'uses' => 'frontend\InfoController@websiteSimilarToBackpage']);
+Route::match(['get', 'post'], 'best-sites-like-backpage',      ['as' => 'best-sites-like-backpage',     'uses' => 'frontend\InfoController@bestSitesLikeBackpage']);
+Route::match(['get', 'post'], 'backpage-replacement',          ['as' => 'backpage-replacement',         'uses' => 'frontend\InfoController@backpageReplacement']);
+
+
 
 
 
