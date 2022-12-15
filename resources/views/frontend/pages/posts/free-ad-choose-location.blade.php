@@ -103,7 +103,7 @@
                 </nav>
                 <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
                     <div class="flex flex-col">
-                    <form name="addform" id="addform" method="post" action="{{url('free-ad-post')}}">
+                    <form name="addform" id="addform" method="post" action="{{url('free-ad-post')}}" enctype="multipart/form-data">
                         @csrf
                         <div id="cookieCrumb" class="space-x-2 p-6">
                             <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
@@ -183,8 +183,8 @@
                                     <input type="text" id="mobile_number" name="mobile_number" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <span class="text-gray-800 text-base font-bold">Add Image:</span>
-                                    <input type="file" id="post_id" name="post_id">
+                                    <label for="exampleInputEmail1">Add Image:</label>
+                                    <input method="POST" type="file" id="chooseFile" name="file" accept=".jpg, .jpeg, .png" multiple>
                                 </div>
                                 <div class="form-group">
                                     <span class="text-gray-800 text-base font-bold">City:</span>

@@ -34,7 +34,16 @@ class Posts extends Model
         $objService->contact_email = $request->input('contact_email');
         $objService->mobile_number = $request->input('mobile_number');
         $objService->save();
-
+        $data=new PostsAttechment;  
+            if($files=$request->file('file')){  
+                $name= $files->getClientOriginalName();  
+                $files->move('uploads',$name);  
+                $data->file_name=$name;  
+                $data->post_id=$objService->id;
+                $data->file_path="abc";
+            }  
+        $data->save(); 
+        
         return $objService->id ;
 
     }
