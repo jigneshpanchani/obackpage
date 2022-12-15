@@ -13,4 +13,12 @@ class SubCategory extends Model
     protected $fillable = [
         'id', 'category_id','sub_category'
     ];
+
+    public function getSubCategory($id) {
+        $query = SubCategory::from('sub_category')
+                ->where('category_id', $id)
+                ->select('sub_category', 'id')
+                ->get()->toArray();
+        return $query;
+    }
 }

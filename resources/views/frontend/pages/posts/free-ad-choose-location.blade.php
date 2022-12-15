@@ -25,10 +25,32 @@
         margin: 0;
         border-bottom: 1px solid black;
     }
+    .form-control {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5;
+        color: rgb(55 ,65, 81);;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #80bdff;
+        outline: 0;
+        /* box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%); */
+    }
     </style>
 
     <div class="">
-        <div class="flex h-screen" style="background-color: #f1f5f9">
+        <div class="flex" style="background-color: #f1f5f9">
             <div class="citySidebar duration-1000 toggelfilter transition-all flex w-48 bg-white px-0">
                 <div class="flex flex-col w-full p-1">
                     <div class="p-6">
@@ -81,100 +103,108 @@
                 </nav>
                 <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
                     <div class="flex flex-col">
+                    <form name="addform" id="addform" method="post" action="{{url('free-ad-post')}}">
+                        @csrf
                         <div id="cookieCrumb" class="space-x-2 p-6">
-                            <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="#"><span class="text-gray-800 text-sm font-bold">Choose locations</span></a>
+                            <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
                         </div>
-                        <div id="heading" class="px-6">
-                            <span class="text-gray-900 text-2xl font-extrabold">Choose locations</span>
-                        </div>
-                        <div class="space-y-2 p-6">
+                        <div class="px-6 space-y-6">
+                            <div class="">
+                                <span class="text-red-900 text-xl font-bold">Choose locations</span>
+                            </div>
+                            <div class="flex grid grid-cols-3 gap-10 px-6">
                                 <div class="form-group">
-                                    <label for="country">Continent/Country</label>
+                                    <span for="country" class="text-gray-800 text-base font-bold">Continent/Country</span>
                                     <select class="form-control selectCountry" id="country-dropdown">
-
                                         @foreach ($continents as $continent)
-                                        <option value="{{$continent['id']}}">
+                                        <option value="{{$continent['id']}}" class="text-gray-700 text-base leading-7 font-semibold">
                                         {{$continent['continent']}}
                                         </option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group selectstate">
-                                    <label for="state">Country/State</label>
+                                    <span for="state" class="text-gray-800 text-base font-bold">Country/State</span>
                                     <select class="form-control state" id="state-dropdown">
-
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="city">City</label>
+                                    <span for="city" class="text-gray-800 text-base font-bold">City</span>
                                     <select class="form-control" id="city-dropdown">
-
                                     </select>
                                 </div>
+                            </div>
+                            <div class="">
+                                <span class="text-red-900 text-xl font-bold">Choose Category</span>
+                            </div>
+                            <div class="flex grid grid-cols-2 gap-10 px-6">
+                                <div class="form-group">
+                                    <span for="country" class="text-gray-800 text-base font-bold">Category</span>
+                                    <select class="form-control selectCategory" id="category-dropdown">
+                                        @foreach ($categories as $category)
+                                        <option value="{{$category['id']}}" class="text-gray-700 text-base leading-7 font-semibold">
+                                        {{$category['category']}}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <span for="city" class="text-gray-800 text-base font-bold">Sub-Category</span>
+                                    <select class="form-control" id="sub-category-dropdown">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="text-red-900 text-xl font-bold">Post Details</span>
+                            </div>
+                            <div class="space-y-6 px-6 pb-6 w-2/3">
+                                <div class="form-group">
+                                    <span class="text-gray-800 text-base font-bold">Title:</span>
+                                    <input type="text" id="title" name="title" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <span class="text-gray-800 text-base font-bold">Description:</span>
+                                    <textarea id="description h-40"  name="description" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <span class="text-gray-800 text-base font-bold">Age:</span>
+                                    <input type="text" id="age" name="age" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <span class="text-gray-800 text-base font-bold">Location:</span>
+                                    <input type="text" id="location" name="location" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <span class="text-gray-800 text-base font-bold">Contact Email:</span>
+                                    <input type="text" id="contact_email" name="contact_email" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <span class="text-gray-800 text-base font-bold">Contact mobaile Number:</span>
+                                    <input type="text" id="mobile_number" name="mobile_number" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <span class="text-gray-800 text-base font-bold">Add Image:</span>
+                                    <input type="file" id="post_id" name="post_id">
+                                </div>
+                                <div class="form-group">
+                                    <span class="text-gray-800 text-base font-bold">City:</span>
+                                    <input type="checkbox" id="city_id" name="city_id"  value="1">
+                                    <span class="text-gray-800 text-base font-bold" for="city_id">Auburn </span>
+                                </div>
+                                <div class="form-group">
+                                <input type="checkbox" id="is_premium_ad" name="is_premium_ad"  value="">
+                                    <span class="text-gray-700 text-base leading-7 font-semibold">By Placing this ad I agree to the <a href="url">terms of use</a> and <a href="url">privacy policy</a></span>
+                                </div>
+                                <div class="g-recaptcha" id="feedback-recaptcha"
+                                     data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}">
+                                </div>
+                                <button type="submit" class="bg-blue-900 flex justify-center items-center p-2 rounded">
+                                    <p class="text-xl font-bold text-white">Submit</p>
+                                </button>
+                            </div>
                         </div>
-                        {{-- post form  --}}
-                            <head>
-                                <meta name="csrf-token" content="{{ csrf_token() }}">
-                                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-                            </head>
-                            <body>
-                                <div class="container mt-4">
-                                        @if(session('status'))
-                                            <div class="alert alert-success">
-                                                {{ session('status') }}
-                                            </div>
-                                        @endif
-                                    <div class="card">
-                                    <div class="card-header text-center font-weight-bold"> Write ad Post</div>
-                                    <div class="card-body">
-                                        <form name="addform" id="addform" method="post" action="{{url('free-ad-choose-location')}}">
-                                        @csrf
-                                            <div class="form-group">
-                                            <label for="exampleInputEmail1">Title:</label>
-                                            <input type="text" id="title" name="title" class="form-control" required="">
-                                            </div>
-                                            <div class="form-group">
-                                            <label for="exampleInputEmail1">Description:</label>
-                                            <textarea id="description"  name="description" class="form-control" required=""></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Age:</label>
-                                                <input type="text" id="age" name="age" class="form-control" required="">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Location:</label>
-                                                <input type="text" id="location" name="location" class="form-control" required="">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Contact Email:</label>
-                                                <input type="text" id="contact_email" name="contact_email" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Contact mobaile Number:</label>
-                                                <input type="text" id="mobile_number" name="mobile_number" class="form-control" required="">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Add Image:</label>
-                                                <input type="file" id="post_id" name="post_id">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">City:</label>
-                                                <input type="checkbox" id="city_id" name="city_id"  value="1">
-                                                <label for="city_id">Auburn </label>
-                                            </div>
-                                            <div class="form-group">
-                                            <input type="checkbox" id="is_premium_ad" name="is_premium_ad"  value="">
-                                                <label for="is_premium_ad">By Placing this ad I agree to the <a href="url">terms of use</a> and <a href="url">privacy policy</a> </label>
-                                            </div>
 
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                        </form>
-                                    </div>
-                                    </div>
-                                </div>  
-                            </body>
-
-
+                        </form>
                     </div>
                 </main>
             </div>

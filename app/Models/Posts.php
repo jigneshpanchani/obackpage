@@ -35,6 +35,7 @@ class Posts extends Model
         $objService->mobile_number = $request->input('mobile_number');
         $objService->save();
 
-        return redirect('free-ad-choose-location')->with('status', 'Form Data Submited Sucessfuly!');;
+        return $objService->id ;
+
     }
 }

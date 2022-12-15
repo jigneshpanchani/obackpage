@@ -25,6 +25,28 @@
         margin: 0;
         border-bottom: 1px solid black;
     }
+    .form-control {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5;
+        color: rgb(55 ,65, 81);;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #80bdff;
+        outline: 0;
+        /* box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%); */
+    }
     </style>
 
     <div class="">
@@ -79,29 +101,15 @@
                         </div>
                     </div>
                 </nav>
-                <main class="flex-1 relative overflow-y-auto min-h-screen focus:outline-none mt-2" tabindex="0">
+                <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
                     <div class="flex flex-col">
                         <div id="cookieCrumb" class="space-x-2 p-6">
-                            <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="#"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
+                            <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
                         </div>
-                        <div id="heading" class="px-6">
-                            <span class="text-gray-900 text-2xl font-extrabold">Post An Ad</span>
-                        </div>
-                        <div class="space-y-2 p-6">
-                            <div class="space-x-2">
-                                <i class='fa fa-caret-right'></i>
-                                <a href="{{ route('free-ad-post') }}" class="space-x-2"><span class="text-red-900 text-base font-bold underline">Post free ad</span></a><span class="text-gray-800 text-sm font-bold">(Mainly free)</span><br/>
-                            </div>
-                            <div class="space-x-2">
-                                <i class='fa fa-caret-right'></i>
-                                <a href="" class="space-x-2"><span class="text-red-900 text-base font-bold underline">Post local ad</span></a><span class="text-gray-800 text-sm font-bold">(Paid Premium And Sponsor ads)</span><br/>
-                            </div>
-                            <div class="space-x-2">
-                                <i class='fa fa-caret-right'></i>
-                                <a href="" class="space-x-2"><span class="text-red-900 text-base font-bold underline">Post in multiple cities</span></a><span class="text-gray-800 text-sm font-bold">(Paid Premium And Sponsor ads)</span><br/>
-                            </div>
-                        </div>
+                        <div class="px-6 space-y-6">
 
+
+                        </div>
                     </div>
                 </main>
             </div>
