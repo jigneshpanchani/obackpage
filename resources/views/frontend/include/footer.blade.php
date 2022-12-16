@@ -1,14 +1,16 @@
-{{-- <script  href="{{ asset('js/jquery/jquery-2.2.3.min.js') }}"></script> --}}
-<script src=
-"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-    </script>
-<script src="https://www.google.com/recaptcha/api.js"
-        async defer></script>
+<script>
+    var base_url = "{{ asset('/') }}";
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 @if (!empty($js))
 @foreach ($js as $value)
 <script src="{{ url('js/custom/'.$value) }}" type="text/javascript"></script>
 @endforeach
 @endif
+
 <script>
     jQuery(document).ready(function() {
 
@@ -19,14 +21,16 @@
     @endif
     });
 </script>
+
+
 <script>
-    var base_url = "{{ asset('/') }}";
-</script>
-<script>
-    $(document).ready(function() {
+
+$(document).ready(function() {
     $("body").on("click", ".openSidebarBtn", function() {
+        alert();
         $('.toggelfilter').toggleClass('widthzero');
         $('.toggelfilter').toggleClass('px-0');
     });
 });
+
 </script>

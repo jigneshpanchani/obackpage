@@ -2,7 +2,6 @@
 <html lang="en">
     @include('frontend.include.header')
     <body>
-        @include('frontend.include.bodyheader')
 
             @yield('content')
 

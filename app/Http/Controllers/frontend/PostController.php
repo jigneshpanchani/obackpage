@@ -59,7 +59,7 @@ class PostController extends Controller
         $data['js'] = array('posts.js');
         $data['funinit'] = array('Posts.init()');
         $data['title'] = 'Home Page';
-        return view('frontend.pages.posts.free-ad-choose-location',$data);
+        return view('frontend.pages.posts.free-ad-post-form',$data);
     }
 
     public function freeAdPreview($id){
@@ -68,7 +68,6 @@ class PostController extends Controller
         $data['funinit'] = array('Posts.init()');
         $data['title'] = 'Home Page';
         return view('frontend.pages.posts.free-ad-post-preview',$data);
-
     }
 
     public function postAdds(Request $request){

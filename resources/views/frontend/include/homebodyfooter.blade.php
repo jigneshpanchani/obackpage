@@ -1,6 +1,6 @@
 <div id="bodyfooter" class="h-full bg-gray-200 p-4">
     <div class="footerlistdata text-center">
-    
+
         <a title="obackpage.com" href="{{route('home')}}"><span class="text-red-700 text-base font-bold">Home</span></a> |
 
         <a title="About us" href="{{route('about-us')}}"><span class="text-red-700 text-base font-bold">About us</span></a> |

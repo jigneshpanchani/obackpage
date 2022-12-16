@@ -39,8 +39,13 @@ Route::match(['get', 'post'], 'category/{city}',            ['as' => 'category',
 Route::match(['get', 'post'], 'post-ad',                    ['as' => 'post-ad',                   'uses' => 'frontend\PostController@postAd']);
 Route::match(['get', 'post'], 'free-ad-post',               ['as' => 'free-ad-post',              'uses' => 'frontend\PostController@freeAdPost']);
 Route::match(['get', 'post'], 'free-ad-preview/{id}',       ['as' => 'free-ad-preview',           'uses' => 'frontend\PostController@freeAdPreview']);
-
 Route::match(['get', 'post'], 'post-adds-ajax',             ['as' => 'post-adds-ajax',            'uses' => 'frontend\PostController@postAdds']);
+Route::match(['get', 'post'], 'free-ad-preview/{id}',       ['as' => 'free-ad-preview',           'uses' => 'frontend\PostController@freeAdPreview']);
+
+Route::match(['get', 'post'], 'manage-ads',                 ['as' => 'manage-ads',                'uses' => 'frontend\AccountController@manageAds']);
+Route::match(['get', 'post'], 'transaction',                ['as' => 'transaction',               'uses' => 'frontend\AccountController@transaction']);
+Route::match(['get', 'post'], 'add-credit',                 ['as' => 'add-credit',                'uses' => 'frontend\AccountController@addCredit']);
+
 
 
 //footerpages
