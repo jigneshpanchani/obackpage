@@ -84,7 +84,7 @@ class InfoController extends Controller
         $data['css'] = array();
         $data['js'] = array();
         $data['funinit'] = array();
-        $data['title'] = 'Backpage';
+        $data['title'] = 'Replacement';
         return view("frontend.pages.info.replacement" , $data);
     }
 

@@ -11,22 +11,36 @@
                     <div class="justify-end">
                         @if (Route::has('login'))
                             @auth
-                                <a href="{{ url('/dashboard') }}"><span class="text-sm text-gray-700 font-semibold dark:text-gray-700 underline">Dashboard</span></a>
+                                <form method="POST" action="{{ route('logout') }}" x-data>
+                                    @csrf
+                                    <a href="{{ route('manage-ads') }}"><span class="text-sm text-gray-700 font-semibold dark:text-gray-700 underline">My Account</span></a>
+                                    <button type="submit" class="ml-4 text-sm text-gray-700 font-semibold dark:text-gray-700 underline">Logout</button>
+                                </form>
                             @else
                                 <a href="{{ route('login') }}"><span class="text-sm text-gray-700 font-semibold  dark:text-gray-700 underline">Log in</span></a>
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}"><span class="ml-4 text-sm text-gray-700 font-semibold dark:text-gray-700 underline">Register</span></a>
-                                @endif
+                                <a href="{{ route('login') }}"><span class="ml-4 text-sm text-gray-700 font-semibold dark:text-gray-700 underline">Register</span></a>
                             @endauth
                         @endif
                     </div>
                 </div>
                 <div class="flex justify-between w-full items-center mt-4 border-b-2 border-gray-900">
                     <div id="items-center justify-start"></div>
-                    <div class="justify-end">
-                        <a href="{{ url('/dashboard') }}"><span class="text-lg text-red-700 font-bold dark:text-red-700 underline">Post Ad</span></a>
+                    @if (Route::has('login'))
+                        @auth
+                            <div class="justify-end">
+                                <a href="{{ route('post-ad') }}" class="">
+                                    <p class="text-lg text-red-700 font-bold dark:text-red-700 underline">Post ad</p>
+                                </a>
+                            </div>
+                        @else
+                            <div class="justify-end">
+                                <a href="{{ route('login') }}" class="">
+                                    <p class="text-lg text-red-700 font-bold dark:text-red-700 underline">Post ad</p>
+                                </a>
+                            </div>
+                        @endauth
+                    @endif
                     </div>
-                </div>
 
                 <div class="py-6">
                     <span class="text-gray-800 text-2xl font-bold">Alternative to Backpage</span>

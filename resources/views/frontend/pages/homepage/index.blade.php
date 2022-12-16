@@ -12,17 +12,14 @@
                     <div class="justify-end">
                         @if (Route::has('login'))
                             @auth
-                                <a href="{{ route('manage-ads') }}"><span class="text-sm text-gray-700 font-semibold dark:text-gray-700 underline">My Account</span></a>
                                 <form method="POST" action="{{ route('logout') }}" x-data>
                                     @csrf
-                                    <button type="submit" class="text-sm text-gray-700 font-semibold dark:text-gray-700 underline">Logout
-                                    </button>
+                                    <a href="{{ route('manage-ads') }}"><span class="text-sm text-gray-700 font-semibold dark:text-gray-700 underline">My Account</span></a>
+                                    <button type="submit" class="ml-4 text-sm text-gray-700 font-semibold dark:text-gray-700 underline">Logout</button>
                                 </form>
                             @else
                                 <a href="{{ route('login') }}"><span class="text-sm text-gray-700 font-semibold  dark:text-gray-700 underline">Log in</span></a>
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}"><span class="ml-4 text-sm text-gray-700 font-semibold dark:text-gray-700 underline">Register</span></a>
-                                @endif
+                                <a href="{{ route('login') }}"><span class="ml-4 text-sm text-gray-700 font-semibold dark:text-gray-700 underline">Register</span></a>
                             @endauth
                         @endif
                     </div>
