@@ -22,11 +22,11 @@ class Posts extends Model
 
         // $id = Auth::user()->id;
         $objService = new Posts();
-        $objService->continent_id = 1;
-        $objService->country_state_id = 1;
-        $objService->city_id = 1;
-        $objService->category_id =1;
-        $objService->sub_category_id =1;
+        $objService->continent_id = $request->input('continent_id');
+        $objService->country_state_id = $request->input('country_state_id');
+        $objService->city_id = $request->input('city_id');
+        $objService->category_id =$request->input('category_id');
+        $objService->sub_category_id =$request->input('sub_category_id');
         $objService->user_id = Auth::user()->id;
         $objService->title = $request->input('title');
         $objService->description = $request->input('description');
@@ -50,5 +50,13 @@ class Posts extends Model
 
         return $objService->id ;
 
+    }
+
+    public function getPosts($id) {
+        $query = Posts::from('posts as ps')
+                ->join('sub_category as sc', 'sc.id', '=', 'ps.sub_category_id')
+                ->where('ps.id', $id)
+                ->get()->toArray();
+        return $query;
     }
 }

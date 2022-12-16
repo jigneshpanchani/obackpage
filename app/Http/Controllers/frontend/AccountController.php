@@ -13,7 +13,7 @@ class AccountController extends Controller
         $data['js'] = array();
         $data['funinit'] = array();
         $data['title'] = 'Manage Ads';
-        return view('frontend.pages.posts.free-ad-post-preview',$data);
+        return view('frontend.pages.account.manage-account',$data);
     }
 
     public function transaction(){
@@ -21,7 +21,7 @@ class AccountController extends Controller
         $data['js'] = array();
         $data['funinit'] = array();
         $data['title'] = 'Transaction';
-        return view('frontend.pages.posts.free-ad-post-preview',$data);
+        return view('frontend.pages.account.transaction-details',$data);
     }
 
     public function addCredit(){
@@ -29,6 +29,6 @@ class AccountController extends Controller
         $data['js'] = array();
         $data['funinit'] = array();
         $data['title'] = 'Add Credit';
-        return view('frontend.pages.posts.free-ad-post-preview',$data);
+        return view('frontend.pages.account.add-credit',$data);
     }
 }

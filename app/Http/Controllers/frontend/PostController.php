@@ -63,6 +63,8 @@ class PostController extends Controller
     }
 
     public function freeAdPreview($id){
+        $objpostpreview = new posts();
+        $data['posts'] =  $objpostpreview ->getPosts($id) ;
         $data['css'] = array();
         $data['js'] = array('posts.js');
         $data['funinit'] = array('Posts.init()');

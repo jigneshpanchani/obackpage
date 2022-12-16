@@ -26,7 +26,7 @@
                     <div class="flex grid grid-cols-3 gap-10 px-6">
                         <div class="form-group">
                             <span for="country" class="text-gray-800 text-base font-bold">Continent/Country</span>
-                            <select class="form-control selectCountry" id="country-dropdown">
+                            <select class="form-control selectCountry" name="continent_id" id="country-dropdown">
                                 @foreach ($continents as $continent)
                                 <option value="{{$continent['id']}}" class="text-gray-700 text-base leading-7 font-semibold">
                                 {{$continent['continent']}}
@@ -36,12 +36,12 @@
                         </div>
                         <div class="form-group selectstate">
                             <span for="state" class="text-gray-800 text-base font-bold">Country/State</span>
-                            <select class="form-control state" id="state-dropdown">
+                            <select class="form-control state" name="country_state_id" id="state-dropdown">
                             </select>
                         </div>
                         <div class="form-group">
                             <span for="city" class="text-gray-800 text-base font-bold">City</span>
-                            <select class="form-control" id="city-dropdown">
+                            <select class="form-control" name="city_id" id="city-dropdown">
                             </select>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                     <div class="flex grid grid-cols-2 gap-10 px-6">
                         <div class="form-group">
                             <span for="country" class="text-gray-800 text-base font-bold">Category</span>
-                            <select class="form-control selectCategory" id="category-dropdown">
+                            <select class="form-control selectCategory" name="category_id" id="category-dropdown">
                                 @foreach ($categories as $category)
                                 <option value="{{$category['id']}}" class="text-gray-700 text-base leading-7 font-semibold">
                                 {{$category['category']}}
@@ -61,7 +61,7 @@
                         </div>
                         <div class="form-group">
                             <span for="city" class="text-gray-800 text-base font-bold">Sub-Category</span>
-                            <select class="form-control" id="sub-category-dropdown">
+                            <select class="form-control" name="sub_category_id" id="sub-category-dropdown">
                             </select>
                         </div>
                     </div>

@@ -18,8 +18,38 @@
                     <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
                 </div>
                 <div class="px-6 space-y-6">
-
-
+                    <div class="">
+                        <span class="text-red-900 text-xl font-bold">Post Details</span>
+                    </div>
+                    <div class="space-y-6 px-6 pb-6 w-2/3">
+                        <div class="g-recaptcha" id="feedback-recaptcha"
+                             data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}">
+                        </div> 
+                        <button type="submit" class="bg-blue-600 flex justify-center items-center p-1 rounded">
+                            <p class="text-xl font-bold text-white">Place Ad Now</p>
+                        </button>
+                        @foreach($posts as $data)
+                        <div class="form-group">
+                            <span class="text-gray-800 text-base font-bold">Title : <br> {{$data['title']}} </span>
+                        </div>
+                        <div class="form-group">
+                            <span class="text-gray-800 text-base font-bold">Description : <br> {{$data['description']}}</span>
+                        </div>
+                        <div class="form-group">
+                            <span class="text-gray-800 text-base font-bold">Contact Email : <br> {{$data['contact_email']}}</span>
+                        </div>
+                        <div class="form-group">
+                            <span class="text-gray-800 text-base font-bold">Contact mobaile Number : <br> {{$data['mobile_number']}}</span>
+                        </div>
+                        {{-- <div class="form-group">
+                            <label for="exampleInputEmail1"> Image:"{{$data['title']}}"</label>
+                            <input method="POST" type="file" id="chooseFile" name="file" accept=".jpg, .jpeg, .png" multiple>
+                        </div> --}}
+                        <div class="form-group">
+                            <span class="text-gray-800 text-base font-bold"> Category : <br>{{$data['sub_category']}}</span>
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </main>
