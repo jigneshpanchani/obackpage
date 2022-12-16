@@ -61,6 +61,16 @@ Route::match(['get', 'post'], 'best-sites-like-backpage',      ['as' => 'best-si
 Route::match(['get', 'post'], 'backpage-replacement',          ['as' => 'backpage-replacement',         'uses' => 'frontend\InfoController@backpageReplacement']);
 
 
+//backend
+Route::match(['get', 'post'], 'admin-dashboard',            ['as' => 'admin-dashboard',           'uses' => 'backend\DashboardController@index']);
+Route::match(['get', 'post'], 'admin-user',                 ['as' => 'admin-user',                'uses' => 'backend\DashboardController@userData']);
+Route::match(['get', 'post'], 'admin-country',              ['as' => 'admin-country',             'uses' => 'backend\DashboardController@countryData']);
+Route::match(['get', 'post'], 'admin-state',                ['as' => 'admin-state',               'uses' => 'backend\DashboardController@stateData']);
+Route::match(['get', 'post'], 'admin-city',                 ['as' => 'admin-city',                'uses' => 'backend\DashboardController@cityData']);
+Route::match(['get', 'post'], 'admin-category',             ['as' => 'admin-category',            'uses' => 'backend\DashboardController@categoryData']);
+Route::match(['get', 'post'], 'admin-sub-category',         ['as' => 'admin-sub-category',        'uses' => 'backend\DashboardController@subCategoryData']);
+
+
 
 
 

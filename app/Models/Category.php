@@ -40,4 +40,13 @@ class Category extends Model
         return $category_array;
 
     }
+
+    function getcategory(){
+
+        $array=category::from('category')
+            ->select('id', 'category',)
+            ->get()
+            ->toArray();
+        return $array;
+    }
 }

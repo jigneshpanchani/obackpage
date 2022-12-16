@@ -33,4 +33,13 @@ class City extends Model
                 ->get()->toArray();
         return $query;
     }
+
+    function getcitys(){
+
+        $array=city::from('city')
+            ->select('id', 'city',)
+            ->get()
+            ->toArray();
+        return $array;
+    }
 }

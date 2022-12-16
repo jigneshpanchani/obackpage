@@ -59,4 +59,12 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    function getUser(){
+
+        $array=user::from('users')
+            ->select('id', 'name', 'email')
+            ->get()->toArray();
+        return $array;
+    }
 }
