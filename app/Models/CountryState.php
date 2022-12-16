@@ -21,4 +21,13 @@ class CountryState extends Model
                 ->get()->toArray();
         return $query;
     }
+
+    function getstate(){
+
+        $array=CountryState::from('country_state')
+            ->select('id', 'country_state',)
+            ->get()
+            ->toArray();
+        return $array;
+    }
 }

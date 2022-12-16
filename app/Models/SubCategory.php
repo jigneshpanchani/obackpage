@@ -21,4 +21,13 @@ class SubCategory extends Model
                 ->get()->toArray();
         return $query;
     }
+
+    function getsubcategoryes(){
+
+        $array=SubCategory::from('sub_category')
+            ->select('id', 'sub_category',)
+            ->get()
+            ->toArray();
+        return $array;
+    }
 }
