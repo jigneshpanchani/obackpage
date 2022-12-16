@@ -39,9 +39,9 @@ class PostController extends Controller
             $objPosts = new Posts();
             $postSave = $objPosts->saveposts($request);
 
-            $this -> validate($request, [
-                'g-recaptcha-response' =>
-                ['required', new Recaptcha()]]);
+            // $this -> validate($request, [
+            //     'g-recaptcha-response' =>
+            //     ['required', new Recaptcha()]]);
 
             if($postSave){
                 $request->session()->flash('session_success', 'Contract Funding Source is Saved.');

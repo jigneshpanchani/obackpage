@@ -25,9 +25,9 @@
                         <div class="g-recaptcha" id="feedback-recaptcha"
                              data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}">
                         </div> 
-                        <button type="submit" class="bg-blue-600 flex justify-center items-center p-1 rounded">
-                            <p class="text-xl font-bold text-white">Place Ad Now</p>
-                        </button>
+                        <div id="cookieCrumb" class="space-x-2 p-6">
+                            <a href="#"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('manage-ads') }}"><span class="text-gray-800 text-sm font-bold">Plcae Ad Now</span></a>
+                        </div>
                         @foreach($posts as $data)
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Title : <br> {{$data['title']}} </span>
@@ -41,10 +41,10 @@
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Contact mobaile Number : <br> {{$data['mobile_number']}}</span>
                         </div>
-                        {{-- <div class="form-group">
-                            <label for="exampleInputEmail1"> Image:"{{$data['title']}}"</label>
-                            <input method="POST" type="file" id="chooseFile" name="file" accept=".jpg, .jpeg, .png" multiple>
-                        </div> --}}
+                        <div class="form-group">
+                            <span class="text-gray-800 text-base font-bold"> Image : <br> {{$data['file_name']}} </span>
+                           <div id='displayUploadedImg'  src="/uploads/" class="flex grid grid-cols-4 gap-10 py-6"></div>
+                           </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold"> Category : <br>{{$data['sub_category']}}</span>
                         </div>
