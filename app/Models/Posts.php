@@ -35,24 +35,28 @@ class Posts extends Model
         $objService->contact_email = $request->input('contact_email');
         $objService->mobile_number = $request->input('mobile_number');
         $objService->save();
-        $data=new PostsAttechment;
-            if($files=$request->file('file')){
-                foreach ($files as $file) {
-                    $name= date('YmdHis').$file->getClientOriginalName();
-                    $destinationPath = public_path('/uploads/');
-                    $file->move($destinationPath, $name);
-                    $data->file_name=$name;
-                    $data->post_id=$objService->id;
-                    $data->file_path="/uploads/.$name";
-                }
+
+
+        if($files=$request->file('file')){
+            foreach ($files as $file) {
+                $data=new PostsAttechment;
+                $name= date('YmdHis').$file->getClientOriginalName();
+                $destinationPath = public_path('/uploads/');
+                $file->move($destinationPath, $name);
+                $data->file_name=$name;
+                $data->post_id=$objService->id;
+                $data->file_path="/uploads/$name";
+                $data->save();
             }
-        $data->save();
+
+        }
 
         return $objService->id ;
 
+
     }
 
-    public function getPosts($id) {
+    public function getPostDetails($id) {
         $query = Posts::from('posts as ps')
                 ->join('sub_category as sc', 'sc.id', '=', 'ps.sub_category_id')
                 ->where('ps.id', $id)
