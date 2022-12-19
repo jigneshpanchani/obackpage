@@ -42,6 +42,8 @@ Route::match(['get', 'post'], 'free-ad-preview/{id}',       ['as' => 'free-ad-pr
 Route::match(['get', 'post'], 'post-adds-ajax',             ['as' => 'post-adds-ajax',            'uses' => 'frontend\PostController@postAdds']);
 Route::match(['get', 'post'], 'local-ad-post',              ['as' => 'local-ad-post',             'uses' => 'frontend\PostController@localAdPost']);
 Route::match(['get', 'post'], 'local-ad-preview/{id}',      ['as' => 'local-ad-preview',          'uses' => 'frontend\PostController@localAdPreview']);
+Route::match(['get', 'post'], 'local-ad-post',              ['as' => 'local-ad-post',             'uses' => 'frontend\PostController@localAdPost']);
+Route::match(['get', 'post'], 'local-ad-preview/{id}',      ['as' => 'local-ad-preview',          'uses' => 'frontend\PostController@localAdPreview']);
 
 Route::match(['get', 'post'], 'manage-ads',                 ['as' => 'manage-ads',                'uses' => 'frontend\AccountController@manageAds']);
 Route::match(['get', 'post'], 'transaction',                ['as' => 'transaction',               'uses' => 'frontend\AccountController@transaction']);
@@ -62,13 +64,13 @@ Route::match(['get', 'post'], 'backpage-replacement',          ['as' => 'backpag
 
 
 //backend
-Route::match(['get', 'post'], 'admin-dashboard',            ['as' => 'admin-dashboard',           'uses' => 'backend\DashboardController@index']);
-Route::match(['get', 'post'], 'admin-user',                 ['as' => 'admin-user',                'uses' => 'backend\DashboardController@userData']);
-Route::match(['get', 'post'], 'admin-country',              ['as' => 'admin-country',             'uses' => 'backend\DashboardController@countryData']);
-Route::match(['get', 'post'], 'admin-state',                ['as' => 'admin-state',               'uses' => 'backend\DashboardController@stateData']);
-Route::match(['get', 'post'], 'admin-city',                 ['as' => 'admin-city',                'uses' => 'backend\DashboardController@cityData']);
-Route::match(['get', 'post'], 'admin-category',             ['as' => 'admin-category',            'uses' => 'backend\DashboardController@categoryData']);
-Route::match(['get', 'post'], 'admin-sub-category',         ['as' => 'admin-sub-category',        'uses' => 'backend\DashboardController@subCategoryData']);
+Route::match(['get', 'post'], 'admin-dashboard',               ['as' => 'admin-dashboard',              'uses' => 'backend\DashboardController@index']);
+Route::match(['get', 'post'], 'admin-user',                    ['as' => 'admin-user',                   'uses' => 'backend\DashboardController@userData']);
+Route::match(['get', 'post'], 'admin-country',                 ['as' => 'admin-country',                'uses' => 'backend\DashboardController@countryData']);
+Route::match(['get', 'post'], 'admin-state',                   ['as' => 'admin-state',                  'uses' => 'backend\DashboardController@stateData']);
+Route::match(['get', 'post'], 'admin-city',                    ['as' => 'admin-city',                   'uses' => 'backend\DashboardController@cityData']);
+Route::match(['get', 'post'], 'admin-category',                ['as' => 'admin-category',               'uses' => 'backend\DashboardController@categoryData']);
+Route::match(['get', 'post'], 'admin-sub-category',            ['as' => 'admin-sub-category',           'uses' => 'backend\DashboardController@subCategoryData']);
 
 
 

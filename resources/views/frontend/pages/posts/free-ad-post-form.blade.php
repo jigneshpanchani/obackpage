@@ -96,20 +96,28 @@
                             <span class="text-gray-800 text-base font-bold">Contact Mobile Number:</span>
                             <input type="text" id="mobile_number" name="mobile_number" class="form-control">
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Add Image:</label>
+                        <div class="form-group space-x-2">
+                            <span class="text-gray-800 text-base font-bold">Add Images:</span>
                             <input method="POST" type="file" id="files" name="file[]" accept=".jpg, .jpeg, .png" multiple>
                             <div id='displayUploadedImg' class="flex grid grid-cols-4 gap-10 py-6">
                             </div>
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">City:</span>
-                            <input type="checkbox" id="city_id" name="city_id"  value="1">
-                            <span class="text-gray-800 text-base font-bold" for="city_id">Auburn </span>
+                            <div class="flex grid grid-cols-3 gap-10 px-6">
+                                <div class="form-group">
+                                    <input type="checkbox" name="city_id[]"  value="1">
+                                    <label for="city_id" class="text-gray-700 text-base leading-7 font-semibold">Auburn </label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="city_id[]"  value="2">
+                                    <label class="text-gray-700 text-base leading-7 font-semibold" for="city_id">Auburn </label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                        <input type="checkbox" id="is_premium_ad" name="is_premium_ad"  value="">
-                            <span class="text-gray-700 text-base leading-7 font-semibold">By Placing this ad I agree to the <a href="url">terms of use</a> and <a href="url">privacy policy</a></span>
+                        <div class="form-group space-x-2">
+                            <input type="checkbox" id="is_premium_ad" name="is_premium_ad"  value="">
+                            <label for="is_premium_ad" class="text-gray-700 text-base leading-7 font-semibold">By Placing this ad I agree to the <a href="url">terms of use</a> and <a href="url">privacy policy</a></label>
                         </div>
                         <div class="g-recaptcha" id="feedback-recaptcha"
                                 data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}">

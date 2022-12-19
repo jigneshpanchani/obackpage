@@ -80,16 +80,17 @@ class PostController extends Controller
     public function localAdPost(Request $request){
 
         if ($request->isMethod('post')) {
+
             $validator = Validator::make($request->all(), [
                 'title' => 'required',
                 'description'   => 'required',
             ]);
             if ($validator->fails()) {
-                return redirect(route('free-ad-post'))->withErrors($validator)->withInput();
+                return redirect(route('local-ad-post'))->withErrors($validator)->withInput();
             }
 
             $objPosts = new Posts();
-            $postSave = $objPosts->saveposts($request);
+            $postSave = $objPosts->saveLocalAdposts($request);
 
 
             // $this -> validate($request, [
@@ -98,10 +99,10 @@ class PostController extends Controller
 
             if($postSave){
                 $request->session()->flash('session_success', 'Contract Funding Source is Saved.');
-                return redirect(route('free-ad-preview', $postSave));
+                return redirect(route('local-ad-preview', $postSave));
             }else{
                 $request->session()->flash('session_error', 'Something will be wrong. Please try again.');
-                return redirect(route('free-ad-post'))->withInput();
+                return redirect(route('local-ad-post'))->withInput();
             }
         }
         $objContinents = new Continents();
@@ -110,7 +111,7 @@ class PostController extends Controller
         $data['categories'] = $objCategory->getCategories();
         $data['css'] = array();
         $data['js'] = array('posts.js');
-        $data['funinit'] = array('Posts.init()');
+        $data['funinit'] = array('Posts.localPost()');
         $data['title'] = 'Home Page';
         return view('frontend.pages.posts.local-ad-post-form',$data);
 
