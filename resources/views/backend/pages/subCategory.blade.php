@@ -4,18 +4,18 @@
 <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
     <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
         <div class="d-flex align-items-center flex-wrap mr-2">
-            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">{{ (@$pagetitle) ? $pagetitle : 'Sub Category' }}</h5>
+            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5"><strong>{{ (@$pagetitle) ? $pagetitle : 'Sub Category' }}</strong></h5>
         </div>
     </div>
 </div>
 
 <div class="bg-white p-1 rounded">
-    <div class="p-6">
-        <table id="myData" class="display">
+    <div class="p-6 font-bold">
+        <table id="myData" class="table table-hover table-custom dataTable no-footer" role="grid">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>SUB CATEGORY NAME</th>
+                    <th><strong>ID</strong></th>
+                    <th><strong>SUB CATEGORY NAME</strong></th>
                 </tr>
             </thead>
             <tbody>

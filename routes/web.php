@@ -68,6 +68,8 @@ Route::match(['get', 'post'], 'admin-state',                ['as' => 'admin-stat
 Route::match(['get', 'post'], 'admin-city',                 ['as' => 'admin-city',                'uses' => 'backend\DashboardController@cityData']);
 Route::match(['get', 'post'], 'admin-category',             ['as' => 'admin-category',            'uses' => 'backend\DashboardController@categoryData']);
 Route::match(['get', 'post'], 'admin-sub-category',         ['as' => 'admin-sub-category',        'uses' => 'backend\DashboardController@subCategoryData']);
+Route::match(['get', 'post'], 'admin-post',                 ['as' => 'admin-post',                'uses' => 'backend\DashboardController@postData']);
+
 
 
 

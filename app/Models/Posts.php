@@ -59,4 +59,16 @@ class Posts extends Model
                 ->get()->toArray();
         return $query;
     }
+
+    function getPost(){
+
+        $array= posts::from('posts as ps')
+            ->leftJoin('city', 'city.id', '=', 'ps.city_id')
+            ->leftJoin('sub_category as sc', 'sc.id', '=', 'ps.sub_category_id')
+            ->leftJoin('category', 'category.id', '=', 'ps.category_id')
+            ->select('ps.id', 'ps.title', 'ps.description', 'ps.location', 'ps.contact_email', 'city.city as city_name', 'category.category as category', 'sc.sub_category as sub_category')
+            ->get()
+            ->toArray();
+        return $array;
+    }
 }

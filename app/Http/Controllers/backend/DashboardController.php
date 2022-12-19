@@ -10,6 +10,7 @@ use App\Models\CountryState;
 use App\Models\City;
 use App\Models\Category;
 use App\Models\SubCategory;
+use App\Models\posts;
 
 class DashboardController extends Controller
 {
@@ -82,5 +83,16 @@ class DashboardController extends Controller
         $data['js'] = array();
         $data['funinit'] = array();
         return view('backend.pages.subCategory',$data);
+    }
+
+    public function postData(){
+
+        $objpost = new posts();
+        $data['posts'] = $objpost->getPost();
+        $data['title'] = 'Post Page';
+        $data['css'] = array();
+        $data['js'] = array();
+        $data['funinit'] = array();
+        return view('backend.pages.post',$data);
     }
 }
