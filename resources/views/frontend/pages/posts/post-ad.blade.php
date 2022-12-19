@@ -21,14 +21,14 @@
                 <div id="heading" class="px-6">
                     <span class="text-gray-900 text-2xl font-extrabold">Post An Ad</span>
                 </div>
-                <div class="space-y-2 p-6">
+                <div class="p-6 space-y-6 bg-white m-6 rounded">
                     <div class="space-x-2">
                         <i class='fa fa-caret-right'></i>
                         <a href="{{ route('free-ad-post') }}" class="space-x-2"><span class="text-red-900 text-base font-bold underline">Post free ad</span></a><span class="text-gray-800 text-sm font-bold">(Mainly free)</span><br/>
                     </div>
                     <div class="space-x-2">
                         <i class='fa fa-caret-right'></i>
-                        <a href="" class="space-x-2"><span class="text-red-900 text-base font-bold underline">Post local ad</span></a><span class="text-gray-800 text-sm font-bold">(Paid Premium And Sponsor ads)</span><br/>
+                        <a href="{{ route('local-ad-post') }}" class="space-x-2"><span class="text-red-900 text-base font-bold underline">Post local ad</span></a><span class="text-gray-800 text-sm font-bold">(Paid Premium And Sponsor ads)</span><br/>
                     </div>
                     <div class="space-x-2">
                         <i class='fa fa-caret-right'></i>

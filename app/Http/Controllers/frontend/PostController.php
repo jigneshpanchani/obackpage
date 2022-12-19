@@ -7,6 +7,7 @@ use App\Models\Continents;
 use App\Models\CountryState;
 use App\Models\City;
 use App\Models\Posts;
+use App\Models\PostsAttechment;
 use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
@@ -39,6 +40,7 @@ class PostController extends Controller
             $objPosts = new Posts();
             $postSave = $objPosts->saveposts($request);
 
+
             // $this -> validate($request, [
             //     'g-recaptcha-response' =>
             //     ['required', new Recaptcha()]]);
@@ -60,16 +62,71 @@ class PostController extends Controller
         $data['funinit'] = array('Posts.init()');
         $data['title'] = 'Home Page';
         return view('frontend.pages.posts.free-ad-post-form',$data);
+
     }
 
     public function freeAdPreview($id){
         $objpostpreview = new posts();
-        $data['posts'] =  $objpostpreview ->getPosts($id) ;
+        $data['postDetails'] = $objpostpreview->getPostDetails($id);
+        $objpostpreview = new PostsAttechment();
+        $data['postAttechment'] = $objpostpreview->getPostAttechment($id);
         $data['css'] = array();
         $data['js'] = array('posts.js');
         $data['funinit'] = array('Posts.init()');
         $data['title'] = 'Home Page';
         return view('frontend.pages.posts.free-ad-post-preview',$data);
+    }
+
+    public function localAdPost(Request $request){
+
+        if ($request->isMethod('post')) {
+
+            $validator = Validator::make($request->all(), [
+                'title' => 'required',
+                'description'   => 'required',
+            ]);
+            if ($validator->fails()) {
+                return redirect(route('local-ad-post'))->withErrors($validator)->withInput();
+            }
+
+            $objPosts = new Posts();
+            $postSave = $objPosts->saveLocalAdposts($request);
+
+
+            // $this -> validate($request, [
+            //     'g-recaptcha-response' =>
+            //     ['required', new Recaptcha()]]);
+
+            if($postSave){
+                $request->session()->flash('session_success', 'Contract Funding Source is Saved.');
+                return redirect(route('local-ad-preview', $postSave));
+            }else{
+                $request->session()->flash('session_error', 'Something will be wrong. Please try again.');
+                return redirect(route('local-ad-post'))->withInput();
+            }
+        }
+        $objContinents = new Continents();
+        $data['continents'] =  $objContinents->getContinents();
+        $objCategory = new Category();
+        $data['categories'] = $objCategory->getCategories();
+        $data['css'] = array();
+        $data['js'] = array('posts.js');
+        $data['funinit'] = array('Posts.localPost()');
+        $data['title'] = 'Home Page';
+        return view('frontend.pages.posts.local-ad-post-form',$data);
+
+    }
+
+    public function localAdPreview($id){
+        $objpostpreview = new posts();
+        $data['postDetails'] = $objpostpreview->getPostDetails($id);
+        $objpostpreview = new PostsAttechment();
+        $data['postAttechment'] = $objpostpreview->getPostAttechment($id);
+        $data['css'] = array();
+        $data['js'] = array('posts.js');
+        $data['funinit'] = array('Posts.init()');
+        $data['title'] = 'Home Page';
+        return view('frontend.pages.posts.local-ad-post-preview',$data);
     }
 
     public function postAdds(Request $request){
