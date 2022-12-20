@@ -12,7 +12,16 @@
                 </div>
             </div>
         </nav>
-       
+        <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
+            <div id="cookieCrumb" class="space-x-2 p-6">
+                <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="#"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
+            </div>
+            <div class="p-6 space-y-6 bg-white m-6 rounded">
+                <div id="heading" class="">
+                    <span class="text-gray-900 text-4xl font-bold">Choose a Section</span>
+                </div>
+            </div>        
+        </main>
     </div>
 
 @endsection
