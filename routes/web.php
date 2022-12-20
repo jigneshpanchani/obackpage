@@ -49,9 +49,11 @@ Route::match(['get', 'post'], 'view-post/{cityId}/{subcategoryId}',    ['as' => 
 Route::match(['get', 'post'], 'posts-details/{cityId}/{subcategoryId}/{postId}',    ['as' => 'posts-details',      'uses' => 'frontend\PostController@postsDetails']);
 
 Route::match(['get', 'post'], 'manage-ads',                 ['as' => 'manage-ads',                'uses' => 'frontend\AccountController@manageAds']);
+Route::match(['get', 'post'], 'manage-ads-ajax',            ['as' => 'manage-ads-ajax',           'uses' => 'frontend\AccountController@ajaxAction']);
 Route::match(['get', 'post'], 'transaction',                ['as' => 'transaction',               'uses' => 'frontend\AccountController@transaction']);
 Route::match(['get', 'post'], 'add-credit',                 ['as' => 'add-credit',                'uses' => 'frontend\AccountController@addCredit']);
 
+Route::match(['get', 'post'], 'edit-free-ad-post-data/{id}',['as' => 'edit-free-ad-post-data',    'uses' => 'frontend\AccountController@editFreeAdPost']);
 
 
 
