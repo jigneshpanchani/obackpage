@@ -57,8 +57,6 @@ class Posts extends Model
 
     public function saveLocalAdposts($request) {
 
-        // $id = Auth::user()->id;
-
         $multipleCities = $request->input('city_id1');
         $i = 0;
         $fisrtPostId = array();
@@ -112,10 +110,10 @@ class Posts extends Model
         return $objService->id;
 
     }
-    
+
     public function updatePosts($request, $id){
-    
-        $objService = Posts::find($id); 
+
+        $objService = Posts::find($id);
         $objService->continent_id = $request->input('continent_id');
         $objService->country_state_id = $request->input('country_state_id');
         $objService->city_id = $request->input('city_id');
@@ -140,14 +138,13 @@ class Posts extends Model
         //             $data->post_id=$objService->id;
         //             $data->file_path="/uploads/.$name";
         //         }
-                
+
         //     }
         // $data->update();
-        return true; 
+        return true;
     }
 
-    public function deletePost($request)
-    {
+    public function deletePost($request){
         $returnpost = Posts::where('id','=', $request->id)
                      ->delete();
         if($returnpost){
@@ -159,7 +156,7 @@ class Posts extends Model
         }
     }
 
-    public function getPosts($id) {
+    public function geteditPostData($id) {
         $query = Posts::from('posts as ps')
                 ->join('sub_category as sc', 'sc.id', '=', 'ps.sub_category_id')
                 ->join('post_attechment as pa', 'pa.id', '=', 'ps.id')
@@ -190,6 +187,14 @@ class Posts extends Model
         return $query;
     }
 
+    public function getPostPreviewDetails($id) {
+        $query = Posts::from('posts as ps')
+                ->join('sub_category as sc', 'sc.id', '=', 'ps.sub_category_id')
+                ->where('ps.id', $id)
+                ->get()->toArray();
+        return $query;
+    }
+
     public function getPostsDetails($pid){
 
         $array=Posts::from('posts')
@@ -198,33 +203,6 @@ class Posts extends Model
             ->get()
             ->toArray();
         return $array;
-    }
-
-    public function getPostData($userId, $data)
-    {
-        $sql = Posts::where('user_id', '=', $userId);
-
-        $result = $sql->get([
-            'id',
-            'continent_id',
-            'country_state_id',
-            'city_id',
-            'category_id',
-            'sub_category_id',
-            'user_id',
-            'title',
-            'description',
-            'age',
-            'location',
-            'contact_email',
-            'mobile_number',
-            'is_premium_ad',
-            'is_sponsor_ad',
-            'created_at',
-            'updated_at',
-
-        ]);
-         return $result;
     }
 
     public function getPostList($userId, $request) {
@@ -239,14 +217,14 @@ class Posts extends Model
             4 => 'ps.is_premium_ad',
             5 => 'ps.is_sponsor_ad',
             6 => 'ps.created_at',
-            
+
         );
         $query = Posts::from('posts as ps')
                 ->join('category as sc', 'sc.id', '=', 'ps.category_id')
                 ->join('city as city', 'city.id', '=', 'ps.city_id')
                 ->where('ps.user_id',$userId);
-                
-    
+
+
         if (!empty($requestData['search']['value'])) {   // if there is a search parameter, $requestData['search']['value'] contains search parameter
             $searchVal = $requestData['search']['value'];
             $query->where(function($query) use ($columns, $searchVal, $requestData) {
@@ -300,9 +278,9 @@ class Posts extends Model
             $nestedData[] = $action;
             $data[] = $nestedData;
         }
-       
+
         $json_data = array(
-            "draw" => intval($requestData['draw']), // for every request/draw by clientside , they send a number as a parameter, when they recieve a response/data they first check the draw number, so we are sending same number in draw. 
+            "draw" => intval($requestData['draw']), // for every request/draw by clientside , they send a number as a parameter, when they recieve a response/data they first check the draw number, so we are sending same number in draw.
             "recordsTotal" => intval($totalData), // total number of records
             "recordsFiltered" => intval($totalFiltered), // total number of records after searching, if there is no searching then totalFiltered = totalData
             "data" => $data   // total data array
@@ -310,6 +288,6 @@ class Posts extends Model
         return $json_data;
     }
 
-    
-    
+
+
 }

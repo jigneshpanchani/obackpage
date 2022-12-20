@@ -68,7 +68,7 @@ class PostController extends Controller
 
     public function freeAdPreview($id){
         $objpostpreview = new posts();
-        $data['postDetails'] = $objpostpreview->getPostDetails($id);
+        $data['postDetails'] = $objpostpreview->getPostPreviewDetails($id);
         $objpostpreview = new PostsAttechment();
         $data['postAttechment'] = $objpostpreview->getPostAttechment($id);
         $data['css'] = array();
@@ -167,7 +167,7 @@ class PostController extends Controller
     }
 
     public function postsDetails($id, $sid, $pid){
-        
+
         $objviewpost = new posts();
         $data['posts'] = $objviewpost->getPostsDetails($pid);
         $data['title'] = 'posts Details Page';

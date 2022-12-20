@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 
 class AccountController extends Controller
 {
-    
+
     public function manageAds(Request $request){
 
         $data['css'] = array();
@@ -62,7 +62,7 @@ class AccountController extends Controller
         $objCategory = new Category();
         $data['categories'] = $objCategory->getCategories();
         $objpostpreview = new posts();
-        $data['posts'] =  $objpostpreview ->getPosts($id);
+        $data['posts'] =  $objpostpreview ->geteditPostData($id);
         $data['postId'] =  $id;
         $data['css'] = array();
         $data['js'] = array('edit-post.js');
@@ -85,11 +85,11 @@ class AccountController extends Controller
                 echo json_encode($arrPostList);
                 break;
             case 'deletePostData':
-                    $dataArr     = $request->input('data');
-                    $objpost  = new posts();
-                    $arrpost = $objpost->deletePost($request);
-                    echo json_encode($arrpost);
-                    break;
+                $dataArr     = $request->input('data');
+                $objpost  = new posts();
+                $arrpost = $objpost->deletePost($request);
+                echo json_encode($arrpost);
+                break;
         }
         exit;
     }
