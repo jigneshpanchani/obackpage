@@ -3,15 +3,25 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Posts;
+use App\Models\Continents;
+use App\Models\CountryState;
+use App\Models\City;
+use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 class AccountController extends Controller
 {
-    //
-    public function manageAds(){
+    
+    public function manageAds(Request $request){
+
         $data['css'] = array();
-        $data['js'] = array();
-        $data['funinit'] = array();
+        $data['js'] = array('manage-table.js');
+        $data['funinit'] = array('manageAcount.manageAds()');
         $data['title'] = 'Manage Ads';
         return view('frontend.pages.account.manage-account',$data);
     }
@@ -26,9 +36,61 @@ class AccountController extends Controller
 
     public function addCredit(){
         $data['css'] = array();
-        $data['js'] = array();
+        $data['js'] = array('');
         $data['funinit'] = array();
         $data['title'] = 'Add Credit';
         return view('frontend.pages.account.add-credit',$data);
+    }
+
+    public function editFreeAdPost(Request $request,$id){
+
+        if ($request->isMethod('post')) {
+            $objPosts = new Posts();
+            $postUpdate = $objPosts->updatePosts($request, $id);
+
+            if($postUpdate){
+                $request->session()->flash('session_success', 'Post Pata Updated Successfully.');
+                return redirect(route('manage-ads'));
+            }else{
+                $request->session()->flash('session_error', 'Something will be wrong. Please try again.');
+                return redirect(route('edit-free-ad-post-data'))->withInput();
+            }
+        }
+
+        $objContinents = new Continents();
+        $data['continents'] =  $objContinents->getContinents();
+        $objCategory = new Category();
+        $data['categories'] = $objCategory->getCategories();
+        $objpostpreview = new posts();
+        $data['posts'] =  $objpostpreview ->getPosts($id);
+        $data['postId'] =  $id;
+        $data['css'] = array();
+        $data['js'] = array('edit-post.js');
+        $data['funinit'] = array('PostsEdit.init()');
+        $data['title'] = 'Edit Post';
+        return view('frontend.pages.account.edit-post',$data);
+    }
+
+    public function ajaxAction(Request $request)
+    {
+
+        $userId = Auth::user()->id;
+        $action    = $request->input('action');
+
+        switch ($action) {
+            case 'getPostData':
+                $dataArr     = $request->input('data');
+                $objpostData = new posts();
+                $arrPostList = $objpostData->getPostList($userId, $request);
+                echo json_encode($arrPostList);
+                break;
+            case 'deletePostData':
+                    $dataArr     = $request->input('data');
+                    $objpost  = new posts();
+                    $arrpost = $objpost->deletePost($request);
+                    echo json_encode($arrpost);
+                    break;
+        }
+        exit;
     }
 }
