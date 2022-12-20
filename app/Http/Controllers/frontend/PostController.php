@@ -29,6 +29,7 @@ class PostController extends Controller
     public function freeAdPost(Request $request){
 
         if ($request->isMethod('post')) {
+
             $validator = Validator::make($request->all(), [
                 'title' => 'required',
                 'description'   => 'required',
@@ -148,5 +149,43 @@ class PostController extends Controller
                 return json_encode($result);
                 break;
         }
+    }
+
+    public function viewPost($id, $sid){
+
+        $objviewpost = new posts();
+        $data['posts'] = $objviewpost->getViewPost($id, $sid);
+        $objCity = new City();
+        $data['nearByCities'] = $objCity->getNearByCities($id);
+        $data['title'] = 'View-Post Page';
+        $data['cityId'] = $id;
+        $data['subId'] = $sid;
+        $data['css'] = array();
+        $data['js'] = array();
+        $data['funinit'] = array();
+        return view('frontend.pages.posts.view-post', $data);
+    }
+
+    public function postsDetails($id, $sid, $pid){
+        
+        $objviewpost = new posts();
+        $data['posts'] = $objviewpost->getPostsDetails($pid);
+        $data['title'] = 'posts Details Page';
+        $data['cityId'] = $id;
+        $data['postId'] = $id;
+        $data['subId'] = $sid;
+        $data['css'] = array();
+        $data['js'] = array();
+        $data['funinit'] = array();
+        return view('frontend.pages.posts.posts-details', $data);
+    }
+
+    public function multipleAdPost(){
+
+        $data['css'] = array();
+        $data['js'] = array('posts.js');
+        $data['funinit'] = array('Posts.init()');
+        $data['title'] = 'Home Page';
+        return view('frontend.pages.posts.multiple-ad-post-form', $data);
     }
 }

@@ -32,7 +32,7 @@
                     </div>
                     <div class="space-x-2">
                         <i class='fa fa-caret-right'></i>
-                        <a href="" class="space-x-2"><span class="text-red-900 text-base font-bold underline">Post in multiple cities</span></a><span class="text-gray-800 text-sm font-bold">(Paid Premium And Sponsor ads)</span><br/>
+                        <a href="{{route('multiple-ad-post')}}" class="space-x-2"><span class="text-red-900 text-base font-bold underline">Post in multiple cities</span></a><span class="text-gray-800 text-sm font-bold">(Paid Premium And Sponsor ads)</span><br/>
                     </div>
                 </div>
 

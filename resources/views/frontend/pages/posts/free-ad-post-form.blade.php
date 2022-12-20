@@ -105,14 +105,14 @@
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">City:</span>
                             <div class="flex grid grid-cols-3 gap-10 px-6">
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <input type="checkbox" name="city_id[]"  value="1">
                                     <label for="city_id" class="text-gray-700 text-base leading-7 font-semibold">Auburn </label>
                                 </div>
                                 <div class="form-group">
                                     <input type="checkbox" name="city_id[]"  value="2">
                                     <label class="text-gray-700 text-base leading-7 font-semibold" for="city_id">Auburn </label>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="form-group space-x-2">

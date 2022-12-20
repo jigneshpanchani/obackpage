@@ -20,7 +20,6 @@
             <div class="flex grid grid-cols-4 space-x-4 m-4">
                 @php
                 $categories = array_chunk($category,(count($category) / 3));
-
                 @endphp
                 @foreach($categories as $category1)
                     <div class="">
@@ -31,7 +30,8 @@
                                 @foreach($category2['subcategory'] as $subcategory)
                                 <div class="space-x-2 py-2">
                                     <i class='fa fa-caret-right'></i>
-                                    <span class="text-gray-800 text-sm font-bold underline">{{  $subcategory['sub_category'] }}<br/></span>
+                                    <a href="{{ route('view-post',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['id'])) }}">
+                                    <span class="text-gray-800 text-sm font-bold underline">{{  $subcategory['sub_category'] }}</span><br/></a>
                                 </div>
                                 @endforeach
                         @endforeach

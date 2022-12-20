@@ -35,6 +35,7 @@ Route::match(['get', 'post'], 'authorized/google',          ['as' => 'authorized
 Route::match(['get', 'post'], 'authorized/google/callback', ['as' => 'authorized/google/callback','uses' => 'LoginWithGoogleController@handleGoogleCallback']);
 Route::match(['get', 'post'], 'category/{city}',            ['as' => 'category',                  'uses' => 'frontend\CategoryController@index']);
 
+// Route::match(['get', 'post'], 'category/{city}',            ['as' => 'category',                  'uses' => 'frontend\CategoryController@index']);
 
 Route::match(['get', 'post'], 'post-ad',                    ['as' => 'post-ad',                   'uses' => 'frontend\PostController@postAd']);
 Route::match(['get', 'post'], 'free-ad-post',               ['as' => 'free-ad-post',              'uses' => 'frontend\PostController@freeAdPost']);
@@ -42,12 +43,15 @@ Route::match(['get', 'post'], 'free-ad-preview/{id}',       ['as' => 'free-ad-pr
 Route::match(['get', 'post'], 'post-adds-ajax',             ['as' => 'post-adds-ajax',            'uses' => 'frontend\PostController@postAdds']);
 Route::match(['get', 'post'], 'local-ad-post',              ['as' => 'local-ad-post',             'uses' => 'frontend\PostController@localAdPost']);
 Route::match(['get', 'post'], 'local-ad-preview/{id}',      ['as' => 'local-ad-preview',          'uses' => 'frontend\PostController@localAdPreview']);
-Route::match(['get', 'post'], 'local-ad-post',              ['as' => 'local-ad-post',             'uses' => 'frontend\PostController@localAdPost']);
-Route::match(['get', 'post'], 'local-ad-preview/{id}',      ['as' => 'local-ad-preview',          'uses' => 'frontend\PostController@localAdPreview']);
+Route::match(['get', 'post'], 'multiple-ad-post',           ['as' => 'multiple-ad-post',          'uses' => 'frontend\PostController@multipleAdPost']);
+Route::match(['get', 'post'], 'multiple-ad-preview/{id}',   ['as' => 'multiple-ad-preview',       'uses' => 'frontend\PostController@multipleAdPreview']);
+Route::match(['get', 'post'], 'view-post/{cityId}/{subcategoryId}',    ['as' => 'view-post',      'uses' => 'frontend\PostController@viewPost']);
+Route::match(['get', 'post'], 'posts-details/{cityId}/{subcategoryId}/{postId}',    ['as' => 'posts-details',      'uses' => 'frontend\PostController@postsDetails']);
 
 Route::match(['get', 'post'], 'manage-ads',                 ['as' => 'manage-ads',                'uses' => 'frontend\AccountController@manageAds']);
 Route::match(['get', 'post'], 'transaction',                ['as' => 'transaction',               'uses' => 'frontend\AccountController@transaction']);
 Route::match(['get', 'post'], 'add-credit',                 ['as' => 'add-credit',                'uses' => 'frontend\AccountController@addCredit']);
+
 
 
 

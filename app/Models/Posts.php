@@ -132,4 +132,25 @@ class Posts extends Model
             ->toArray();
         return $array;
     }
+
+    function getViewPost($id, $sid){
+
+        $query = Posts::from('posts')
+            ->where('city_id', $id)
+            ->where('sub_category_id', $sid)
+            ->get()
+            ->toArray();
+        return $query;
+    }
+
+    function getPostsDetails($pid){
+
+        $array=Posts::from('posts')
+            ->where('id', $pid)
+            ->select('id', 'title', 'description', 'location', 'age', 'created_at', 'contact_email')
+            ->get()
+            ->toArray();
+        return $array;
+    }
+
 }
