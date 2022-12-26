@@ -42,4 +42,15 @@ class City extends Model
             ->toArray();
         return $array;
     }
+    
+    public function getCityMultiple($idArr){
+
+        $query = city::from('city')
+              ->select('id', 'city')
+              ->whereIn('country_state_id', $idArr)
+              ->get()
+              ->toArray();
+         return $query;
+
+    }
 }

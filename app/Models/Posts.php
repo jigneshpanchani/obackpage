@@ -288,6 +288,59 @@ class Posts extends Model
         return $json_data;
     }
 
+    public function saveMultipleAdposts($request){
 
+        $multipleCityes = $request->input('city');
+        $i = 0;
+        $fisrtPostId = array();
+        foreach($multipleCityes as $multipleCityIDs){
 
+            $objService = new Posts();
+            $objService->continent_id = $request->input('continent_id');
+            $objService->country_state_id = $request->input('country_state_id');
+            $objService->city_id = $multipleCityIDs;
+            $objService->category_id =$request->input('category_id');
+            $objService->sub_category_id =$request->input('sub_category_id');
+            $objService->user_id = Auth::user()->id;
+            $objService->title = $request->input('title');
+            $objService->description = $request->input('description');
+            $objService->age = $request->input('age');
+            $objService->location = $request->input('location');
+            $objService->contact_email = $request->input('contact_email');
+            $objService->mobile_number = $request->input('mobile_number');
+            $objService->save();
+            if($files=$request->file('file')){
+                if($i == 0){
+                    array_push($fisrtPostId,$objService->id);
+                    foreach ($files as $file) {
+
+                        $data=new PostsAttechment;
+                        $name= date('YmdHis').$file->getClientOriginalName();
+                        $destinationPath = public_path('/uploads/');
+                        $file->move($destinationPath, $name);
+                        $data->file_name=$name;
+                        $data->post_id= $objService->id;
+                        $data->file_path="/uploads/$name";
+                        $data->save();
+
+                        unset($data);
+                    }
+                } else {
+                    $findPostId = PostsAttechment::where('post_id',$fisrtPostId[0])->get();
+                    foreach ($findPostId as $fileArray) {
+                        $otherFiles=new PostsAttechment;
+                        $otherFiles->file_name=$fileArray->file_name;
+                        $otherFiles->post_id= $objService->id;
+                        $otherFiles->file_path=$fileArray->file_path;
+                        $otherFiles->save();
+                    }
+                }
+
+            }
+            $i++;
+        }
+
+        return $objService->id;
+    }
+    
 }

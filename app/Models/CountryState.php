@@ -30,4 +30,14 @@ class CountryState extends Model
             ->toArray();
         return $array;
     }
+
+    public function getCountryStateMultiple($idArr){
+
+        $query = CountryState::from('country_state')
+              ->select('id', 'country_state')
+              ->whereIn('continent_id', $idArr)
+              ->get()
+              ->toArray();
+        return $query;    
+    }
 }

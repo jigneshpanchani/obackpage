@@ -49,4 +49,13 @@ class Category extends Model
             ->toArray();
         return $array;
     }
+
+    public function getCatData(){
+
+        $array=category::from('category')
+        ->select('category')
+        ->get()
+        ->toArray();
+    return $array;
+    }
 }
