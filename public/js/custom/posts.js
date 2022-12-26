@@ -159,7 +159,6 @@ var Posts = function () {
                     }, 200);
                 }
             });
-            // $('#country-dropdown').val(continent_id).attr("selected", "selected");
             
         });
 
@@ -266,7 +265,6 @@ var Posts = function () {
         });
 
         $("body").on("click", ".selectCityBox", function () { 
-            // alert();
             var citycheckboxes = document.getElementById("citycheckboxes");
             if (!expanded) {
             citycheckboxes.style.display = "none";
@@ -275,31 +273,7 @@ var Posts = function () {
             citycheckboxes.style.display = "block";
             expanded = false;
             }
-            alert();
-            var selectCityBox = true();
-            function selectCityBox() {
-                var checkboxes = 
-                    document.getElementsByName('citycheckboxes');
-      
-                var result = "";
-      
-                for (var i = 0; i < checkboxes.length; i++) {
-                    if (checkboxes[i].checked) {
-                        result += checkboxes[i].value 
-                            + " " + " citycheckboxes, ";
-                    }
-                }
-                document.write("<p> You have selected : "
-                        + result + "</p>");
-            }
-            alert();
-            return false;
         });
-        
-        setTimeout(function() {
-            // $('#country-dropdown').trigger('click');
-            $('#category-dropdown').trigger('click');
-        }, 200);
 
         $("body").on("click", ".continent_chkbox", function () {
             var i = 0;
@@ -307,9 +281,6 @@ var Posts = function () {
             $('.continent_chkbox:checked').each(function () {
                 arr.push($(this).val());
             });
-        
-            console.log(arr);
-            // return false;
             $.ajax({
                 method: "POST",
                 url:  base_url + "post-adds-ajax",
@@ -322,13 +293,9 @@ var Posts = function () {
                     var output = JSON.parse(data);
                     var temp_html = '';
                         for (var i = 0; i < output.length; i++) {
-                            // temp_html += '<option value="' + output[i].id + '" class="text-gray-700 text-base leading-7 font-semibold">' + output[i].country_state + '</option>';
-                               temp_html += '<div class="space-x-4"><label for="' + output[i].country_state + '" class="px-2 text-gray-700 text-base leading-7 font-semibold space-x-1"><input type="checkbox" name="selectstate[]" class="selectstate" value="' + output[i].id + '" id="' + output[i].country_state + '"/><span>' + output[i].country_state + '</span></label> </div>';
+                               temp_html += '<div class="space-x-4"><label for="' + output[i].country_state + '" class="px-2 text-gray-700 text-base leading-7 font-semibold space-x-1"><input type="checkbox" name="selectstate[]" class="selectstate" value="' + output[i].id + '" id="' + output[i].country_state + '" checked/><span>' + output[i].country_state + '</span></label> </div>';
                         }
                     $("#statecheckboxes").html(temp_html);
-                    setTimeout(function() {
-                        $('#state-dropdown').trigger('click');
-                    }, 200);
                 }
             });
         });
@@ -352,12 +319,9 @@ var Posts = function () {
                     var output = JSON.parse(data);
                     var temp_html = '';
                         for (var i = 0; i < output.length; i++) {
-                            temp_html += '<div class="space-x-4"><label for="' + output[i].city + '" class="px-2 text-gray-700 text-base leading-7 font-semibold space-x-2"><input type="checkbox" name="city" class="city" value="' + output[i].id + '" id="' + output[i].city + '"/><span>' + output[i].city + '</span></label> </div>';
+                            temp_html += '<div class="space-x-4"><label for="' + output[i].city + '" class="px-2 text-gray-700 text-base leading-7 font-semibold space-x-2"><input type="checkbox" name="city" class="city" value="' + output[i].id + '" id="' + output[i].city + '" checked/><span>' + output[i].city + '</span></label> </div>';
                         }
                     $("#citycheckboxes").html(temp_html);
-                    setTimeout(function() {
-                        $('#city-dropdown').trigger('click');
-                    }, 200);
                 }
             });
         });
