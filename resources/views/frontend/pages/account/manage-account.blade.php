@@ -36,16 +36,10 @@
   
     
 }
-
-
 </style>
-
-
-    <div class="flex flex-col z-10 flex-1">
+     <div class="flex flex-col z-10 flex-1">
         <nav class="navbar">
             <div class="flex bg-blue-900 w-full justify-between w-full items-center p-2">
-                
-
                 <div class="flex flex-row items-center justify-start space-x-4">
                     <i class="fa fa-bars openSidebarBtn cursor-pointer" aria-hidden="true"></i>
                     <a href="">
@@ -59,23 +53,21 @@
                 <div id="cookieCrumb" class="space-x-2 p-6">
                     <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
                 </div>
-                <div class="px-6 space-y-6">
-                  
-                        <div class="table-responsive no-padding">
-                            <table id="postData" class="table table-hover table-custom">
-                                <thead>
-                                    <tr><th>Date</th>
-                                        <th>Title</th>
-                                        <th>City</th>
-                                        <th>Category</th>
-                                        <th>Primium</th>
-                                        <th>Sponsor</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
-                            
+                <div class="m-6 bg-white">
+                    <div class="p-6 table-responsive no-padding">
+                        <table id="postData" class="table table-hover table-custom">
+                            <thead>
+                                <tr><th>Date</th>
+                                    <th>Title</th>
+                                    <th>City</th>
+                                    <th>Category</th>
+                                    <th>Primium</th>
+                                    <th>Sponsor</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
                 </div>
             </div>
         </main>
@@ -104,9 +96,7 @@
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
-    </div> 
-   
-
+    </div>
 
    
 @endsection

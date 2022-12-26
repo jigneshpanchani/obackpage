@@ -72,8 +72,6 @@ var manageAcount = function() {
             });
         }
 
-       
-        
         function hideShowDatatableColumn(dataTable) {
             $('body').on('click', '.custom-column', function() {
                 // Get the column API object
@@ -101,63 +99,37 @@ var manageAcount = function() {
 
 
         
-    $("body").on("click", ".openDeleteModal", function () {
-        $('#deleteModal').addClass("show-modal");
-        $('.modal-dialog').addClass("show-modal-position");
-        $('.modal-dialog').addClass("modal-content ");
-        $('.modal-dialog').addClass("modal-header ");
-        let dataid = $(this).attr('data-id');
-        $("body").on("click", ".deletepost", function () {
-          $.ajax({
-                method: "POST",
-                url:  base_url + "manage-ads-ajax",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                data: {'action': 'deletePostData', 'id':  dataid},
-                type: "json",
-                success: function(data) {
-                    var data = JSON.parse(data);
-                    location.reload();
-                }
-            });
+        $("body").on("click", ".openDeleteModal", function () {
+            $('#deleteModal').addClass("show-modal");
+            $('.modal-dialog').addClass("show-modal-position");
+            $('.modal-dialog').addClass("modal-content ");
+            $('.modal-dialog').addClass("modal-header ");
+            let dataid = $(this).attr('data-id');
+            $("body").on("click", ".deletepost", function () {
+            $.ajax({
+                    method: "POST",
+                    url:  base_url + "manage-ads-ajax",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {'action': 'deletePostData', 'id':  dataid},
+                    type: "json",
+                    success: function(data) {
+                        var data = JSON.parse(data);
+                        location.reload();
+                    }
+                });
         });    
 
 
-    });
-    $(document).on("click", ".close_button", function () { 
-        // alert ("oi");
-         $('#deleteModal').removeClass("show-modal");
-         $('.modal-dialog').removeClass("show-modal-position");
+        });
+        $(document).on("click", ".close_button", function () { 
+            // alert ("oi");
+            $('#deleteModal').removeClass("show-modal");
+            $('.modal-dialog').removeClass("show-modal-position");
 
-        
-    });  
-
-    // $("body").on("click", ".deletepost", function () {
-    //      let dataid = $(this).attr('data-id');
-       
-    //     $.ajax({
-    //         method: "POST",
-    //         url:  base_url + "manage-ads-ajax",
-    //         headers: {
-    //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //         },
-    //         data: {'action': 'deletePostData', 'id':  dataid},
-    //         type: "json",
-    //         success: function(data) {
-    //             // var output = JSON.parse(data);
-    //             // var temp_html = '';
-    //             //     for (var i = 0; i < output.length; i++) {
-    //             //         temp_html += '<option value="' + output[i].id + '" class="text-gray-700 text-base leading-7 font-semibold">' + output[i].sub_category + '</option>';
-    //             //     }
-    //             // $("#sub-category-dropdown").html(temp_html);
-    //         }
-    //     });
-    // });
-   
-
-        
-
+            
+        });  
 
     };
     return{

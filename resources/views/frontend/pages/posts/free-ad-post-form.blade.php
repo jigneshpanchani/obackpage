@@ -14,7 +14,7 @@
         </nav>
         <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
             <div class="flex flex-col">
-            <form name="addform" id="addform" method="post" action="{{url('free-ad-post')}}" enctype="multipart/form-data">
+            <form name="addform" id="addform"  onsubmit="return validateForm()" method="post" action="{{url('free-ad-post')}}" enctype="multipart/form-data">
                 @csrf
                 <div id="cookieCrumb" class="space-x-2 p-6">
                     <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Description:</span>
-                            <textarea id="description h-40"  name="description" class="form-control"></textarea>
+                            <textarea type="text" id = 'ckeditor2' name="description" class="form-control"></textarea>
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Age:</span>
@@ -90,7 +90,7 @@
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Contact Email:</span>
-                            <input type="text" id="contact_email" name="contact_email" class="form-control">
+                            <input type="email" id="contact_email" name="contact_email" class="form-control">
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Contact Mobile Number:</span>
@@ -104,15 +104,8 @@
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">City:</span>
-                            <div class="flex grid grid-cols-3 gap-10 px-6">
-                                {{-- <div class="form-group">
-                                    <input type="checkbox" name="city_id[]"  value="1">
-                                    <label for="city_id" class="text-gray-700 text-base leading-7 font-semibold">Auburn </label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" name="city_id[]"  value="2">
-                                    <label class="text-gray-700 text-base leading-7 font-semibold" for="city_id">Auburn </label>
-                                </div> --}}
+                            <div class="flex grid grid-cols-4 gap-2" name="city-checkbox" id="city-checkbox">
+                                   
                             </div>
                         </div>
                         <div class="form-group space-x-2">

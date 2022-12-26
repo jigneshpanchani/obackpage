@@ -195,6 +195,8 @@ class Posts extends Model
         return $query;
     }
 
+   
+
     public function getPostsDetails($pid){
 
         $array=Posts::from('posts')
@@ -268,10 +270,10 @@ class Posts extends Model
                 $nestedData[] = $row["category"];
                 $nestedData[] = $row["is_premium_ad"];
                 $nestedData[] = $row["is_sponsor_ad"];
-                $actionHtml .= '<li><a href="'. route('edit-free-ad-post-data', array('id' => $row['id'])) .'" class="link-black text-sm" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i></a></li>';
+                $actionHtml .= '<li><a href="'. route('edit-free-ad-post-data', array('id' => $row['id'])) .'" class="link-black text-sm" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil  "></i></a></li>';
                 $actionHtml .= '<li><button type="button" class="delete openDeleteModal" data-id="'.$row['id'].'" ><span class="fa fa-trash""></span></button></li>';
                 $action = '<div class="action-overlay">
-                             <ul class="icon-actions-set">
+                             <ul class="icon-actions-set flex space-x-4">
                               ' . $actionHtml . '
                             </ul>
                         </div>';
@@ -285,6 +287,7 @@ class Posts extends Model
             "recordsFiltered" => intval($totalFiltered), // total number of records after searching, if there is no searching then totalFiltered = totalData
             "data" => $data   // total data array
         );
+        
         return $json_data;
     }
 

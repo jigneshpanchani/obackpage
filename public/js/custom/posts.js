@@ -1,6 +1,22 @@
+let myEditor2;
+let myEditor3;
 var Posts = function () {
 
     var list = function () {
+
+        ClassicEditor.create(document.querySelector('#ckeditor2'))
+        .then(editor => {
+            editor.ui.view.editable.element.style.height = '300px';
+            myEditor2 = editor;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+        setTimeout(function() {
+            $('#country-dropdown').trigger('change');
+            $('#category-dropdown').trigger('change');
+        }, 200);
 
         setTimeout(function() {
             $('#country-dropdown').trigger('change');
@@ -44,10 +60,14 @@ var Posts = function () {
                 success: function(data) {
                     var output = JSON.parse(data);
                     var temp_html = '';
+                    var city_checkbox_html = '';
                         for (var i = 0; i < output.length; i++) {
                             temp_html += '<option value="' + output[i].id + '" class="text-gray-700 text-base leading-7 font-semibold">' + output[i].city + '</option>';
                         }
+                        city_checkbox_html += '<div class="space-x-2"><input type="checkbox" name="city_id1[]"  value="' + output[0].id + '"><label for="city_id" class="text-gray-700 text-base leading-7 font-semibold">' + output[0].city + ' </label></div>';
                     $("#city-dropdown").html(temp_html);
+                    $("#city-checkbox").html(city_checkbox_html);
+                    $('input[name="city_id1[]"]').get(0).checked = true;
                 }
             });
         });
@@ -103,6 +123,15 @@ var Posts = function () {
 
     var localpost = function(){
 
+        ClassicEditor.create(document.querySelector('#ckeditor3'))
+        .then(editor => {
+            editor.ui.view.editable.element.style.height = '300px';
+            myEditor3 = editor;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
         setTimeout(function() {
             $('#country-dropdown').trigger('change');
             $('#category-dropdown').trigger('change');
@@ -130,6 +159,8 @@ var Posts = function () {
                     }, 200);
                 }
             });
+            // $('#country-dropdown').val(continent_id).attr("selected", "selected");
+            
         });
 
         $("body").on("change", ".selectstate", function () {
@@ -152,6 +183,9 @@ var Posts = function () {
                         }
                     $("#city-dropdown").html(temp_html);
                     $("#city-checkbox").html(city_checkbox_html);
+                    $('input[name="city_id1[]"]').get(0).checked = true;
+                    
+                    
                 }
             });
         });
@@ -203,14 +237,83 @@ var Posts = function () {
             console.log("Your browser does not support File API");
           }
 
-    }
+        }
+
+        var validateForm = function () {
+            
+            $("#addform").validate({
+                // Specify validation rules
+                rules: {
+                    title: "required",
+                    description: "required",
+                    location: "required",
+                    contact_email: {
+                        required: true,
+                         contact_email:true,
+                        // regEmail:/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g,
+                        contact_email:focus(),
+                    },      
+                    mobile_number: {
+                        required: true,
+                        digits: true,
+                        minlength: 10,
+                        maxlength: 10,
+                    },
+                     age: {
+                        required: true,
+                        digits: true,
+                        maxlength: 03,
+                    },
+                    continent_id:"required",
+                },
+                messages: {
+                 title: {
+                    required: "Please enter title",
+                 },      
+                 description: {
+                    required: "Please enter description",
+                 },   
+                 location: {
+                    required: "Please enter location",
+                 },    
+                 mobile_number: {
+                    required: "Please enter phone number",
+                    digits: "Please enter valid phone number",
+                    minlength: "Phone number field accept only 10 digits",
+                    maxlength: "Phone number field accept only 10 digits",
+                 },     
+                 contact_email: {
+                    required: "Please enter email address",
+                    contact_email: "Please enter a valid email address.",
+                    // regEmail:"Please enter a valid email address",
+
+                 },
+                 age: {
+                    required: "Please enter age",
+                    digits: "Please enter valid  age",
+                    maxlength: "age field accept only 2 digits",
+                   },   
+                   continent_id: {
+                    required: "Please select Continent/country",
+                    
+                 }, 
+                },
+              
+              });
+            }
+            
 
     return {
         init: function () {
             list();
+            validateForm(); 
+
         },
         localPost: function () {
             localpost();
+            validateForm();
+           
         },
+        
     }
 }();

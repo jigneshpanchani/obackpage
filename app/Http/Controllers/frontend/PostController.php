@@ -30,14 +30,6 @@ class PostController extends Controller
 
         if ($request->isMethod('post')) {
 
-            $validator = Validator::make($request->all(), [
-                'title' => 'required',
-                'description'   => 'required',
-            ]);
-            if ($validator->fails()) {
-                return redirect(route('free-ad-post'))->withErrors($validator)->withInput();
-            }
-
             $objPosts = new Posts();
             $postSave = $objPosts->saveposts($request);
 
@@ -56,6 +48,8 @@ class PostController extends Controller
         }
         $objContinents = new Continents();
         $data['continents'] =  $objContinents->getContinents();
+        $objContinents = new City();
+        $data['city'] =  $objContinents->getCitys();
         $objCategory = new Category();
         $data['categories'] = $objCategory->getCategories();
         $data['css'] = array();
@@ -81,14 +75,6 @@ class PostController extends Controller
     public function localAdPost(Request $request){
 
         if ($request->isMethod('post')) {
-
-            $validator = Validator::make($request->all(), [
-                'title' => 'required',
-                'description'   => 'required',
-            ]);
-            if ($validator->fails()) {
-                return redirect(route('local-ad-post'))->withErrors($validator)->withInput();
-            }
 
             $objPosts = new Posts();
             $postSave = $objPosts->saveLocalAdposts($request);
@@ -120,7 +106,7 @@ class PostController extends Controller
 
     public function localAdPreview($id){
         $objpostpreview = new posts();
-        $data['postDetails'] = $objpostpreview->getPostDetails($id);
+        $data['postDetails'] = $objpostpreview->getPostPreviewDetails($id);
         $objpostpreview = new PostsAttechment();
         $data['postAttechment'] = $objpostpreview->getPostAttechment($id);
         $data['css'] = array();
