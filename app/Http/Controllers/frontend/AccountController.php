@@ -9,6 +9,7 @@ use App\Models\CountryState;
 use App\Models\City;
 use App\Models\Category;
 use App\Models\SubCategory;
+use App\Models\PostsAttechment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -63,6 +64,8 @@ class AccountController extends Controller
         $data['categories'] = $objCategory->getCategories();
         $objpostpreview = new posts();
         $data['posts'] =  $objpostpreview ->geteditPostData($id);
+        $objpostpreview = new PostsAttechment();
+        $data['postAttechment'] = $objpostpreview->getPostAttechment($id);
         $data['postId'] =  $id;
         $data['css'] = array();
         $data['js'] = array('edit-post.js');

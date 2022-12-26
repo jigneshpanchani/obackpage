@@ -1,7 +1,18 @@
+let myEditor1;
 var PostsEdit = function () {
 
-    var edit = function () {
 
+
+    var edit = function () {
+        ClassicEditor.create(document.querySelector('#ckeditor1'))
+        .then(editor => {
+            editor.ui.view.editable.element.style.height = '300px';
+            myEditor1 = editor;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+        
         setTimeout(function() {
             $('#country-dropdown').trigger('change');
             $('#category-dropdown').trigger('change');
@@ -30,6 +41,7 @@ var PostsEdit = function () {
                     }, 200);
                 }
             });
+  
         });
 
         $("body").on("change", ".selectstate", function () {
@@ -44,11 +56,15 @@ var PostsEdit = function () {
                 type: "json",
                 success: function(data) {
                     var output = JSON.parse(data);
+                    var city_checkbox_html = '';
                     var temp_html = '';
                         for (var i = 0; i < output.length; i++) {
                             temp_html += '<option value="' + output[i].id + '" class="text-gray-700 text-base leading-7 font-semibold">' + output[i].city + '</option>';
                         }
-                    $("#city-dropdown").html(temp_html);
+                        city_checkbox_html += '<div class="space-x-2"><input type="checkbox" name="city_id1[]"  value="' + output[0].id + '"><label for="city_id" class="text-gray-700 text-base leading-7 font-semibold">' + output[0].city + ' </label></div>';
+                        $("#city-dropdown").html(temp_html);
+                        $("#city-checkbox").html(city_checkbox_html);
+                        $('input[name="city_id1[]"]').get(0).checked = true;
                 }
             });
         });

@@ -14,7 +14,7 @@
         </nav>
         <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
             <div class="flex flex-col">
-            <form name="localAdPost" id="localAdPost" method="post" action="{{url('local-ad-post')}}" enctype="multipart/form-data">
+            <form name="addform" id="addform" onsubmit="return validateForm()" method="post" action="{{url('local-ad-post')}}" enctype="multipart/form-data">
                 @csrf
                 <div id="cookieCrumb" class="space-x-2 p-6">
                     <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="form-group selectstate">
                             <span for="state" class="text-gray-800 text-base font-bold">Country/State</span>
-                            <select class="form-control state" name="country_state_id" id="state-dropdown">
+                            <select class="form-control state" name="country_state_id"  id="state-dropdown">
                             </select>
                         </div>
                         <div class="form-group">
@@ -78,7 +78,7 @@
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Description :</span>
-                            <textarea id="description h-40"  name="description" class="form-control"></textarea>
+                            <textarea id="ckeditor3"  name="description" class="form-control"></textarea>
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Age :</span>
@@ -90,7 +90,7 @@
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Contact Email :</span>
-                            <input type="text" id="contact_email" name="contact_email" class="form-control">
+                            <input type="email" id="contact_email" name="contact_email" class="form-control">
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Contact Mobile Number :</span>
@@ -125,8 +125,8 @@
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">City :</span>
-                            <div class="flex grid grid-cols-4 gap-2" id="city-checkbox">
-
+                            <div class="flex grid grid-cols-4 gap-2" name="city-checkbox" id="city-checkbox">
+                                   
                             </div>
                         </div>
                         <div class="form-group space-x-2">
