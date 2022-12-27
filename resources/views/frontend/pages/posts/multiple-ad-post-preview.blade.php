@@ -29,26 +29,26 @@
                         <p class="text-xl font-bold text-white">Place Ad Now</p>
                     </a>
                     <div class="flex">
-                        <span class="w-60 text-red-900 text-lg font-bold">Title :</span><span class="w-60 text-gray-800 text-base font-bold">title</span>
+                        <span class="w-60 text-red-900 text-lg font-bold">Title :</span><span class="w-60 text-gray-800 text-base font-bold">{{$postDetails[0]['title']}}</span>
                     </div>
                     <div class="flex">
-                        <span class="w-60 text-red-900 text-lg font-bold">Description : </span><span class="w-60 text-gray-800 text-base font-bold">description</span>
+                        <span class="w-60 text-red-900 text-lg font-bold">Description : </span><span class="w-60 text-gray-800 text-base font-bold">{{$postDetails[0]['description']}}</span>
                     </div>
                     <div class="flex">
-                        <span class="w-60 text-red-900 text-lg font-bold">Contact Email : </span><span class="w-60 text-gray-800 text-base font-bold">contact_email</span>
+                        <span class="w-60 text-red-900 text-lg font-bold">Contact Email : </span><span class="w-60 text-gray-800 text-base font-bold">{{$postDetails[0]['contact_email']}}</span>
                     </div>
                     <div class="flex">
-                        <span class="w-60 text-red-900 text-lg font-bold">Contact mobaile Number : </span><span class="w-60 text-gray-800 text-base font-bold">mobile_number</span>
+                        <span class="w-60 text-red-900 text-lg font-bold">Contact mobaile Number : </span><span class="w-60 text-gray-800 text-base font-bold">{{$postDetails[0]['mobile_number']}}</span>
                     </div>
                     <div class="flex">
-                        <span class="w-60 text-red-900 text-lg font-bold"> Category : </span><span class="w-60 text-gray-800 text-base font-bold">sub_category</span>
+                        <span class="w-60 text-red-900 text-lg font-bold"> Category : </span><span class="w-60 text-gray-800 text-base font-bold">{{$postDetails[0]['sub_category']}}</span>
                     </div>
                     <div class="flex flex grid grid-cols-4 gap-10">
-                        {{-- @foreach($postAttechment as $postAttechments) --}}
+                        @foreach($postAttechment as $postAttechments)
                         <div class="flex">
-                            <img src="" alt="searchIcon" />
+                            <img src="{{ asset($postAttechments['file_path'])}}" alt="searchIcon" />
                         </div>
-                        {{-- @endforeach --}}
+                        @endforeach
                     </div>
                 </div>
             </div>

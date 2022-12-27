@@ -239,61 +239,44 @@ var Posts = function () {
     }
 
     var multiplePost = function(){
-
-        var expanded = false;
-
-        $("body").on("click", ".selectCountryBox", function () { 
-            var countrycheckboxes = document.getElementById("countrycheckboxes");
-            if (!expanded) {
-            countrycheckboxes.style.display = "none";
-            expanded = true;
-            } else {
-            countrycheckboxes.style.display = "block";
-            expanded = false;
-            }
+        
+        ClassicEditor.create(document.querySelector('#ckeditor4'))
+        .then(editor => {
+            editor.ui.view.editable.element.style.height = '300px';
+            myEditor4 = editor;
+        })
+        .catch(error => {
+            console.error(error);
         });
-
+        $('#ckeditor4').ckeditor({
+            toolbar: 'Full',
+            enterMode : CKEDITOR.ENTER_BR,
+            shiftEnterMode: CKEDITOR.ENTER_P
+        });
+       
         $("body").on("click", ".selectStateBox", function () { 
-            var statecheckboxes = document.getElementById("statecheckboxes");
-            if (!expanded) {
-            statecheckboxes.style.display = "none";
-            expanded = true;
-            } else {
-            statecheckboxes.style.display = "block";
-            expanded = false;
-            }
+            $("#statecheckboxes").toggleClass("showMutipleDropDown");
         });
 
         $("body").on("click", ".selectCityBox", function () { 
-            var citycheckboxes = document.getElementById("citycheckboxes");
-            if (!expanded) {
-            citycheckboxes.style.display = "none";
-            expanded = true;
-            } else {
-            citycheckboxes.style.display = "block";
-            expanded = false;
-            }
+            $("#citycheckboxes").toggleClass("showMutipleDropDown");
         });
 
-        $("body").on("click", ".continent_chkbox", function () {
-            var i = 0;
-            let arr = [];
-            $('.continent_chkbox:checked').each(function () {
-                arr.push($(this).val());
-            });
+        $("body").on("change", ".selectCountry", function () {
+            var id = $('#country-dropdown').val();
             $.ajax({
                 method: "POST",
                 url:  base_url + "post-adds-ajax",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                data: {'action': 'getCountryStateMultiple','id' : arr},
+                data: {'action': 'getCountryStateByContinent','id' : id},
                 type: "json",
                 success: function(data) {
                     var output = JSON.parse(data);
                     var temp_html = '';
                         for (var i = 0; i < output.length; i++) {
-                               temp_html += '<div class="space-x-4"><label for="' + output[i].country_state + '" class="px-2 text-gray-700 text-base leading-7 font-semibold space-x-1"><input type="checkbox" name="selectstate[]" class="selectstate" value="' + output[i].id + '" id="' + output[i].country_state + '" checked/><span>' + output[i].country_state + '</span></label> </div>';
+                               temp_html += '<div class="space-x-4"><label for="' + output[i].country_state + '" class="px-2 text-gray-700 text-base leading-7 font-semibold space-x-1"><input type="checkbox" name="country_state_id[]" class="selectstate" value="' + output[i].id + '" id="' + output[i].country_state + '"/><span>' + output[i].country_state + '</span></label> </div>';
                         }
                     $("#statecheckboxes").html(temp_html);
                 }
@@ -318,10 +301,14 @@ var Posts = function () {
                 success: function(data) {
                     var output = JSON.parse(data);
                     var temp_html = '';
+                    var city_checkbox_html = '';
                         for (var i = 0; i < output.length; i++) {
-                            temp_html += '<div class="space-x-4"><label for="' + output[i].city + '" class="px-2 text-gray-700 text-base leading-7 font-semibold space-x-2"><input type="checkbox" name="city" class="city" value="' + output[i].id + '" id="' + output[i].city + '" checked/><span>' + output[i].city + '</span></label> </div>';
+                            // temp_html += '<div class="space-x-4"><label for="' + output[i].city + '" class="px-2 text-gray-700 text-base leading-7 font-semibold space-x-2"><input type="checkbox" name="city" class="city" value="' + output[i].id + '" id="' + output[i].city + '" checked/><span>' + output[i].city + '</span></label> </div>';
+                            city_checkbox_html += '<div class="space-x-2"><input type="checkbox" name="city_ids[]"  value="' + output[i].id + '" checked><label for="city_id" class="text-gray-700 text-base leading-7 font-semibold">' + output[i].city + ' </label></div>';
                         }
-                    $("#citycheckboxes").html(temp_html);
+                    // $("#citycheckboxes").html(temp_html);
+                    $("#city-checkbox").html(city_checkbox_html);
+
                 }
             });
         });
@@ -453,7 +440,7 @@ var Posts = function () {
         },
         multiplePost: function(){
             multiplePost();
-            // validateForm();
+            validateForm();
         },
         
     }
