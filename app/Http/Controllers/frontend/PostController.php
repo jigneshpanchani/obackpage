@@ -181,15 +181,7 @@ class PostController extends Controller
     public function multipleAdPost(Request $request){
 
         if ($request->isMethod('post')) {
-
-            $validator = Validator::make($request->all(), [
-                'title' => 'required',
-                'description'   => 'required',
-            ]);
-            if ($validator->fails()) {
-                return redirect(route('local-ad-post'))->withErrors($validator)->withInput();
-            }
-
+            
             $objPosts = new Posts();
             $postSave = $objPosts->saveMultipleAdposts($request);
 
@@ -206,26 +198,31 @@ class PostController extends Controller
                 return redirect(route('local-ad-post'))->withInput();
             }
         }
-        $objContinents = new Continents();
-        $data['continents'] =  $objContinents->getContinents();
-        $objCategory = new Category();
-        $data['categories'] = $objCategory->getCategories();
-        $data['css'] = array();
-        $data['js'] = array('posts.js');
-        $data['funinit'] = array('Posts.multiplePost()');
-        $data['title'] = 'Multiple Ad Page';
-         return view('frontend.pages.posts.multiple-ad-post-form', $data); 
-    }
 
-    public function multipleAdPreview(){
-        // $objpostpreview = new posts();
-        // $data['postDetails'] = $objpostpreview->getPostDetails();
-        // $objpostpreview = new PostsAttechment();
-        // $data['postAttechment'] = $objpostpreview->getPostAttechment();
-        $data['css'] = array();
-        $data['js'] = array('posts.js');
-        $data['funinit'] = array('Posts.init()');
-        $data['title'] = 'Multiple Ad Preview Page';
+            $objContinents = new Continents();
+            $data['continents'] =  $objContinents->getContinents();
+            $objCategory = new Category();
+            $data['categories'] = $objCategory->getCategories();
+            $data['css'] = array();
+            $data['js'] = array('posts.js');
+            $data['funinit'] = array('Posts.multiplePost()');
+            $data['title'] = 'Multiple Ad Page';
+            return view('frontend.pages.posts.multiple-ad-post-form', $data);
+        
+        }
+
+        public function multipleAdPreview($id){
+            $objpostpreview = new posts();
+            $data['postDetails'] = $objpostpreview->getPostPreviewDetails($id);
+            $objpostpreview = new PostsAttechment();
+            $data['postAttechment'] = $objpostpreview->getPostAttechment($id);
+            $data['css'] = array();
+            $data['js'] = array('posts.js');
+            $data['funinit'] = array('Posts.init()');
+            $data['title'] = 'Multiple Ad Preview Page';
         return view('frontend.pages.posts.multiple-ad-post-preview',$data);
     }
-}
+         
+    }
+
+    

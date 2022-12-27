@@ -291,17 +291,19 @@ class Posts extends Model
         return $json_data;
     }
 
-    public function saveMultipleAdposts($request){
+    public function saveMultipleAdposts($request) {
 
-        $multipleCityes = $request->input('city');
+        $multipleCities = $request->input('city_ids');
+    //    print_r($multipleCities); exit;
         $i = 0;
         $fisrtPostId = array();
-        foreach($multipleCityes as $multipleCityIDs){
+        foreach($multipleCities as $multipleCityID){
 
+            $getCountryStateID = City::from('city')->where('id', $multipleCityID)->select('country_state_id')->get();
             $objService = new Posts();
             $objService->continent_id = $request->input('continent_id');
-            $objService->country_state_id = $request->input('country_state_id');
-            $objService->city_id = $multipleCityIDs;
+            $objService->country_state_id = $getCountryStateID[0]->country_state_id;
+            $objService->city_id = $multipleCityID;
             $objService->category_id =$request->input('category_id');
             $objService->sub_category_id =$request->input('sub_category_id');
             $objService->user_id = Auth::user()->id;
@@ -344,6 +346,7 @@ class Posts extends Model
         }
 
         return $objService->id;
+
     }
     
 }

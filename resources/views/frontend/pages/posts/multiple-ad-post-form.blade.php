@@ -5,16 +5,6 @@
 .dropdown-check-list {
   display: inline-block;
 }
-
-.selectCountryBox {
-  position: relative;
-}
-
-.selectCountryBox select {
-  width: 100%;
-  font-weight: bold;
-}
-
 .overSelect {
   position: absolute;
   left: 0;
@@ -23,17 +13,8 @@
   bottom: 0;
 }
 
-#countrycheckboxes {
-  display: none;
-  border: 1px #dadada solid;
-}
-
-#countrycheckboxes label {
-  display: block;
-}
-
-#countrycheckboxes label:hover {
-  background-color: #1e90ff;
+.showMutipleDropDown{
+    display: block !important;
 }
 /* //double */
 
@@ -108,37 +89,29 @@
                 <div class="">
                     <span class="text-red-900 text-xl font-bold">Choose locations</span>
                 </div>
-                <div class="flex grid grid-cols-3 gap-10 px-6">
+                <div class="flex grid grid-cols-2 gap-10 px-6">
                     <div class="form-group">
-                        <span for="state" class="text-gray-800 text-base font-bold">Continent/Country</span>
-                        <div class="selectCountryBox">
-                            <select class="form-control selectCountry" name="continent_id" id="country-dropdown">
-                                <option class="text-gray-700 text-base leading-7 font-semibold">Select Continent/Country</option>
-                            </select>
-                            <div class="overSelect"></div>
-                        </div>
-                        <div id="countrycheckboxes" class="absolute hidden bg-white text-base w-1/4 overflow-y-auto max-h-60">
+                        <span for="country" class="text-gray-800 text-base font-bold">Continent/Country</span>
+                        <select class="form-control selectCountry" name="continent_id" id="country-dropdown">
                             @foreach ($continents as $continent)
-                            <div class="space-x-4">
-                                <label for="{{$continent['continent']}}" class="px-2 text-gray-700 text-base leading-7 font-semibold">
-                                <input type="checkbox" name="continent_chkbox[]" class="continent_chkbox" value="{{$continent['id']}}" id="{{$continent['continent']}}"/>
-                                <span>{{$continent['continent']}}</span></label>
-                            </div>
+                            <option value="{{$continent['id']}}" class="text-gray-700 text-base leading-7 font-semibold">
+                            {{$continent['continent']}}
+                            </option>
                             @endforeach
-                        </div>
+                        </select>
                     </div>
                     <div class="form-group selectstate">
                         <span for="state" class="text-gray-800 text-base font-bold">Country/State</span>
                         <div class="selectStateBox">
-                            <select class="form-control" name="country_state_id" id="state-dropdown">
+                            <select class="form-control" name="" id="state-dropdown">
                                 <option class="text-gray-700 text-base leading-7 font-semibold">Select Country/State</option>
                             </select>
                             <div class="overSelect"></div>
                         </div>
-                        <div id="statecheckboxes" class="absolute hidden bg-white text-base w-1/4 overflow-y-auto max-h-60">
+                        <div id="statecheckboxes" class="absolute hidden bg-white text-base w-2/5 overflow-y-auto max-h-60">
                         </div>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <span for="state" class="text-gray-800 text-base font-bold">City</span>
                         <div class="selectCityBox">
                             <select class="form-control" name="city_id" id="city-dropdown">
@@ -146,8 +119,14 @@
                             </select>
                             <div class="overSelect"></div>
                         </div>
-                        <div id="citycheckboxes" class="absolute hidden bg-white text-base w-1/4 overflow-y-auto max-h-60">
+                        <div id="citycheckboxes" class="bg-white text-base w-2/2 overflow-y-auto max-h-60">
                         </div>
+                    </div> --}}
+                </div>
+                <div class="form-group px-6">
+                    <span class="text-gray-800 text-base font-bold">City :</span>
+                    <div class="flex grid grid-cols-5 gap-2" name="city-checkbox" id="city-checkbox">
+                           
                     </div>
                 </div>
                 <div class="">
@@ -180,7 +159,7 @@
                     </div>
                     <div class="form-group">
                         <span class="text-gray-800 text-base font-bold">Description:</span>
-                        <textarea id="description h-40"  name="description" class="form-control"></textarea>
+                        <textarea id="ckeditor4"  name="description" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
                         <span class="text-gray-800 text-base font-bold">Age:</span>
@@ -202,19 +181,6 @@
                         <span class="text-gray-800 text-base font-bold">Add Images:</span>
                         <input method="POST" type="file" id="files" name="file[]" accept=".jpg, .jpeg, .png" multiple>
                         <div id='displayUploadedImg' class="flex grid grid-cols-4 gap-10 py-6">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <span class="text-gray-800 text-base font-bold">City:</span>
-                        <div class="flex grid grid-cols-3 gap-10 px-6">
-                            {{-- <div class="form-group">
-                                <input type="checkbox" name="city_id[]"  value="1">
-                                <label for="city_id" class="text-gray-700 text-base leading-7 font-semibold">Auburn </label>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="city_id[]"  value="2">
-                                <label class="text-gray-700 text-base leading-7 font-semibold" for="city_id">Auburn </label>
-                            </div> --}}
                         </div>
                     </div>
                     <div class="form-group space-x-2">
