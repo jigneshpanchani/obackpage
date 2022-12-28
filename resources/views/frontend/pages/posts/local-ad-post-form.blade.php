@@ -114,7 +114,7 @@
                         <div class="form-group">
                             <span class="text-gray-800 text-lg font-bold">Premium Ads :</span>
                             <div class="space-x-2">
-                                <input type="checkbox" id="is_premium_ad" name="is_premium_ad"  value="">
+                                <input type="checkbox" id="is_premium_ad" name="is_premium_ad" value="0" >
                                 <span class="text-gray-800 text-base leading-7 font-semibold"> Make this ad Premium for ( Premium ad will be shown on top of all Ads. ) $4 </span>
                             </div>
                         </div>
@@ -126,13 +126,13 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <span class="text-gray-800 text-base font-bold">City :</span>
+                            <span class="text-gray-800 text-base font-bold">City :$</span>
                             <div class="flex grid grid-cols-4 gap-2" name="city-checkbox" id="city-checkbox">
                                    
                             </div>
                         </div>
                         <div class="form-group space-x-2">
-                            <input type="checkbox" id="is_premium_ad" name="is_premium_ad"  value="">
+                            <input type="checkbox" id="" name=""  value="">
                             <span class="text-gray-800 text-base leading-7 font-semibold">By Placing this ad I agree to the <a href="url">terms of use</a> and <a href="url">privacy policy</a></span>
                         </div>
                         <div class="g-recaptcha" id="feedback-recaptcha"
