@@ -51,10 +51,18 @@
         <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
             <div class="flex flex-col">
                 <div id="cookieCrumb" class="space-x-2 p-6">
-                    <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
+                    <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad  </span></a>
                 </div>
-                <div class="m-6 bg-white">
-                    <div class="p-6 table-responsive no-padding">
+                <div class="m-6 bg-white flex flex-col">
+                    <div class="flex items-center justify-between p-6">
+                        <div class="border border-green-600 rounded p-2">
+                            <span class="text-green-600 font-bold text-lg">Credits :</span><span class="text-green-600 font-bold text-lg">$ {{ Auth::user()->credits  }}</span>
+                        </div>
+                        <div class=""> 
+                            <span class="w-60 text-gray-900 text-lg font-bold">{{ Auth::user()->email  }}</span>
+                        </div>
+                    </div>
+                    <div class="px-6 table-responsive no-padding">
                         <table id="postData" class="table table-hover table-custom">
                             <thead>
                                 <tr><th>Date</th>
