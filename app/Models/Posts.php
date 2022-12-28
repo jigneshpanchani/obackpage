@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\PostsAttechment;
 use Illuminate\Support\Facades\DB;
 
+
 class Posts extends Model
 {
     use HasFactory;
@@ -182,9 +183,23 @@ class Posts extends Model
         $query = Posts::from('posts')
             ->where('city_id', $id)
             ->where('sub_category_id', $sid)
+            ->select('id','title','age', 'location', DB::raw("DATE_FORMAT(created_at, '%d %b %Y') as posted_date"))
+            ->orderBy('created_at')
+            ->groupBy('created_at')
             ->get()
             ->toArray();
-        return $query;
+
+        $results = [];
+        foreach ($query as $item) {
+            $results[$item['posted_date']][] = [
+                'id' => $item['id'],
+                'title' => $item['title'],
+                'age' => $item['age'],
+                'location' => $item['location']
+            ];
+        }
+
+        return $results;
     }
 
     public function getPostPreviewDetails($id) {
@@ -195,7 +210,7 @@ class Posts extends Model
         return $query;
     }
 
-   
+
 
     public function getPostsDetails($pid){
 
@@ -287,7 +302,7 @@ class Posts extends Model
             "recordsFiltered" => intval($totalFiltered), // total number of records after searching, if there is no searching then totalFiltered = totalData
             "data" => $data   // total data array
         );
-        
+
         return $json_data;
     }
 
@@ -348,5 +363,5 @@ class Posts extends Model
         return $objService->id;
 
     }
-    
+
 }

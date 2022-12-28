@@ -27,18 +27,21 @@
                 <div class="">
                     <a href="#"><span class="text-green-700 text-base font-bold">Top</span></a> |
                 </div>
-                @foreach ($posts as $post)
-                <div class="">
+                @foreach ($posts as $date=>$postList)
+                <div class="space-y-2">
                     <div class="bg-gradient-to-r from-gray-300 rounded">
-                        <span class="text-gray-800 text-base font-semibold leading-7 pl-2 date">{{  date('d-m-y', strtotime($post['created_at']))}}</span>
+                        <span class="text-gray-800 text-base font-semibold leading-7 pl-2 date">{{ $date }}</span>
                     </div>
-                    <div class="p-2">
+                    @foreach ($postList as $post)
+                    <div class="px-4">
                         <a href="{{ route('posts-details',  array('cityId' => $city['id'], 'subcategoryId' => $subId, 'postId' => $post['id'])) }}">
-                            <span class="text-red-800 text-base font-semibold">{{$post['title']}}</span>
-                            <span class="text-gray-800 text-base font-bold">-{{ $post['age']}}  ({{$post['location']}})</span></a>
+                            <span class="text-red-800 text-base font-semibold">{{ $post['title'] }}</span>
+                            <span class="text-gray-800 text-base font-bold">-{{ $post['age'] }}  ({{ $post['location'] }})</span></a>
                     </div>
+                    @endforeach
                 </div>
                 @endforeach
+
             </div>
         </div>
     </main>
