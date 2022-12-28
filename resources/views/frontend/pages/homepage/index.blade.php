@@ -65,7 +65,7 @@
                 @foreach($continents as $country)
                     @if($i == 0)
                         <div class="">
-                            <div class="bg-blue-900 rounded p-1">
+                            <div class="bg-blue-900 rounded p-1 text-center">
                                 <span class="text-white text-xl px-2 font-bold leading-7">{{  $country['continent'] }}<br/></span>
                             </div>
                             <div class="flex grid grid-cols-3 p-2">
@@ -88,7 +88,7 @@
                         </div>
                     @else
                         @if($i == 1)<div class="space-y-2">@endif
-                            <div class="bg-blue-900 rounded p-1">
+                            <div class="bg-blue-900 rounded p-1 text-center">
                                 <span class="text-white text-xl px-2 font-bold leading-7">{{  $country['continent'] }}<br/></span>
                             </div>
                             <div class="flex grid grid-cols-3 p-2">
