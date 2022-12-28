@@ -184,7 +184,7 @@ class Posts extends Model
             ->where('city_id', $id)
             ->where('sub_category_id', $sid)
             ->select('id','title','age', 'location', DB::raw("DATE_FORMAT(created_at, '%d %b %Y') as posted_date"))
-            ->orderBy('created_at')
+            ->orderBy('created_at', 'DESC')
             ->groupBy('created_at')
             ->get()
             ->toArray();

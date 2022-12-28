@@ -1,27 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-    @include('backend.include.header')
-    
-    
-    <body>
-        <div class="flex h-screen" style="background-color: #f1f5f9">
-            @include('backend.include.sidebar')
-            @include('backend.include.userpanel')
-            <div class="flex flex-col z-10 flex-1">
-                @include('backend.include.bodyheader')
-                <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
-    
-                    @yield('content')
-    
-                </main>
-            </div>
-        </div>
-
-        @include('backend.include.footer')
-    </body>
-</html> --}}
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -39,17 +15,17 @@
 
             <!--begin::Wrapper-->
             <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
-         
+
                 @include('backend.include.bodyheader')
 
                 <!--begin::Content-->
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 
                 <!--begin::Subheader-->
-            
+
                   <!--end::Subheader-->
 
-                  <div class="d-flex flex-column-fluid">
+                  <div class="flex-column-fluid">
                     <div class="w-full p-2">
                         @yield('content')
 
