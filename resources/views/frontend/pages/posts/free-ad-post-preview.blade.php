@@ -18,7 +18,7 @@
                     <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
                 </div>
                 <div id="heading" class="px-6">
-                    <span class="text-gray-900 text-2xl font-extrabold">Preview Ad</span>
+                    <span class="text-gray-900 text-2xl font-extrabold">Free Ad Preview</span>
                 </div>
                 <div class="p-6 space-y-6 bg-white m-6 rounded">
                     <div class="space-y-6">
@@ -32,7 +32,7 @@
                             <span class="w-60 text-red-900 text-lg font-bold">Title :</span><span class="w-60 text-gray-800 text-base font-bold"> {{$postDetails[0]['title']}} </span>
                         </div>
                         <div class="flex">
-                            <span class="w-60 text-red-900 text-lg font-bold">Description : </span><span class="w-60 text-gray-800 text-base font-bold">{{$postDetails[0]['description']}}</span>
+                            <span class="w-60 text-red-900 text-lg font-bold">Description : </span><span class="w-60 text-gray-800 text-base font-bold">{!!$postDetails[0]['description']!!}</span>
                         </div>
                         <div class="flex">
                             <span class="w-60 text-red-900 text-lg font-bold">Contact Email : </span><span class="w-60 text-gray-800 text-base font-bold">{{$postDetails[0]['contact_email']}}</span>
