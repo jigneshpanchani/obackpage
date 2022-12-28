@@ -32,7 +32,6 @@
 
 $(document).ready(function() {
     $("body").on("click", ".openSidebarBtn", function() {
-        alert();
         $('.toggelfilter').toggleClass('widthzero');
         $('.toggelfilter').toggleClass('px-0');
     });

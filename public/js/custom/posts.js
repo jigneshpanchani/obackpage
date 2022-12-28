@@ -131,13 +131,15 @@ var Posts = function () {
         .catch(error => {
             console.error(error);
         });
-
+    
+       
         setTimeout(function() {
             $('#country-dropdown').trigger('change');
             $('#category-dropdown').trigger('change');
         }, 200);
 
-        $("body").on("change", ".selectCountry", function () {
+       
+         $("body").on("change", ".selectCountry", function () {
             var id = $('#country-dropdown').val();
             $.ajax({
                 method: "POST",
@@ -426,7 +428,14 @@ var Posts = function () {
               
               });
             }
-            
+          
+            $('input[name="is_premium_ad"]').click(function(){ 
+                if ( $( is_premium_ad ).prop( "checked" ) ) {
+                    $('#is_premium_ad').val(1);
+                } else {
+                    $('#is_premium_ad').val(0);
+                }
+            });
 
 
     return {
@@ -438,6 +447,7 @@ var Posts = function () {
         localPost: function () {
             localpost();
             validateForm();
+           
            
         },
         multiplePost: function(){

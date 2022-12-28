@@ -51,10 +51,18 @@
         <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
             <div class="flex flex-col">
                 <div id="cookieCrumb" class="space-x-2 p-6">
-                    <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
+                    <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad  </span></a>
                 </div>
-                <div class="m-6 bg-white">
-                    <div class="p-6 table-responsive no-padding">
+                <div class="m-6 bg-white flex flex-col">
+                    <div class="flex items-center justify-between p-6">
+                        <div class="border border-green-600 rounded p-2">
+                            <span class="text-green-600 font-bold text-lg">Credits :</span><span class="text-green-600 font-bold text-lg">$ {{ Auth::user()->credits  }}</span>
+                        </div>
+                        <div class=""> 
+                            <span class="w-60 text-gray-900 text-lg font-bold">{{ Auth::user()->email  }}</span>
+                        </div>
+                    </div>
+                    <div class="px-6 table-responsive no-padding">
                         <table id="postData" class="table table-hover table-custom">
                             <thead>
                                 <tr><th>Date</th>
@@ -75,28 +83,18 @@
 
     <div class="modal fade" id="deleteModal" role="dialog" style="display: none;">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button aria-label="Close" data-dismiss="modal" class="close  close_button" type="button">
-                        <span aria-hidden="true">×</span>
+                <div class="flex justify-end">
+                    <button aria-label="Close" data-dismiss="modal" class="close close_button">
                     </button>
-                    <h4 class="modal-title">Delete Recorde</h4>
                 </div>
-                <div class="modal-body">
-                    <div class="box box-info">
-                        <div class="box-body">
-                            <p> You want to delete recorde. Are you sure?</p>
-                        </div>
-                    </div>
+                <div class="flex justify-start p-4">
+                    <p>Are you sure you want to delete this ad ?</p><br>
                 </div>
-                <div class="modal-footer">
-                    <button data-dismiss="modal" class="btn btn-danger  close_button" type="button">No</button>
-                    {{-- <input type='hidden' name='id' id='deleteformId' /> --}}
-                    <button class="btn btn-success yes-sure deletepost" type="button">Yes</button>
+                <div class="flex justify-end space-x-2 p-2">
+                    <button class="btn btn-danger close_button bg-red-500 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                    <button class="btn btn-success yes-sure deletepost bg-green-500 text-white font-bold py-2 px-4 rounded">Confirm</button>
                 </div>
-            </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
 
-   
 @endsection
