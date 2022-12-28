@@ -15,10 +15,12 @@
         <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
             <div class="flex flex-col">
                 <div id="cookieCrumb" class="space-x-2 p-6">
-                    <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
+                    <a href="http://localhost.obackpage.com"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i>
+                    <a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a><i class='fa fa-chevron-right'></i>
+                    <a href=""><span class="text-gray-800 text-sm font-bold">Local Ad Preview</span></a>
                 </div>
                 <div id="heading" class="px-6">
-                    <span class="text-gray-900 text-2xl font-extrabold">Preview Ad</span>
+                    <span class="text-gray-900 text-2xl font-extrabold">Local Ad Preview</span>
                 </div>
                 <div class="p-6 space-y-6 bg-white m-6 rounded">
                     <div class="space-y-6">
@@ -32,7 +34,7 @@
                             <span class="w-60 text-red-900 text-lg font-bold">Title :</span><span class="w-60 text-gray-800 text-base font-bold"> {{$postDetails[0]['title']}} </span>
                         </div>
                         <div class="flex">
-                            <span class="w-60 text-red-900 text-lg font-bold">Description : </span><span class="w-60 text-gray-800 text-base font-bold">{{$postDetails[0]['description']}}</span>
+                            <span class="w-60 text-red-900 text-lg font-bold">Description : </span><span class="w-60 text-gray-800 text-base font-bold">{!!$postDetails[0]['description']!!}</span>
                         </div>
                         <div class="flex">
                             <span class="w-60 text-red-900 text-lg font-bold">Contact Email : </span><span class="w-60 text-gray-800 text-base font-bold">{{$postDetails[0]['contact_email']}}</span>

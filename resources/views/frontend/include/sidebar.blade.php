@@ -21,7 +21,7 @@
                     </div>
                 @endauth
             @endif
-            <a href="" class="bg-gray-200 flex justify-center items-center p-2 rounded">
+            <a href="http://localhost.obackpage.com" class="bg-gray-200 flex justify-center items-center p-2 rounded">
                 <span class="text-gray-800 text-sm font-bold underline">Home</span>
             </a>
             <div class="p-4 flex justify-center items-center">

@@ -192,10 +192,10 @@ class PostController extends Controller
 
             if($postSave){
                 $request->session()->flash('session_success', 'Contract Funding Source is Saved.');
-                return redirect(route('local-ad-preview', $postSave));
+                return redirect(route('multiple-ad-preview', $postSave));
             }else{
                 $request->session()->flash('session_error', 'Something will be wrong. Please try again.');
-                return redirect(route('local-ad-post'))->withInput();
+                return redirect(route('multiple-ad-post'))->withInput();
             }
         }
 
