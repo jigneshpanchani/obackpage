@@ -169,6 +169,8 @@ class PostController extends Controller
         $objviewpost = new posts();
         $data['posts'] = $objviewpost->getPostsDetails($pid);
         $data['title'] = 'posts Details Page';
+        $objpostpreview = new PostsAttechment();
+        $data['postAttechment'] = $objpostpreview->getPostAttechment($pid);
         $data['cityId'] = $id;
         $data['postId'] = $id;
         $data['subId'] = $sid;

@@ -75,28 +75,18 @@
 
     <div class="modal fade" id="deleteModal" role="dialog" style="display: none;">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button aria-label="Close" data-dismiss="modal" class="close  close_button" type="button">
-                        <span aria-hidden="true">×</span>
+                <div class="flex justify-end">
+                    <button aria-label="Close" data-dismiss="modal" class="close close_button">
                     </button>
-                    <h4 class="modal-title">Delete Recorde</h4>
                 </div>
-                <div class="modal-body">
-                    <div class="box box-info">
-                        <div class="box-body">
-                            <p> You want to delete recorde. Are you sure?</p>
-                        </div>
-                    </div>
+                <div class="flex justify-start p-4">
+                    <p>Are you sure you want to delete this ad ?</p><br>
                 </div>
-                <div class="modal-footer">
-                    <button data-dismiss="modal" class="btn btn-danger  close_button" type="button">No</button>
-                    {{-- <input type='hidden' name='id' id='deleteformId' /> --}}
-                    <button class="btn btn-success yes-sure deletepost" type="button">Yes</button>
+                <div class="flex justify-end space-x-2 p-2">
+                    <button class="btn btn-danger close_button bg-red-500 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                    <button class="btn btn-success yes-sure deletepost bg-green-500 text-white font-bold py-2 px-4 rounded">Confirm</button>
                 </div>
-            </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
 
-   
 @endsection
