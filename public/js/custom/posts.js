@@ -239,19 +239,15 @@ var Posts = function () {
     }
 
     var multiplePost = function(){
-        
+
         ClassicEditor.create(document.querySelector('#ckeditor4'))
         .then(editor => {
             editor.ui.view.editable.element.style.height = '300px';
+            B.config.enterMode==3?'div':''
             myEditor4 = editor;
         })
         .catch(error => {
             console.error(error);
-        });
-        $('#ckeditor4').ckeditor({
-            toolbar: 'Full',
-            enterMode : CKEDITOR.ENTER_BR,
-            shiftEnterMode: CKEDITOR.ENTER_P
         });
        
         $("body").on("click", ".selectStateBox", function () { 
@@ -361,6 +357,12 @@ var Posts = function () {
           }
 
         }
+
+        // ckeditor4.editorConfig = function( ckeditor4 ) {
+        //     ckeditor4.enterMode = CKEDITOR.ENTER_BR; // pressing the ENTER KEY input <br/>
+        //     ckeditor4.shiftEnterMode = CKEDITOR.ENTER_P; //pressing the SHIFT + ENTER KEYS input <p>
+        //     ckeditor4.autoParagraph = false; // stops automatic insertion of <p> on focus
+        //      };
 
         var validateForm = function () {
             

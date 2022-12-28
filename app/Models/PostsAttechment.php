@@ -17,6 +17,5 @@ class PostsAttechment extends Model
                 ->get()->toArray();
         return $query;
     }
-    
 
 }

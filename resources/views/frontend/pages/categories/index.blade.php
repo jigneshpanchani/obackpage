@@ -24,7 +24,7 @@
                 @foreach($categories as $category1)
                     <div class="">
                         @foreach($category1 as $category2)
-                                <div class="bg-blue-900 rounded">
+                                <div class="bg-blue-900 rounded text-center">
                                     <span class="text-white text-lg px-2 font-bold leading-7">{{  $category2['category'] }}<br/></span>
                                 </div>
                                 @foreach($category2['subcategory'] as $subcategory)

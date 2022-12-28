@@ -12,7 +12,7 @@
 
 <div class="bg-white p-1 rounded">
     <div class="p-6 font-bold">
-        <table id="myData" class="table table-hover table-custom dataTable no-footer" role="grid">
+        <table id="myData" class="table table-hover table-custom dataTable no-footer text-4xl" role="grid">
             <thead>
                 <tr>
                     <th><strong>ID</strong></th>

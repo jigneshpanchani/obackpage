@@ -80,7 +80,9 @@
         <form name="addform" id="addform" method="post" action="{{url('multiple-ad-post')}}" enctype="multipart/form-data">
             @csrf
             <div id="cookieCrumb" class="space-x-2 p-6">
-                <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
+                <a href="http://localhost.obackpage.com"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i>
+                <a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a><i class='fa fa-chevron-right'></i>
+                <a href=""><span class="text-gray-800 text-sm font-bold">Multiple Ad</span></a>
             </div>
             <div id="heading" class="px-6">
                 <span class="text-gray-900 text-2xl font-extrabold">Multiple Ad</span>
@@ -183,16 +185,36 @@
                         <div id='displayUploadedImg' class="flex grid grid-cols-4 gap-10 py-6">
                         </div>
                     </div>
-                    <div class="form-group space-x-2">
-                        <input type="checkbox" id="is_premium_ad" name="is_premium_ad"  value="">
-                        <label for="is_premium_ad" class="text-gray-700 text-base leading-7 font-semibold">By Placing this ad I agree to the <a href="url">terms of use</a> and <a href="url">privacy policy</a></label>
+
+                    <div class="">
+                        <span class="text-red-900 text-xl font-bold">Premium Ads Future</span>
                     </div>
-                    <div class="g-recaptcha" id="feedback-recaptcha"
-                            data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}">
+                    <div class="space-y-6 px-6 pb-6">
+                        <div class="form-group">
+                            <span class="text-gray-800 text-lg font-bold">Premium Ads :</span>
+                            <div class="space-x-2">
+                                <input type="checkbox" id="is_premium_ad" name="is_premium_ad"  value="">
+                                <span class="text-gray-800 text-base leading-7 font-semibold"> Make this ad Premium for ( Premium ad will be shown on top of all Ads. ) $4 </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="text-gray-800 text-lg font-bold">Sponsor Ads :</span>
+                            <div class="space-x-2 flex flex-col">
+                                <span class="text-gray-800 text-sm leading-6 font-semibold"> Your ad will appear highlighted (Top and Bottom).</span>
+                                <span class="text-gray-800 text-base leading-7 font-semibold"> Number of weeks: 1 week ($2)</span>
+                            </div>
+                        </div>
+                        <div class="form-group space-x-2">
+                            <input type="checkbox" id="is_premium_ad" name="is_premium_ad"  value="">
+                            <span class="text-gray-800 text-base leading-7 font-semibold">By Placing this ad I agree to the <a href="url">terms of use</a> and <a href="url">privacy policy</a></span>
+                        </div>
+                        <div class="g-recaptcha" id="feedback-recaptcha"
+                                data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}">
+                        </div>
+                        <button type="submit" class="bg-blue-900 flex justify-center items-center p-2 rounded">
+                            <p class="text-xl font-bold text-white">Submit</p>
+                        </button>
                     </div>
-                    <button type="submit" class="bg-blue-900 flex justify-center items-center p-2 rounded">
-                        <p class="text-xl font-bold text-white">Submit</p>
-                    </button>
                 </div>
             </div>
 
