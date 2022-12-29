@@ -4,7 +4,7 @@
     <body>
 
         <div class="">
-            <div class="flex" style="background-color: #f1f5f9">
+                <div class="flex bg-gray-100">       {{--style="background-color: #e3f1ffad" --}}
                 @include('frontend.include.sidebar')
 
                 @yield('content')
