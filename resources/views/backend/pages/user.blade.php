@@ -15,9 +15,9 @@
         <table id="myData" class="table table-hover table-custom dataTable no-footer text-4xl" role="grid">
             <thead>
                 <tr>
-                    <th><strong>ID</strong></th>
-                    <th><strong>NAME</strong></th>
-                    <th><strong>EMAIL</strong></th>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
                 </tr>
             </thead>
             <tbody>

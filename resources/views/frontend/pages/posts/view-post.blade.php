@@ -23,14 +23,14 @@
                     <a href="{{ route('view-post',  array('cityId' => $city['id'], 'subcategoryId' => $subId)) }}"><span class="text-red-800 text-base font-semibold">{{  $city['city'] }}</span></a> |
                 @endforeach
             </div>
-            <div class="p-6 space-y-6 bg-white m-6 rounded">
+            <div class="p-6 space-y-6 m-6 rounded">
                 <div class="">
                     <a href="#"><span class="text-green-700 text-base font-bold">Top</span></a> |
                 </div>
                 @foreach ($posts as $date=>$postList)
                 <div class="space-y-2">
-                    <div class="bg-gradient-to-r from-gray-300 rounded">
-                        <span class="text-gray-800 text-base font-semibold leading-7 pl-2 date">{{ $date }}</span>
+                    <div class="bg-gradient-to-r from-blue-900  rounded">
+                        <span class="text-white text-base font-semibold leading-7 pl-2 date">{{ $date }}</span>
                     </div>
                     @foreach ($postList as $post)
                     <div class="px-4">

@@ -16,19 +16,19 @@
         <table id="myData" class="table table-hover table-custom dataTable no-footer text-4xl" role="grid">
             <thead>
                 <tr>
-                    <th><strong>ID</strong></th>
-                    <th><strong>TITLE</strong></th>
-                    <th><strong>DESCRIPTION</strong></th>
-                    <th><strong>LOCATION</strong></th>
-                    <th><strong>CONTACT EMAIL</strong></th>
-                    <th><strong>City</strong></th>
-                    <th><strong>CATEGORY</strong></th>
-                    <th><strong>SUB CATEGORY</strong></th>
+                    <th>ID</th>
+                    <th>TITLE</th>
+                    <th>DESCRIPTION</th>
+                    <th>LOCATION</th>
+                    <th>CONTACT EMAIL</th>
+                    <th>CITY</th>
+                    <th>CATEGORY</th>
+                    <th>SUB CATEGORY</th>
                 </tr>
-            </thead>   
+            </thead>
             <tbody>
                 @foreach ($posts as $post)
-                    <tr>   
+                    <tr>
                     <td>{{ $post['id'] }}</td>
                     <td>{{ $post['title'] }}</td>
                     <td>{!! $post['description'] !!}</td>

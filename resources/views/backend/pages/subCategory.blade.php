@@ -14,8 +14,8 @@
         <table id="myData" class="table table-hover table-custom dataTable no-footer text-4xl" role="grid">
             <thead>
                 <tr>
-                    <th><strong>ID</strong></th>
-                    <th><strong>SUB CATEGORY NAME</strong></th>
+                    <th>ID</th>
+                    <th>SUB CATEGORY NAME</th>
                 </tr>
             </thead>
             <tbody>

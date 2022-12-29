@@ -1,4 +1,4 @@
-<div id="bodyfooter" class="h-full bg-gray-200 p-4">
+<div id="bodyfooter" class="h-full p-4" style="background-color: #d9e1eaa8">
     <div class="footerlistdata text-center">
 
         <a title="obackpage.com" href="{{route('home')}}"><span class="text-red-700 text-base font-bold">Home</span></a> |

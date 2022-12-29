@@ -76,6 +76,7 @@ class Posts extends Model
             $objService->location = $request->input('location');
             $objService->contact_email = $request->input('contact_email');
             $objService->mobile_number = $request->input('mobile_number');
+            $objService->is_premium_ad = (!empty($request->input('is_premium_ad'))) ? '1' : '0';
             $objService->save();
             if($files=$request->file('file')){
                 if($i == 0){
@@ -184,7 +185,7 @@ class Posts extends Model
             ->where('city_id', $id)
             ->where('sub_category_id', $sid)
             ->select('id','title','age', 'location', DB::raw("DATE_FORMAT(created_at, '%d %b %Y') as posted_date"))
-            ->orderBy('created_at')
+            ->orderBy('created_at', 'DESC')
             ->groupBy('created_at')
             ->get()
             ->toArray();
@@ -328,6 +329,7 @@ class Posts extends Model
             $objService->location = $request->input('location');
             $objService->contact_email = $request->input('contact_email');
             $objService->mobile_number = $request->input('mobile_number');
+            $objService->is_premium_ad = (!empty($request->input('is_premium_ad'))) ? '1' : '0';
             $objService->save();
             if($files=$request->file('file')){
                 if($i == 0){

@@ -1961,7 +1961,7 @@ pre code {
 
 .table-hover tbody tr:hover {
   color: #3F4254;
-  background-color: #E4E6EF;
+  background-color: #e1f0ff;
 }
 
 .table-primary,
@@ -73879,14 +73879,14 @@ code {
   border-spacing: 0 !important;
   border-radius: 0.42rem;
 }
-.dataTables_wrapper .dataTable th, .dataTables_wrapper .dataTable td {
-  font-weight: 400;
-  font-size: 1rem;
+.dataTables_wrapper .dataTable td {
+  font-weight: 500 !important;
+  font-size: 14px;
   vertical-align: middle;
   color: #3F4254;
   transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
   outline: none !important;
-  padding: 1rem 1rem;
+  padding: 8px 12px;
 }
 .dataTables_wrapper .dataTable th .checkbox, .dataTables_wrapper .dataTable td .checkbox {
   margin: 0;
@@ -73904,11 +73904,7 @@ code {
 .dataTables_wrapper .dataTable th.sorting:before, .dataTables_wrapper .dataTable th.sorting:after, .dataTables_wrapper .dataTable td.sorting:before, .dataTables_wrapper .dataTable td.sorting:after {
   opacity: 0.6;
 }
-.dataTables_wrapper .dataTable th.sorting_desc:before, .dataTables_wrapper .dataTable th.sorting_desc:after, .dataTables_wrapper .dataTable th.orting_asc_disabled:before, .dataTables_wrapper .dataTable th.orting_asc_disabled:after, .dataTables_wrapper .dataTable th.orting_desc_disabled:before, .dataTables_wrapper .dataTable th.orting_desc_disabled:after, .dataTables_wrapper .dataTable th.sorting_asc:before, .dataTables_wrapper .dataTable th.sorting_asc:after, .dataTables_wrapper .dataTable th.sorting:before, .dataTables_wrapper .dataTable th.sorting:after, .dataTables_wrapper .dataTable td.sorting_desc:before, .dataTables_wrapper .dataTable td.sorting_desc:after, .dataTables_wrapper .dataTable td.orting_asc_disabled:before, .dataTables_wrapper .dataTable td.orting_asc_disabled:after, .dataTables_wrapper .dataTable td.orting_desc_disabled:before, .dataTables_wrapper .dataTable td.orting_desc_disabled:after, .dataTables_wrapper .dataTable td.sorting_asc:before, .dataTables_wrapper .dataTable td.sorting_asc:after, .dataTables_wrapper .dataTable td.sorting:before, .dataTables_wrapper .dataTable td.sorting:after {
-  top: 50% !important;
-  margin-top: -0.75rem;
-  bottom: auto !important;
-}
+
 .dataTables_wrapper .dataTable th.sorting_asc, .dataTables_wrapper .dataTable td.sorting_asc {
   color: #3699FF !important;
 }
@@ -73925,7 +73921,7 @@ code {
 }
 .dataTables_wrapper .dataTable tfoot th,
 .dataTables_wrapper .dataTable thead th {
-  font-weight: 500;
+  font-weight: 600!important;
   color: #181C32;
 }
 .dataTables_wrapper .dataTable thead th {

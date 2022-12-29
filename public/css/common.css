@@ -1,5 +1,6 @@
 .widthzero {
     width: 0px;
+    opacity: 0;
     /* display: none; */
 }
 .fa-bars{
