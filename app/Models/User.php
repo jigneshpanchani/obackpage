@@ -11,6 +11,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Transaction;
+use Illuminate\Database\Eloquent\Model;
+
 
 class User extends Authenticatable
 {
@@ -29,7 +31,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'google_id'
+        'google_id',
+        'credits'
     ];
 
     /**
@@ -65,7 +68,7 @@ class User extends Authenticatable
     function getUser(){
 
         $array=user::from('users')
-            ->select('id', 'name', 'email')
+            ->select('id', 'name', 'email', 'credits')
             ->get()->toArray();
         return $array;
     }
@@ -78,8 +81,6 @@ class User extends Authenticatable
         $objService = user::find($user_id);
         $objService->credits =  $updatedCredit;
         $objService->update();
-
-        
         return true;
     }
 }

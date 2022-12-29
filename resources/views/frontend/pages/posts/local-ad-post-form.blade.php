@@ -126,9 +126,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <span class="text-gray-800 text-base font-bold">City :$</span>
-                            <div class="flex grid grid-cols-4 gap-2" name="city-checkbox" id="city-checkbox">
-                                   
+                            <span class="text-gray-800 text-base font-bold">City : $</span><span class="text-gray-800 text-base font-bold"  id="totla__amount">2</span>
+                            <input type="hidden" name="totla__amount_value" id="totla__amount_value" value="2"/>
+                            <div class="flex grid grid-cols-4 gap-2" id="city-checkbox">
+                              
                             </div>
                         </div>
                         <div class="form-group space-x-2">

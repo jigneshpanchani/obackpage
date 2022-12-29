@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\PostsAttechment;
+use App\Models\User;
+
+
 use Illuminate\Support\Facades\DB;
 
 
@@ -15,6 +18,7 @@ class Posts extends Model
     protected $table = 'posts';
     protected $fillable = [
         'id', 'continent_id','country_state_id','city_id','category_id', 'sub_category_id','user_id','title','description','age','location','contact_email',
+        'mobile_number',
         'is_premium_ad',
         'is_sponsor_ad',
         'created_at',
@@ -57,6 +61,13 @@ class Posts extends Model
     }
 
     public function saveLocalAdposts($request) {
+
+        $user_id = Auth::user()->id;
+        $getCurrentCredit= User::select('credits')->where('id', $user_id)->get()->toArray();
+        $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value');
+        $objService = user::find($user_id);
+        $objService->credits = $updatedCredit;
+        $objService->update();
 
         $multipleCities = $request->input('city_id1');
         $i = 0;
@@ -110,7 +121,6 @@ class Posts extends Model
         }
 
         return $objService->id;
-
     }
 
     public function updatePosts($request, $id){
@@ -217,7 +227,7 @@ class Posts extends Model
 
         $array=Posts::from('posts')
             ->where('id', $pid)
-            ->select('id', 'title', 'description', 'location', 'age', 'created_at', 'contact_email')
+            ->select('id', 'title', 'description', 'location', 'age', 'created_at', 'contact_email', 'mobile_number')
             ->get()
             ->toArray();
         return $array;
@@ -308,6 +318,13 @@ class Posts extends Model
     }
 
     public function saveMultipleAdposts($request) {
+
+        $user_id = Auth::user()->id;
+        $getCurrentCredit= User::select('credits')->where('id', $user_id)->get()->toArray();
+        $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value');
+        $objService = user::find($user_id);
+        $objService->credits = $updatedCredit;
+        $objService->update();
 
         $multipleCities = $request->input('city_ids');
     //    print_r($multipleCities); exit;

@@ -112,9 +112,9 @@ var PostsEdit = function () {
                 picReader.readAsDataURL(file);
               }
             });
-          } else {
+        } else {
             console.log("Your browser does not support File API");
-          }
+        }
            
     }
 

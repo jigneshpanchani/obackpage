@@ -224,7 +224,17 @@ class PostController extends Controller
             $data['title'] = 'Multiple Ad Preview Page';
         return view('frontend.pages.posts.multiple-ad-post-preview',$data);
     }
-         
+
+        public function disclamier($id, $sid){
+            $data['css'] = array(); 
+            $data['cityId'] = $id;
+            $data['subId'] = $sid;
+            $data['js'] = array('posts.js');
+            $data['funinit'] = array('Posts.init()');
+            $data['title'] = 'Disclamier';
+        return view('frontend.pages.posts.disclamier',$data);
     }
+         
+}
 
     

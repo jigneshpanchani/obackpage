@@ -180,16 +180,27 @@ var Posts = function () {
                     var city_checkbox_html = '';
                         for (var i = 0; i < output.length; i++) {
                             temp_html += '<option value="' + output[i].id + '" class="text-gray-700 text-base leading-7 font-semibold">' + output[i].city + '</option>';
-                            city_checkbox_html += '<div class="space-x-2"><input type="checkbox" name="city_id1[]"  value="' + output[i].id + '"><label for="city_id" class="text-gray-700 text-base leading-7 font-semibold">' + output[i].city + ' </label></div>';
+                            city_checkbox_html += '<div class="space-x-2 cityCheckbox"><input id="" type="checkbox" name="city_id1[]"  class="checkbox" value="' + output[i].id + '"><label for="" class="text-gray-700 text-base leading-7 font-semibold">' + output[i].city + ' </label></div>';
                         }
                     $("#city-dropdown").html(temp_html);
                     $("#city-checkbox").html(city_checkbox_html);
                     $('input[name="city_id1[]"]').get(0).checked = true;
-                    
-                    
+                    // alert($(":checkbox:checked").length);
+                   
                 }
             });
         });
+        
+    
+      
+         $("body").on("click", ".cityCheckbox", function () {
+
+            var CheckedCheckBox = $('input[name="city_id1[]"]:checked').length;
+            var totalAmount = CheckedCheckBox * 2; 
+            $('#totla__amount_value').val(totalAmount);
+            $('#totla__amount').empty();
+            $('#totla__amount').append(totalAmount);
+        })
 
         $("body").on("change", ".selectCategory", function () {
             var id = $('#category-dropdown').val();
@@ -302,15 +313,30 @@ var Posts = function () {
                     var city_checkbox_html = '';
                         for (var i = 0; i < output.length; i++) {
                             // temp_html += '<div class="space-x-4"><label for="' + output[i].city + '" class="px-2 text-gray-700 text-base leading-7 font-semibold space-x-2"><input type="checkbox" name="city" class="city" value="' + output[i].id + '" id="' + output[i].city + '" checked/><span>' + output[i].city + '</span></label> </div>';
-                            city_checkbox_html += '<div class="space-x-2"><input type="checkbox" name="city_ids[]"  value="' + output[i].id + '" checked><label for="city_id" class="text-gray-700 text-base leading-7 font-semibold">' + output[i].city + ' </label></div>';
+                            city_checkbox_html += '<div class="space-x-2" cityCheckbox ><input type="checkbox" name="city_ids[]" class="checkbox"  value="' + output[i].id + '" checked><label for="city_id" class="text-gray-700 text-base leading-7 font-semibold">' + output[i].city + ' </label></div>';
                         }
                     // $("#citycheckboxes").html(temp_html);
                     $("#city-checkbox").html(city_checkbox_html);
-
+                    $('#totla__amount').empty();
+                    var CheckedCheckBox = $('input[name="city_ids[]"]:checked').length;
+                    var totalAmount = CheckedCheckBox * 2; 
+                    $('#totla__amount_value').val(totalAmount);
+                    $('#totla__amount').append(totalAmount);
+                    
                 }
             });
         });
+        
+        $("body").on("click", ".checkbox", function () {
+             var CheckedCheckBox = $('input[name="city_ids[]"]:checked').length;
+             var totalAmount = CheckedCheckBox * 2; 
+            $('#totla__amount_value').val(totalAmount);
+            $('#totla__amount').empty();
+            $('#totla__amount').append(totalAmount);
+        })
 
+        
+        
         $("body").on("click", ".selectCategory", function () {
             var id = $('#category-dropdown').val();
             $.ajax({
@@ -427,7 +453,7 @@ var Posts = function () {
                 },
               
               });
-            }
+        }
           
             $('input[name="is_premium_ad"]').click(function(){ 
                 if ( $( is_premium_ad ).prop( "checked" ) ) {
@@ -436,7 +462,8 @@ var Posts = function () {
                     $('#is_premium_ad').val(0);
                 }
             });
-
+    
+      
 
     return {
         init: function () {
