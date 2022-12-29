@@ -3,7 +3,7 @@
 @endphp
 
 
-@if ($currRoute == 'category')
+@if ($currRoute == 'category' || $currRoute == 'view-post')
     <div class="citySidebar duration-1000 toggelfilter transition-all flex w-48 bg-white px-0">
         <div class="flex flex-col w-full p-1">
             @if (Route::has('login'))
@@ -21,7 +21,7 @@
                     </div>
                 @endauth
             @endif
-            <a href="http://localhost.obackpage.com" class="bg-gray-200 flex justify-center items-center p-2 rounded">
+            <a href="{{ route('home')}}" class="bg-gray-200 flex justify-center items-center p-2 rounded">
                 <span class="text-gray-800 text-sm font-bold underline">Home</span>
             </a>
             <div class="p-4 flex justify-center items-center">
@@ -47,6 +47,38 @@
             </ul>
         </div>
     </div>
+
+@elseif($currRoute == 'posts-details')
+
+<div class="citySidebar duration-1000 toggelfilter transition-all flex w-48 bg-white px-0">
+    <div class="flex flex-col w-full p-1">
+        @if (Route::has('login'))
+            @auth
+                <div class="p-6">
+                    <a href="{{ route('post-ad') }}" class="bg-blue-900 flex justify-center items-center p-2 rounded">
+                        <p class="text-xl font-bold text-white">Post ad</p>
+                    </a>
+                </div>
+            @else
+                <div class="p-6">
+                    <a href="{{ route('login') }}" class="bg-blue-900 flex justify-center items-center p-2 rounded">
+                        <p class="text-xl font-bold text-white">Post ad</p>
+                    </a>
+                </div>
+            @endauth
+        @endif
+        <a href="{{ route('home')}}" class="bg-gray-200 flex justify-center items-center p-2 rounded">
+            <span class="text-gray-800 text-sm font-bold underline">Home</span>
+        </a>
+    </div>
+</div>
+
+
+
+
+
+
+
 
 @else
 
