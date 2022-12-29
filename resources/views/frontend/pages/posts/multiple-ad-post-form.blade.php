@@ -126,8 +126,9 @@
                     </div> --}}
                 </div>
                 <div class="form-group px-6">
-                    <span class="text-gray-800 text-base font-bold">City :</span>
-                    <div class="flex grid grid-cols-5 gap-2" name="city-checkbox" id="city-checkbox">
+                    <span class="text-gray-800 text-base font-bold">City : $</span><span class="text-gray-800 text-base font-bold"  id="totla__amount"></span>
+                        <input type="hidden" name="totla__amount_value" id="totla__amount_value" />
+                        <div class="flex grid grid-cols-4 gap-2" id="city-checkbox">
 
                     </div>
                 </div>
@@ -205,7 +206,7 @@
                         </div>
                     </div>
                     <div class="form-group space-x-2">
-                        <input type="checkbox" id="is_premium_ad" name="is_premium_ad"  value="">
+                        <input type="checkbox" id="" name=""  value="">
                         <span class="text-gray-800 text-base leading-7 font-semibold">By Placing this ad I agree to the <a href="url">terms of use</a> and <a href="url">privacy policy</a></span>
                     </div>
                     <div class="g-recaptcha" id="feedback-recaptcha"
