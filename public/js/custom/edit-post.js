@@ -118,8 +118,6 @@ var PostsEdit = function () {
            
     }
 
-    
-   
     return {
         init: function () {
             edit();

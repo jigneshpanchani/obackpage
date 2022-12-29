@@ -3,12 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Transaction;
 
 class User extends Authenticatable
 {
@@ -66,5 +68,18 @@ class User extends Authenticatable
             ->select('id', 'name', 'email')
             ->get()->toArray();
         return $array;
+    }
+
+    public function updateUser($request){
+
+        $user_id = Auth::user()->id;
+        $getCurrentCredit= User::select('credits')->where('id', $user_id)->get()->toArray();
+        $updatedCredit = $getCurrentCredit[0]['credits'] + $request->input('credit_amount');
+        $objService = user::find($user_id);
+        $objService->credits =  $updatedCredit;
+        $objService->update();
+
+        
+        return true;
     }
 }

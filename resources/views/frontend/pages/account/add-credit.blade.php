@@ -13,12 +13,64 @@
             </div>
         </nav>
         <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
-            <div class="flex flex-col">
+            <div class="flex flex-col h-screen">
                 <div id="cookieCrumb" class="space-x-2 p-6">
                     <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
                 </div>
                 <div class="px-6 space-y-6">
-                    
+                
+                    <div class="m-6 bg-white flex flex-col">
+                        <div class="flex items-center justify-between p-6">
+                            <div class="border border-green-600 rounded p-2">
+                                <span class="text-green-600 font-bold text-lg">Credits :</span><span class="text-green-600 font-bold text-lg">$ {{ Auth::user()->credits  }}</span>
+                            </div>
+                            <div class=""> 
+                                <span class="w-60 text-gray-900 text-lg font-bold">{{ Auth::user()->email  }}</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between bg-blue-900 rounded p-4">
+                            <div class="border border-blue-900 rounded space-x-6">
+                                <a href="{{route('manage-ads')}}">
+                                <span class="bg-blue-900 text-white font-bold">My Account</span>
+                                </a>
+                                <a href="{{route('transaction')}}">
+                                    <span class="bg-blue-900 text-white font-bold">Transaction</span>
+                                </a>
+                            </div>
+                            <div class="">
+                                <a href="{{route('add-credit')}}"> 
+                                    <span class="bg-blue-900 text-white font-bold">Buy Credits</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="border-2 border-gray-200 p-4 bg-white">
+                            <div class="infobox"><span class="text-indigo-700 text-base font-bold"> || INSTANT CREDIT DEPOSIT || </span>
+                                <br class="text-gray-900"> Add credits in your obackpage account to post top page ( Premium/Sponsor ) your ads, After one ads promotion, Remaining credits/balance will be still available in your account for future ads promotions! 
+                            </div>
+                            <div class="flex space-x-4">
+                                <form name="addform" id="addform" method="post" action="{{url('add-credit')}}" enctype="multipart/form-data">
+                                    @csrf
+                                <div class="border-2 border-gray-200 p-4 bg-white resize-none space-y-5">
+                                    <div class="border-2 border-gray-200 p-2 bg-gray-200 resize-none md:resize">
+                                        <div class="panel-heading">Instant Bitcoin Add</div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <label class="font-bold">Amount</label>
+                                    </div>
+                                    <div class="panel-body space-y-5">
+                                        <div class="flex flex-col">
+                                            <input type="number" class="form-control" name="credit_amount" placeholder="Input USD amount">
+                                        </div>
+                                        <div class="flex justify-center">
+                                            <button type="submit" class="bg-green-500 flex justify-center items-center p-2 rounded">
+                                                <span class="text-xl font-bold text-white">Add Bitcoin</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
                 </div>
             </div>
         </main>

@@ -10,6 +10,8 @@ use App\Models\City;
 use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\PostsAttechment;
+use App\Models\Transaction;
+use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -29,15 +31,33 @@ class AccountController extends Controller
 
     public function transaction(){
         $data['css'] = array();
-        $data['js'] = array();
-        $data['funinit'] = array();
+        $data['js'] = array('transaction-table.js');
+        $data['funinit'] = array('transaction.transaction()');
         $data['title'] = 'Transaction';
         return view('frontend.pages.account.transaction-details',$data);
     }
 
-    public function addCredit(){
+    public function addCredit(Request $request){
+
+        if ($request->isMethod('post')) {
+
+            $objUser = new user();
+            $UserUpdate = $objUser->updateUser($request);
+
+            $objtransaction = new transaction();
+            $data = $objtransaction->saveTransaction($request);
+
+            if($UserUpdate){
+                $request->session()->flash('session_success', 'Amount credited Successfully.');
+                return redirect(route('add-credit'));
+            }else{
+                $request->session()->flash('session_error', 'Something will be wrong. Please try again.');
+                return redirect(route('add-credit'))->withInput();
+            }
+        }
+      
         $data['css'] = array();
-        $data['js'] = array('');
+        $data['js'] = array();
         $data['funinit'] = array();
         $data['title'] = 'Add Credit';
         return view('frontend.pages.account.add-credit',$data);
@@ -93,6 +113,13 @@ class AccountController extends Controller
                 $arrpost = $objpost->deletePost($request);
                 echo json_encode($arrpost);
                 break;
+            case 'getTransactionData':
+                $dataArr  = $request->input('data');
+                $objtransactionData = new Transaction();
+                $arrTransactionList = $objtransactionData->getTransactionList($userId, $request);
+                echo json_encode($arrTransactionList);
+                break;
+
         }
         exit;
     }
