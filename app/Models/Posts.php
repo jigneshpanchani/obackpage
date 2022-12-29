@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\PostsAttechment;
+use App\Models\User;
+
+
 use Illuminate\Support\Facades\DB;
 
 
@@ -57,6 +60,13 @@ class Posts extends Model
     }
 
     public function saveLocalAdposts($request) {
+
+        $user_id = Auth::user()->id;
+        $getCurrentCredit= User::select('credits')->where('id', $user_id)->get()->toArray();
+        $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value');
+        $objService = user::find($user_id);
+        $objService->credits = $updatedCredit;
+        $objService->update();
 
         $multipleCities = $request->input('city_id1');
         $i = 0;
@@ -110,7 +120,6 @@ class Posts extends Model
         }
 
         return $objService->id;
-
     }
 
     public function updatePosts($request, $id){
@@ -308,6 +317,13 @@ class Posts extends Model
     }
 
     public function saveMultipleAdposts($request) {
+
+        $user_id = Auth::user()->id;
+        $getCurrentCredit= User::select('credits')->where('id', $user_id)->get()->toArray();
+        $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value');
+        $objService = user::find($user_id);
+        $objService->credits = $updatedCredit;
+        $objService->update();
 
         $multipleCities = $request->input('city_ids');
     //    print_r($multipleCities); exit;

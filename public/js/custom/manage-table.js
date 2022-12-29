@@ -97,9 +97,7 @@ var manageAcount = function() {
         };
         getDataTable(arrList);
 
-
-        
-        $("body").on("click", ".openDeleteModal", function () {
+         $("body").on("click", ".openDeleteModal", function () {
             $('#deleteModal').addClass("show-modal");
             $('.modal-dialog').addClass("show-modal-position");
             $('.modal-dialog').addClass("modal-content ");
