@@ -14,7 +14,7 @@
         @endif
         <form method="POST" class="" action="{{ route('login') }}">
             @csrf
-            <div id="centralIndexModule" class="flex flex-col p-6">                  
+            <div id="" class="flex flex-col p-6">
                 <div id="flex flex-col">
                     <div class="flex justify-center mt-4">
                         <img alt="obackpage" title="obackpage" src="https://obackpage.com/assets/frontend/img/logo.png">

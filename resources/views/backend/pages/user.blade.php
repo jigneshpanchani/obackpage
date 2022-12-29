@@ -18,6 +18,7 @@
                     <th>ID</th>
                     <th>NAME</th>
                     <th>EMAIL</th>
+                    <th>CREDIT</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +27,7 @@
                     <td>{{ $user['id'] }}</td>
                     <td>{{ $user['name'] }}</td>
                     <td>{{ $user['email'] }}</td>
+                    <td>{{ $user['credits'] }}</td>
                     </tr>
                     @endforeach
             </tbody>

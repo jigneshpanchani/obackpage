@@ -15,6 +15,7 @@ class Posts extends Model
     protected $table = 'posts';
     protected $fillable = [
         'id', 'continent_id','country_state_id','city_id','category_id', 'sub_category_id','user_id','title','description','age','location','contact_email',
+        'mobile_number',
         'is_premium_ad',
         'is_sponsor_ad',
         'created_at',
@@ -217,7 +218,7 @@ class Posts extends Model
 
         $array=Posts::from('posts')
             ->where('id', $pid)
-            ->select('id', 'title', 'description', 'location', 'age', 'created_at', 'contact_email')
+            ->select('id', 'title', 'description', 'location', 'age', 'created_at', 'contact_email', 'mobile_number')
             ->get()
             ->toArray();
         return $array;

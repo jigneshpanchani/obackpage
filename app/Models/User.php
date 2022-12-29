@@ -63,7 +63,7 @@ class User extends Authenticatable
     function getUser(){
 
         $array=user::from('users')
-            ->select('id', 'name', 'email')
+            ->select('id', 'name', 'email', 'credits')
             ->get()->toArray();
         return $array;
     }

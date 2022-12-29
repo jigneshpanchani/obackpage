@@ -24,9 +24,14 @@
                     <span class="text-gray-900 text-4xl font-bold">{{$posts[0]['title']}}!</span><br>
                     <span class="text-gray-700 text-base font-semibold">Posted:{{  date('d-m-y', strtotime($posts[0]['created_at']))}}</span>
                 </div>
-                <button type="submit" class="bg-blue-500 flex justify-center items-center p-1 rounded">
+                <div class="flex space-x-4">
+                <button type="submit" class="bg-blue-500 flex justify-center items-center p-1">
                     <p class="text-base font-bold text-white"><i class="fa fa-envelope-square"></i> {{$posts[0]['contact_email']}}</p>
                 </button>
+                <button type="submit" class="bg-cyan-500 flex justify-center items-center p-1">
+                    <p class="text-base font-bold text-white"><i class="fa fa-phone-square"></i> {{$posts[0]['mobile_number']}}</p>
+                </button>
+                </div>
                 <div class="border-2 border-red-500 p-4 bg-yellow-100">
                     <div class="infobox"><span class="text-red-500 text-base font-semibold">SCAM Alert!!!</span>
                         <br> if ad poster asks for money or tells you to verify in another website by 

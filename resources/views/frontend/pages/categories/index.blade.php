@@ -28,9 +28,14 @@
                                     <span class="text-white text-lg px-2 font-bold leading-7">{{  $category2['category'] }}<br/></span>
                                 </div>
                                 @foreach($category2['subcategory'] as $subcategory)
+
                                 <div class="space-x-2 py-2">
                                     <i class='fa fa-caret-right'></i>
-                                    <a href="{{ route('view-post',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['id'])) }}">
+                                   @if($subcategory['category_id'] == '1'  || $subcategory['category_id'] == '5')
+                                        <a href="{{ route('disclamier',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['id']))}}">
+                                    @else
+                                        <a href="{{ route('view-post',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['id'])) }}">
+                                    @endif
                                     <span class="text-gray-800 text-sm font-bold underline">{{  $subcategory['sub_category'] }}</span><br/></a>
                                 </div>
                                 @endforeach
