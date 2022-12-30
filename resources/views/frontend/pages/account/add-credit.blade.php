@@ -17,14 +17,13 @@
                 <div id="cookieCrumb" class="space-x-2 p-6">
                     <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
                 </div>
-                <div class="px-6 space-y-6">
-                
+                <div class="space-y-6">
                     <div class="m-6 bg-white flex flex-col">
                         <div class="flex items-center justify-between p-6">
                             <div class="border border-green-600 rounded p-2">
                                 <span class="text-green-600 font-bold text-lg">Credits :</span><span class="text-green-600 font-bold text-lg">$ {{ Auth::user()->credits  }}</span>
                             </div>
-                            <div class=""> 
+                            <div class="">
                                 <span class="w-60 text-gray-900 text-lg font-bold">{{ Auth::user()->email  }}</span>
                             </div>
                         </div>
@@ -38,20 +37,20 @@
                                 </a>
                             </div>
                             <div class="">
-                                <a href="{{route('add-credit')}}"> 
+                                <a href="{{route('add-credit')}}">
                                     <span class="bg-blue-900 text-white font-bold">Buy Credits</span>
                                 </a>
                             </div>
                         </div>
-                        <div class="border-2 border-gray-200 p-4 bg-white">
+                        <div class="border-2 border-gray-200 p-6 bg-white space-y-4">
                             <div class="infobox"><span class="text-indigo-700 text-base font-bold"> || INSTANT CREDIT DEPOSIT || </span>
-                                <br class="text-gray-900"> Add credits in your obackpage account to post top page ( Premium/Sponsor ) your ads, After one ads promotion, Remaining credits/balance will be still available in your account for future ads promotions! 
+                                <br class="text-gray-900"> Add credits in your obackpage account to post top page ( Premium/Sponsor ) your ads, After one ads promotion, Remaining credits/balance will be still available in your account for future ads promotions!
                             </div>
-                            <div class="flex space-x-4">
-                                <form name="addform" id="addform" method="post" action="{{url('add-credit')}}" enctype="multipart/form-data">
+                            <div class="flex space-x-4 items-center justify-center">
+                                <form name="addform" id="addform" class="w-1/2" method="post" action="{{url('add-credit')}}" enctype="multipart/form-data">
                                     @csrf
-                                <div class="border-2 border-gray-200 p-4 bg-white resize-none space-y-5">
-                                    <div class="border-2 border-gray-200 p-2 bg-gray-200 resize-none md:resize">
+                                <div class="border-2 border-gray-200 p-6 bg-white space-y-6">
+                                    <div class="border-1 border-gray-200 p-2 bg-gray-200">
                                         <div class="panel-heading">Instant Bitcoin Add</div>
                                     </div>
                                     <div class="flex flex-col">
@@ -70,7 +69,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>        
+                    </div>
                 </div>
             </div>
         </main>

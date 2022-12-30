@@ -18,11 +18,6 @@ var Posts = function () {
             $('#category-dropdown').trigger('change');
         }, 200);
 
-        setTimeout(function() {
-            $('#country-dropdown').trigger('change');
-            $('#category-dropdown').trigger('change');
-        }, 200);
-
         $("body").on("change", ".selectCountry", function () {
             var id = $('#country-dropdown').val();
             $.ajax({
@@ -131,14 +126,14 @@ var Posts = function () {
         .catch(error => {
             console.error(error);
         });
-    
-       
+
+
         setTimeout(function() {
             $('#country-dropdown').trigger('change');
             $('#category-dropdown').trigger('change');
         }, 200);
 
-       
+
          $("body").on("change", ".selectCountry", function () {
             var id = $('#country-dropdown').val();
             $.ajax({
@@ -161,7 +156,7 @@ var Posts = function () {
                     }, 200);
                 }
             });
-            
+
         });
 
         $("body").on("change", ".selectstate", function () {
@@ -186,17 +181,17 @@ var Posts = function () {
                     $("#city-checkbox").html(city_checkbox_html);
                     $('input[name="city_id1[]"]').get(0).checked = true;
                     // alert($(":checkbox:checked").length);
-                   
+
                 }
             });
         });
-        
-    
-      
+
+
+
          $("body").on("click", ".cityCheckbox", function () {
 
             var CheckedCheckBox = $('input[name="city_id1[]"]:checked').length;
-            var totalAmount = CheckedCheckBox * 2; 
+            var totalAmount = CheckedCheckBox * 2;
             $('#totla__amount_value').val(totalAmount);
             $('#totla__amount').empty();
             $('#totla__amount').append(totalAmount);
@@ -222,7 +217,7 @@ var Posts = function () {
                 }
             });
         });
- 
+
         if (window.File && window.FileList && window.FileReader) {
             var filesInput = document.getElementById("files");
             filesInput.addEventListener("change", function(event) {
@@ -262,12 +257,17 @@ var Posts = function () {
         .catch(error => {
             console.error(error);
         });
-       
-        $("body").on("click", ".selectStateBox", function () { 
+
+        setTimeout(function() {
+            $('#country-dropdown').trigger('change');
+            $('#category-dropdown').trigger('change');
+        }, 500);
+
+        $("body").on("click", ".selectStateBox", function () {
             $("#statecheckboxes").toggleClass("showMutipleDropDown");
         });
 
-        $("body").on("click", ".selectCityBox", function () { 
+        $("body").on("click", ".selectCityBox", function () {
             $("#citycheckboxes").toggleClass("showMutipleDropDown");
         });
 
@@ -297,8 +297,8 @@ var Posts = function () {
             var arr = [];
             $('.selectstate:checked').each(function () {
                 arr.push($(this).val());
-            }); 
-        
+            });
+
             $.ajax({
                 method: "POST",
                 url:  base_url + "post-adds-ajax",
@@ -319,24 +319,24 @@ var Posts = function () {
                     $("#city-checkbox").html(city_checkbox_html);
                     $('#totla__amount').empty();
                     var CheckedCheckBox = $('input[name="city_ids[]"]:checked').length;
-                    var totalAmount = CheckedCheckBox * 2; 
+                    var totalAmount = CheckedCheckBox * 2;
                     $('#totla__amount_value').val(totalAmount);
                     $('#totla__amount').append(totalAmount);
-                    
+
                 }
             });
         });
-        
+
         $("body").on("click", ".checkbox", function () {
              var CheckedCheckBox = $('input[name="city_ids[]"]:checked').length;
-             var totalAmount = CheckedCheckBox * 2; 
+             var totalAmount = CheckedCheckBox * 2;
             $('#totla__amount_value').val(totalAmount);
             $('#totla__amount').empty();
             $('#totla__amount').append(totalAmount);
         })
 
-        
-        
+
+
         $("body").on("click", ".selectCategory", function () {
             var id = $('#category-dropdown').val();
             $.ajax({
@@ -393,7 +393,7 @@ var Posts = function () {
         //      };
 
         var validateForm = function () {
-            
+
             $("#addform").validate({
                 // Specify validation rules
                 rules: {
@@ -405,7 +405,7 @@ var Posts = function () {
                          contact_email:true,
                         // regEmail:/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g,
                         contact_email:focus(),
-                    },      
+                    },
                     mobile_number: {
                         required: true,
                         digits: true,
@@ -422,19 +422,19 @@ var Posts = function () {
                 messages: {
                  title: {
                     required: "Please enter title",
-                 },      
+                 },
                  description: {
                     required: "Please enter description",
-                 },   
+                 },
                  location: {
                     required: "Please enter location",
-                 },    
+                 },
                  mobile_number: {
                     required: "Please enter phone number",
                     digits: "Please enter valid phone number",
                     minlength: "Phone number field accept only 10 digits",
                     maxlength: "Phone number field accept only 10 digits",
-                 },     
+                 },
                  contact_email: {
                     required: "Please enter email address",
                     contact_email: "Please enter a valid email address.",
@@ -445,42 +445,42 @@ var Posts = function () {
                     required: "Please enter age",
                     digits: "Please enter valid  age",
                     maxlength: "age field accept only 2 digits",
-                   },   
+                   },
                    continent_id: {
                     required: "Please select Continent/country",
-                    
-                 }, 
+
+                 },
                 },
-              
+
               });
         }
-          
-            $('input[name="is_premium_ad"]').click(function(){ 
+
+            $('input[name="is_premium_ad"]').click(function(){
                 if ( $( is_premium_ad ).prop( "checked" ) ) {
                     $('#is_premium_ad').val(1);
                 } else {
                     $('#is_premium_ad').val(0);
                 }
             });
-    
-      
+
+
 
     return {
         init: function () {
             list();
-            validateForm(); 
+            validateForm();
 
         },
         localPost: function () {
             localpost();
             validateForm();
-           
-           
+
+
         },
         multiplePost: function(){
             multiplePost();
             validateForm();
         },
-        
+
     }
 }();

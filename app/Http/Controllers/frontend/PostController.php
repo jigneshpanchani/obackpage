@@ -79,7 +79,6 @@ class PostController extends Controller
             $objPosts = new Posts();
             $postSave = $objPosts->saveLocalAdposts($request);
 
-
             // $this -> validate($request, [
             //     'g-recaptcha-response' =>
             //     ['required', new Recaptcha()]]);
@@ -89,7 +88,7 @@ class PostController extends Controller
                 return redirect(route('local-ad-preview', $postSave));
             }else{
                 $request->session()->flash('session_error', 'Something will be wrong. Please try again.');
-                return redirect(route('local-ad-post'))->withInput();
+                return redirect(route('add-credit'))->withInput();
             }
         }
         $objContinents = new Continents();
@@ -183,7 +182,7 @@ class PostController extends Controller
     public function multipleAdPost(Request $request){
 
         if ($request->isMethod('post')) {
-            
+
             $objPosts = new Posts();
             $postSave = $objPosts->saveMultipleAdposts($request);
 
@@ -210,7 +209,7 @@ class PostController extends Controller
             $data['funinit'] = array('Posts.multiplePost()');
             $data['title'] = 'Multiple Ad Page';
             return view('frontend.pages.posts.multiple-ad-post-form', $data);
-        
+
         }
 
         public function multipleAdPreview($id){
@@ -226,7 +225,7 @@ class PostController extends Controller
     }
 
         public function disclamier($id, $sid){
-            $data['css'] = array(); 
+            $data['css'] = array();
             $data['cityId'] = $id;
             $data['subId'] = $sid;
             $data['js'] = array('posts.js');
@@ -234,7 +233,7 @@ class PostController extends Controller
             $data['title'] = 'Disclamier';
         return view('frontend.pages.posts.disclamier',$data);
     }
-         
+
 }
 
-    
+

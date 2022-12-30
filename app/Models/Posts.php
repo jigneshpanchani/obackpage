@@ -64,63 +64,78 @@ class Posts extends Model
 
         $user_id = Auth::user()->id;
         $getCurrentCredit= User::select('credits')->where('id', $user_id)->get()->toArray();
-        $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value');
-        $objService = user::find($user_id);
-        $objService->credits = $updatedCredit;
-        $objService->update();
 
-        $multipleCities = $request->input('city_id1');
-        $i = 0;
-        $fisrtPostId = array();
-        foreach($multipleCities as $multipleCityID){
+        if($getCurrentCredit[0]['credits']>=$request->input('totla__amount_value')){
 
-            $objService = new Posts();
-            $objService->continent_id = $request->input('continent_id');
-            $objService->country_state_id = $request->input('country_state_id');
-            $objService->city_id = $multipleCityID;
-            $objService->category_id =$request->input('category_id');
-            $objService->sub_category_id =$request->input('sub_category_id');
-            $objService->user_id = Auth::user()->id;
-            $objService->title = $request->input('title');
-            $objService->description = $request->input('description');
-            $objService->age = $request->input('age');
-            $objService->location = $request->input('location');
-            $objService->contact_email = $request->input('contact_email');
-            $objService->mobile_number = $request->input('mobile_number');
-            $objService->is_premium_ad = (!empty($request->input('is_premium_ad'))) ? '1' : '0';
-            $objService->save();
-            if($files=$request->file('file')){
-                if($i == 0){
-                    array_push($fisrtPostId,$objService->id);
-                    foreach ($files as $file) {
+            $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value');
+            $objUser = user::find($user_id);
+            $objUser->credits = $updatedCredit;
+            $objUser->update();
 
-                        $data=new PostsAttechment;
-                        $name= date('YmdHis').$file->getClientOriginalName();
-                        $destinationPath = public_path('/uploads/');
-                        $file->move($destinationPath, $name);
-                        $data->file_name=$name;
-                        $data->post_id= $objService->id;
-                        $data->file_path="/uploads/$name";
-                        $data->save();
+            $objTransaction = new Transaction();
+            $objTransaction->status = "debit";
+            $objTransaction->code = "ABC123";
+            $objTransaction->amount = $request->input('totla__amount_value');
+            $objTransaction->user_id = Auth::user()->id;
+            $objTransaction->save();
 
-                        unset($data);
+            $multipleCities = $request->input('city_id1');
+            $i = 0;
+            $fisrtPostId = array();
+            foreach($multipleCities as $multipleCityID){
+
+                $objService = new Posts();
+                $objService->continent_id = $request->input('continent_id');
+                $objService->country_state_id = $request->input('country_state_id');
+                $objService->city_id = $multipleCityID;
+                $objService->category_id =$request->input('category_id');
+                $objService->sub_category_id =$request->input('sub_category_id');
+                $objService->user_id = Auth::user()->id;
+                $objService->title = $request->input('title');
+                $objService->description = $request->input('description');
+                $objService->age = $request->input('age');
+                $objService->location = $request->input('location');
+                $objService->contact_email = $request->input('contact_email');
+                $objService->mobile_number = $request->input('mobile_number');
+                $objService->is_premium_ad = (!empty($request->input('is_premium_ad'))) ? '1' : '0';
+                $objService->save();
+                if($files=$request->file('file')){
+                    if($i == 0){
+                        array_push($fisrtPostId,$objService->id);
+                        foreach ($files as $file) {
+
+                            $data=new PostsAttechment;
+                            $name= date('YmdHis').$file->getClientOriginalName();
+                            $destinationPath = public_path('/uploads/');
+                            $file->move($destinationPath, $name);
+                            $data->file_name=$name;
+                            $data->post_id= $objService->id;
+                            $data->file_path="/uploads/$name";
+                            $data->save();
+
+                            unset($data);
+                        }
+                    } else {
+                        $findPostId = PostsAttechment::where('post_id',$fisrtPostId[0])->get();
+                        foreach ($findPostId as $fileArray) {
+                            $otherFiles=new PostsAttechment;
+                            $otherFiles->file_name=$fileArray->file_name;
+                            $otherFiles->post_id= $objService->id;
+                            $otherFiles->file_path=$fileArray->file_path;
+                            $otherFiles->save();
+                        }
                     }
-                } else {
-                    $findPostId = PostsAttechment::where('post_id',$fisrtPostId[0])->get();
-                    foreach ($findPostId as $fileArray) {
-                        $otherFiles=new PostsAttechment;
-                        $otherFiles->file_name=$fileArray->file_name;
-                        $otherFiles->post_id= $objService->id;
-                        $otherFiles->file_path=$fileArray->file_path;
-                        $otherFiles->save();
-                    }
+
                 }
-
+                $i++;
             }
-            $i++;
+            return $objService->id;
+        }else{
+            return false;
         }
 
-        return $objService->id;
+
+
     }
 
     public function updatePosts($request, $id){
@@ -321,65 +336,74 @@ class Posts extends Model
 
         $user_id = Auth::user()->id;
         $getCurrentCredit= User::select('credits')->where('id', $user_id)->get()->toArray();
-        $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value');
-        $objService = user::find($user_id);
-        $objService->credits = $updatedCredit;
-        $objService->update();
 
-        $multipleCities = $request->input('city_ids');
-    //    print_r($multipleCities); exit;
-        $i = 0;
-        $fisrtPostId = array();
-        foreach($multipleCities as $multipleCityID){
+        if($getCurrentCredit[0]['credits']>=$request->input('totla__amount_value')){
 
-            $getCountryStateID = City::from('city')->where('id', $multipleCityID)->select('country_state_id')->get();
-            $objService = new Posts();
-            $objService->continent_id = $request->input('continent_id');
-            $objService->country_state_id = $getCountryStateID[0]->country_state_id;
-            $objService->city_id = $multipleCityID;
-            $objService->category_id =$request->input('category_id');
-            $objService->sub_category_id =$request->input('sub_category_id');
-            $objService->user_id = Auth::user()->id;
-            $objService->title = $request->input('title');
-            $objService->description = $request->input('description');
-            $objService->age = $request->input('age');
-            $objService->location = $request->input('location');
-            $objService->contact_email = $request->input('contact_email');
-            $objService->mobile_number = $request->input('mobile_number');
-            $objService->is_premium_ad = (!empty($request->input('is_premium_ad'))) ? '1' : '0';
-            $objService->save();
-            if($files=$request->file('file')){
-                if($i == 0){
-                    array_push($fisrtPostId,$objService->id);
-                    foreach ($files as $file) {
+            $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value');
+            $objUser = user::find($user_id);
+            $objUser->credits = $updatedCredit;
+            $objUser->update();
 
-                        $data=new PostsAttechment;
-                        $name= date('YmdHis').$file->getClientOriginalName();
-                        $destinationPath = public_path('/uploads/');
-                        $file->move($destinationPath, $name);
-                        $data->file_name=$name;
-                        $data->post_id= $objService->id;
-                        $data->file_path="/uploads/$name";
-                        $data->save();
+            $objTransaction = new Transaction();
+            $objTransaction->status = "debit";
+            $objTransaction->code = "ABC123";
+            $objTransaction->amount = $request->input('totla__amount_value');
+            $objTransaction->user_id = Auth::user()->id;
+            $objTransaction->save();
 
-                        unset($data);
-                    }
-                } else {
-                    $findPostId = PostsAttechment::where('post_id',$fisrtPostId[0])->get();
-                    foreach ($findPostId as $fileArray) {
-                        $otherFiles=new PostsAttechment;
-                        $otherFiles->file_name=$fileArray->file_name;
-                        $otherFiles->post_id= $objService->id;
-                        $otherFiles->file_path=$fileArray->file_path;
-                        $otherFiles->save();
+            $multipleCities = $request->input('city_ids');
+            $i = 0;
+            $fisrtPostId = array();
+            foreach($multipleCities as $multipleCityID){
+                $getCountryStateID = City::from('city')->where('id', $multipleCityID)->select('country_state_id')->get();
+                $objService = new Posts();
+                $objService->continent_id = $request->input('continent_id');
+                $objService->country_state_id = $getCountryStateID[0]->country_state_id;
+                $objService->city_id = $multipleCityID;
+                $objService->category_id =$request->input('category_id');
+                $objService->sub_category_id =$request->input('sub_category_id');
+                $objService->user_id = Auth::user()->id;
+                $objService->title = $request->input('title');
+                $objService->description = $request->input('description');
+                $objService->age = $request->input('age');
+                $objService->location = $request->input('location');
+                $objService->contact_email = $request->input('contact_email');
+                $objService->mobile_number = $request->input('mobile_number');
+                $objService->is_premium_ad = (!empty($request->input('is_premium_ad'))) ? '1' : '0';
+                $objService->save();
+                if($files=$request->file('file')){
+                    if($i == 0){
+                        array_push($fisrtPostId,$objService->id);
+                        foreach ($files as $file) {
+
+                            $data=new PostsAttechment;
+                            $name= date('YmdHis').$file->getClientOriginalName();
+                            $destinationPath = public_path('/uploads/');
+                            $file->move($destinationPath, $name);
+                            $data->file_name=$name;
+                            $data->post_id= $objService->id;
+                            $data->file_path="/uploads/$name";
+                            $data->save();
+
+                            unset($data);
+                        }
+                    } else {
+                        $findPostId = PostsAttechment::where('post_id',$fisrtPostId[0])->get();
+                        foreach ($findPostId as $fileArray) {
+                            $otherFiles=new PostsAttechment;
+                            $otherFiles->file_name=$fileArray->file_name;
+                            $otherFiles->post_id= $objService->id;
+                            $otherFiles->file_path=$fileArray->file_path;
+                            $otherFiles->save();
+                        }
                     }
                 }
-
+                $i++;
             }
-            $i++;
+            return $objService->id;
+        } else {
+            return false;
         }
-
-        return $objService->id;
 
     }
 

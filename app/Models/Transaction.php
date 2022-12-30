@@ -95,11 +95,12 @@ class Transaction extends Model
 
     public function saveTransaction($request){
 
-        $objService = new Transaction();
-        $objService->code = $request->input('code');
-        $objService->amount = $request->input('credit_amount');
-        $objService->user_id = Auth::user()->id;
-        $objService->save();
+        $objTransaction = new Transaction();
+        $objTransaction->status = "credit";
+        $objTransaction->amount = $request->input('credit_amount');
+        $objTransaction->user_id = Auth::user()->id;
+        $objTransaction->code = "ABC123";
+        $objTransaction->save();
     }
 
 
