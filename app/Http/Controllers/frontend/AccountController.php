@@ -119,7 +119,6 @@ class AccountController extends Controller
                 $arrTransactionList = $objtransactionData->getTransactionList($userId, $request);
                 echo json_encode($arrTransactionList);
                 break;
-
         }
         exit;
     }
@@ -136,4 +135,5 @@ class AccountController extends Controller
         $data['funinit'] = array();
         return view('frontend.pages.account.view-post-details',$data);        
     }
+    
 }

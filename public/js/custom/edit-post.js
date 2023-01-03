@@ -123,4 +123,5 @@ var PostsEdit = function () {
             edit();
         },
     }
+    
 }();
