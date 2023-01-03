@@ -15,9 +15,14 @@
     <main class="flex-1 relative overflow-y-auto min-h-screen focus:outline-none mt-2" tabindex="0">
         <div class="flex flex-col">
             <div id="cookieCrumb" class="space-x-2 p-6">
-                <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i>
-                <a href="#"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a><i class='fa fa-chevron-right'></i>
-                <a href="#"><span class="text-gray-800 text-sm font-bold">View Posts</span></a>
+                <a href="{{ route('home') }}"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i>
+                <a href="#"><span class="text-gray-800 text-sm font-bold">{{  $getPostPath[0]['continent'] }}</span></a>
+                <i class='fa fa-chevron-right'></i>
+                <a href="#"><span class="text-gray-800 text-sm font-bold">{{  $getPostPath[0]['state'] }}</span></a>
+                <i class='fa fa-chevron-right'></i>
+                <a href="#"><span class="text-gray-800 text-sm font-bold">{{  $getPostPath[0]['city'] }}</span></a>
+                <i class='fa fa-chevron-right'></i>
+                <a href="#"><span class="text-gray-800 text-sm font-bold">{{  $getSubCat[0]['sub_category'] }}</span></a>
             </div>
             <div class="p-6 space-y-6 bg-white m-6 rounded">
                 <div id="heading" class="">
@@ -45,8 +50,8 @@
                 <div class="w-full flex">
                     <div class="w-2/3">
                           <div class="space-y-2">
-                            <span class="text-gray-700 text-base font-bold">{!!$posts[0]['description']!!}</span>
-                            <span class="text-gray-700 text-base font-bold">Location: </span><span class="text-gray-900 text-base font-bold">{{$posts[0]['location']}}</span><br>
+                            <span class="text-gray-700 text-base font-bold">{!!$posts[0]['description']!!}</span><br>
+                            <span class="text-gray-700 text-base font-bold">Location: </span><span class="text-gray-900 text-base font-bold capitalize">{{$posts[0]['location']}}</span><br>
                             <span class="text-gray-700 text-base font-bold">Poster age: </span><span class="text-gray-900 text-base font-bold">{{$posts[0]['age']}}</span><br>
                             <span class="text-gray-700 text-base font-bold">Post ID: </span><span class="text-gray-900 text-base font-bold">{{$posts[0]['id']}}</span><br>
                         </div>

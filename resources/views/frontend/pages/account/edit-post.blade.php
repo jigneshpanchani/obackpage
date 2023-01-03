@@ -48,7 +48,7 @@
                     <div class="flex grid grid-cols-2 gap-10 px-6">
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Category:</span>
-                            <input value=" {{$data['category']}}" id="category_id" name="category"  class="form-control" readonly>
+                            <input value=" {{$data['category']}}" id="category_id" name="category"  class="form-control" readonly>        
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Sub Category:</span>

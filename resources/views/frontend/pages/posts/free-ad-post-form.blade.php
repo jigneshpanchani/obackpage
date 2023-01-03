@@ -17,7 +17,7 @@
             <form name="addform" id="addform"  onsubmit="return validateForm()" method="post" action="{{url('free-ad-post')}}" enctype="multipart/form-data">
                 @csrf
                 <div id="cookieCrumb" class="space-x-2 p-6">
-                    <a href="http://localhost.obackpage.com"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i>
+                    <a href="{{ route('home') }}"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i>
                     <a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a><i class='fa fa-chevron-right'></i>
                     <a href="{{ route('free-ad-post') }}"><span class="text-gray-800 text-sm font-bold">Free Ad</span></a>
                 </div>

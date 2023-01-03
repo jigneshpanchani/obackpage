@@ -11,9 +11,6 @@
                         <img style="width: 158px; height: 40px; padding-top: 2px;" alt="obackpage" title="obackpage" class="logow" src="https://obackpage.com/assets/frontend/img/logo_white.png">
                     </a>
                 </div>
-                <span class="flex justify-end">
-                    <h1><span class="text-white text-base font-bold">Backpage Dothan | Dothan Escorts | Escorts in Dothan, Alabama</span></h1>
-                </span>
             </div>
         </nav>
         <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">

@@ -16,7 +16,14 @@
     <main class="flex-1 relative overflow-y-auto min-h-screen focus:outline-none mt-2" tabindex="0">
         <div class="flex flex-col">
             <div id="cookieCrumb" class="space-x-2 p-6">
-                <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="#"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
+                <a href="{{ route('home') }}"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i>
+                    <a href="#"><span class="text-gray-800 text-sm font-bold">{{  $getPostPath[0]['continent'] }}</span></a>
+                    <i class='fa fa-chevron-right'></i>
+                    <a href="#"><span class="text-gray-800 text-sm font-bold">{{  $getPostPath[0]['state'] }}</span></a>
+                    <i class='fa fa-chevron-right'></i>
+                    <a href="#"><span class="text-gray-800 text-sm font-bold">{{  $getPostPath[0]['city'] }}</span></a>
+                    <i class='fa fa-chevron-right'></i>
+                    <a href="#"><span class="text-gray-800 text-sm font-bold">{{  $getSubCat[0]['sub_category'] }}</span></a>
             </div>
             <div class="px-6 space-6">
                 @foreach($nearByCities as $city)
@@ -34,7 +41,7 @@
                     </div>
                     @foreach ($postList as $post)
                     <div class="px-4">
-                        <a href="{{ route('posts-details',  array('cityId' => $city['id'], 'subcategoryId' => $subId, 'postId' => $post['id'])) }}">
+                        <a href="{{ route('posts-details',  array('cityId' => $cityId, 'subcategoryId' => $subId, 'postId' => $post['id'])) }}">
                             <span class="text-red-800 text-base font-semibold">{{ $post['title'] }}</span>
                             <span class="text-gray-800 text-base font-bold">-{{ $post['age'] }}  ({{ $post['location'] }})</span></a>
                     </div>
