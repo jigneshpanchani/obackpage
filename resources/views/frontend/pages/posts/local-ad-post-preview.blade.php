@@ -15,7 +15,7 @@
         <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
             <div class="flex flex-col">
                 <div id="cookieCrumb" class="space-x-2 p-6">
-                    <a href="http://localhost.obackpage.com"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i>
+                    <a href="{{ route('home') }}"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i>
                     <a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a><i class='fa fa-chevron-right'></i>
                     <a href=""><span class="text-gray-800 text-sm font-bold">Local Ad Preview</span></a>
                 </div>

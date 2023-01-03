@@ -152,8 +152,12 @@ class PostController extends Controller
 
         $objviewpost = new posts();
         $data['posts'] = $objviewpost->getViewPost($id, $sid);
+
         $objCity = new City();
         $data['nearByCities'] = $objCity->getNearByCities($id);
+        $data['getPostPath'] = $objCity->getPostPath($id);
+        $objSubCategory = new SubCategory();
+        $data['getSubCat'] = $objSubCategory->getSubCat($sid);
         $data['title'] = 'View-Post Page';
         $data['cityId'] = $id;
         $data['subId'] = $sid;
@@ -170,6 +174,11 @@ class PostController extends Controller
         $data['title'] = 'posts Details Page';
         $objpostpreview = new PostsAttechment();
         $data['postAttechment'] = $objpostpreview->getPostAttechment($pid);
+        $objCity = new City();
+        $data['getPostPath'] = $objCity->getPostPath($id);
+        $objSubCategory = new SubCategory();
+        $data['getSubCat'] = $objSubCategory->getSubCat($sid);
+       
         $data['cityId'] = $id;
         $data['postId'] = $id;
         $data['subId'] = $sid;
@@ -225,6 +234,9 @@ class PostController extends Controller
     }
 
         public function disclamier($id, $sid){
+
+            $objSubCategory = new SubCategory();
+            $data['getSubCat'] = $objSubCategory->getSubCat($sid);
             $data['css'] = array();
             $data['cityId'] = $id;
             $data['subId'] = $sid;

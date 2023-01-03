@@ -30,4 +30,14 @@ class SubCategory extends Model
             ->toArray();
         return $array;
     }
+
+    public function getSubCat($id) {
+        $query = SubCategory::from('sub_category')
+                ->where('id', $id)
+                ->select('sub_category', 'id')
+                ->get()
+                ->toArray();
+                // print_r($query);exit;
+        return $query;
+    }
 }

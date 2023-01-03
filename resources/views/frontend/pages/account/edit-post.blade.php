@@ -19,7 +19,7 @@
                 @foreach($posts as $data)
                 @csrf
                 <div id="cookieCrumb" class="space-x-2 p-6">
-                    <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
+                    <a href="{{ route('home') }}"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
                 </div>
                 <div class="p-6 space-y-6 bg-white m-6 rounded">
                   
@@ -31,7 +31,7 @@
                             <span for="country" class="text-gray-800 text-base font-bold">Continent/Country</span>
                             <select class="form-control  selectCountry"   value="{{(empty($data['continent_id']) ? null : $data['continent_id'])}}"  name="continent_id" id="country-dropdown" selected : {{$data['continent_id']}} >
                                 @foreach ($continents as $continent)
-                                <option value="{{$continent['id']}} " class="text-gray-700 text-base leading-7 font-semibold"  >
+                                <option value="{{$continent['id']}} " class="text-gray-700 text-base leading-7 font-semibold">
                                 {{$continent['continent']}}
                                 </option>
                                 @endforeach
@@ -39,12 +39,12 @@
                         </div>
                         <div class="form-group selectstate">
                             <span for="state" class="text-gray-800 text-base font-bold">Country/State</span>
-                            <select class="form-control state" value="{{$data['country_state_id']}}" name="country_state_id" id="state-dropdown" >
+                            <select class="form-control state" value="{{$data['country_state_id']}}" name="country_state_id" id="state-dropdown">
                             </select>
                         </div>
                         <div class="form-group">
                             <span for="city" class="text-gray-800 text-base font-bold">City</span>
-                            <select class="form-control" value="{{$data['city_id']}}" name="city_id" id="city-dropdown"  >
+                            <select class="form-control" value="{{$data['city_id']}}" name="city_id" id="city-dropdown">
                             </select>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                             <span for="country" class="text-gray-800 text-base font-bold">Category</span>
                             <select class="form-control selectCategory"  value="{{(empty($data['category_id']) ? null : $data['category_id'])}}" name="category_id"  id="category-dropdown">
                                 @foreach ($categories as $category)
-                                <option value=" {{$category['id']}}"  {{$category['category']}} class="text-gray-700 text-base leading-7 font-semibold" >
+                                <option value=" {{$category['id']}}"  {{$category['category']}} class="text-gray-700 text-base leading-7 font-semibold">
                                 {{$category['category']}}
                                 </option>
                                 @endforeach

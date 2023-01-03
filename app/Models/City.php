@@ -53,4 +53,19 @@ class City extends Model
          return $query;
 
     }
+
+    public function getPostPath($cid){
+
+
+        $array = City::from('city')
+              ->join('continents', 'continents.id', '=', 'city.continent_id')
+              ->join('country_state', 'country_state.id', '=', 'city.country_state_id')
+              ->where('city.id', $cid)
+              ->select('city.id', 'city', 'continents.continent as continent', 'country_state.country_state as state')
+              ->get()
+              ->toArray();
+            //   print_r($array); exit;
+         return $array;
+            
+    }
 }

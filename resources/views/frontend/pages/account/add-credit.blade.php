@@ -15,13 +15,13 @@
         <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
             <div class="flex flex-col h-screen">
                 <div id="cookieCrumb" class="space-x-2 p-6">
-                    <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
+                    <a href="{{ route('home') }}"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
                 </div>
                 <div class="space-y-6">
                     <div class="m-6 bg-white flex flex-col">
                         <div class="flex items-center justify-between p-6">
                             <div class="border border-green-600 rounded p-2">
-                                <span class="text-green-600 font-bold text-lg">Credits :</span><span class="text-green-600 font-bold text-lg">$ {{ Auth::user()->credits  }}</span>
+                                <span class="text-green-600 font-bold text-lg">Credits :</span><span class="text-green-600 font-bold text-lg"> ${{ Auth::user()->credits  }}</span>
                             </div>
                             <div class="">
                                 <span class="w-60 text-gray-900 text-lg font-bold">{{ Auth::user()->email  }}</span>
