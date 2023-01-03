@@ -19,7 +19,9 @@
                 @foreach($posts as $data)
                 @csrf
                 <div id="cookieCrumb" class="space-x-2 p-6">
-                    <a href="#"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
+                    <a href="{{route('home')}}"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i>
+                    <a href="{{route('manage-ads')}}"><span class="text-gray-800 text-sm font-bold">My Account</span></a><i class='fa fa-chevron-right'></i>
+                    <a href=""><span class="text-gray-800 text-sm font-bold">Edit Post</span></a>
                 </div>
                 <div class="p-6 space-y-6 bg-white m-6 rounded">
                   
@@ -28,24 +30,16 @@
                     </div>
                     <div class="flex grid grid-cols-3 gap-10 px-6">
                         <div class="form-group">
-                            <span for="country" class="text-gray-800 text-base font-bold">Continent/Country</span>
-                            <select class="form-control  selectCountry"   value="{{(empty($data['continent_id']) ? null : $data['continent_id'])}}"  name="continent_id" id="country-dropdown" selected : {{$data['continent_id']}} >
-                                @foreach ($continents as $continent)
-                                <option value="{{$continent['id']}} " class="text-gray-700 text-base leading-7 font-semibold"  >
-                                {{$continent['continent']}}
-                                </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group selectstate">
-                            <span for="state" class="text-gray-800 text-base font-bold">Country/State</span>
-                            <select class="form-control state" value="{{$data['country_state_id']}}" name="country_state_id" id="state-dropdown" >
-                            </select>
+                            <span class="text-gray-800 text-base font-bold">Continent/Country:</span>
+                            <input value=" {{$data['country_name']}}" id="continent_id" name="country_name"  class="form-control" readonly>
                         </div>
                         <div class="form-group">
-                            <span for="city" class="text-gray-800 text-base font-bold">City</span>
-                            <select class="form-control" value="{{$data['city_id']}}" name="city_id" id="city-dropdown"  >
-                            </select>
+                            <span class="text-gray-800 text-base font-bold">Country/State:</span>
+                            <input value=" {{$data['state']}}" id="country_state_id" name="state"  class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <span class="text-gray-800 text-base font-bold">City:</span>
+                            <input value=" {{$data['city_name']}}" id="city_id" name="city_name"  class="form-control" readonly>
                         </div>
                     </div>
                     <div class="">
@@ -53,24 +47,16 @@
                     </div>
                     <div class="flex grid grid-cols-2 gap-10 px-6">
                         <div class="form-group">
-                            <span for="country" class="text-gray-800 text-base font-bold">Category</span>
-                            <select class="form-control selectCategory"  value="{{(empty($data['category_id']) ? null : $data['category_id'])}}" name="category_id"  id="category-dropdown">
-                                @foreach ($categories as $category)
-                                <option value=" {{$category['id']}}"  {{$category['category']}} class="text-gray-700 text-base leading-7 font-semibold" >
-                                {{$category['category']}}
-                                </option>
-                                @endforeach
-                            </select>
-                            
+                            <span class="text-gray-800 text-base font-bold">Category:</span>
+                            <input value=" {{$data['category']}}" id="category_id" name="category"  class="form-control" readonly>
                         </div>
                         <div class="form-group">
-                            <span for="city" class="text-gray-800 text-base font-bold">Sub-Category</span>
-                            <select class="form-control" value="{{$data['sub_category']}}"  name="sub_category_id" id="sub-category-dropdown" >
-                            </select>
+                            <span class="text-gray-800 text-base font-bold">Sub Category:</span>
+                            <input value=" {{$data['sub_category']}}" id="sub_category_id" name="sub_category"  class="form-control" readonly>
                         </div>
                     </div>
                     <div class="">
-                        <span class="text-red-900 text-xl font-bold">Post Details</span>
+                        <span class="text-red-900 text-xl font-bold">Edit Post Details</span>
                     </div>
                     <div class="space-y-6 px-6 pb-6 w-2/3">
                      
@@ -103,11 +89,13 @@
                             <input method="POST" type="file" id="files" name="file[]" accept=".jpg, .jpeg, .png" multiple>
                             <div id='displayUploadedImg' class="flex grid grid-cols-4 gap-10 py-6">
                             </div>
-                            @foreach($postAttechment as $postAttechments)
-                            <div class="flex">
+                            
+                            <div class="flex grid grid-cols-4 gap-10 py-6">
+                                @foreach($postAttechment as $postAttechments)
                                 <img src="{{ asset($postAttechments['file_path'])}}" alt="searchIcon" />
-                            </div>
+                                
                             @endforeach
+                            </div>
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">City:</span>

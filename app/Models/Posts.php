@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\PostsAttechment;
 use App\Models\User;
@@ -139,13 +140,8 @@ class Posts extends Model
     }
 
     public function updatePosts($request, $id){
-
+        
         $objService = Posts::find($id);
-        $objService->continent_id = $request->input('continent_id');
-        $objService->country_state_id = $request->input('country_state_id');
-        $objService->city_id = $request->input('city_id');
-        $objService->category_id =$request->input('category_id');
-        $objService->sub_category_id =$request->input('sub_category_id');
         $objService->user_id = Auth::user()->id;
         $objService->title = $request->input('title');
         $objService->description = $request->input('description');
@@ -154,7 +150,18 @@ class Posts extends Model
         $objService->contact_email = $request->input('contact_email');
         $objService->mobile_number = $request->input('mobile_number');
         $objService->update();
-        //
+
+        // $objService =new PostsAttechment; 
+        // if($request->hasfile('file_path')){
+
+        //     $file = $request->file('file_path');
+        //     $extension = $file->getimages();
+        //     $filename = time() . '.' . $extension;
+        //     $file->move('uploads/', $filename);
+        //     $objService->file_path = $filename;
+        // }
+        
+
         // $data=new PostsAttechment;
         //     if($files=$request->file('file')){
         //         foreach ($files as $file) {
@@ -168,27 +175,22 @@ class Posts extends Model
 
         //     }
         // $data->update();
+        // print_r($data);exit;
         return true;
-    }
-
-    public function deletePost($request){
-        $returnpost = Posts::where('id','=', $request->id)
-                     ->delete();
-        if($returnpost){
-            $request->session()->flash('session_success', 'Post Data Deleted Sucessfuly.');
-            return redirect(route('manage-ads', $returnpost));
-        }else{
-            $request->session()->flash('session_error', 'Something will be wrong. Please try again.');
-            return redirect(route('manage-ads'))->withInput();
-        }
     }
 
     public function geteditPostData($id) {
         $query = Posts::from('posts as ps')
-                ->join('sub_category as sc', 'sc.id', '=', 'ps.sub_category_id')
+                ->leftjoin('continents', 'continents.id', '=', 'ps.continent_id')
+                ->leftjoin('country_state', 'country_state.id', '=', 'ps.country_state_id')
+                ->leftJoin('city', 'city.id', '=', 'ps.city_id')
+                ->leftJoin('category', 'category.id', '=', 'ps.category_id')
+                ->leftjoin('sub_category as sc', 'sc.id', '=', 'ps.sub_category_id')
                 ->join('post_attechment as pa', 'pa.id', '=', 'ps.id')
                 ->where('ps.id', $id)
-                ->get()->toArray();
+                ->select('ps.id', 'ps.title', 'ps.description', 'ps.location', 'ps.contact_email', 'continents.continent as country_name', 'country_state.country_state as state', 'city.city as city_name', 'category.category as category', 'sc.sub_category as sub_category', 'ps.age', 'ps.mobile_number')
+                ->get()
+                ->toArray();
         return $query;
     }
 
@@ -242,7 +244,17 @@ class Posts extends Model
 
         $array=Posts::from('posts')
             ->where('id', $pid)
-            ->select('id', 'title', 'description', 'location', 'age', 'created_at', 'contact_email', 'mobile_number')
+            ->select('id', 'title', 'description', 'location', 'age', 'created_at', 'contact_email', 'mobile_number', 'category')
+            ->get()
+            ->toArray();
+        return $array;
+    }
+
+    public function getViewPostDetail($pid){
+        $array=posts::from('posts as ps')
+            ->join('category', 'category.id', '=', 'ps.category_id')
+            ->where('ps.id', $pid)
+            ->select('ps.id', 'ps.title', 'ps.description', 'ps.location', 'ps.age', 'ps.created_at', 'ps.contact_email', 'ps.mobile_number', 'category.category as category')
             ->get()
             ->toArray();
         return $array;
@@ -312,6 +324,7 @@ class Posts extends Model
                 $nestedData[] = $row["is_premium_ad"];
                 $nestedData[] = $row["is_sponsor_ad"];
                 $actionHtml .= '<li><a href="'. route('edit-free-ad-post-data', array('id' => $row['id'])) .'" class="link-black text-sm" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil  "></i></a></li>';
+                $actionHtml .= '<li><a href="'. route('view-post-details', array('id' => $row['id'])) .'" class="link-black text-sm" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-eye"></i></a></li>';
                 $actionHtml .= '<li><button type="button" class="delete openDeleteModal" data-id="'.$row['id'].'" ><span class="fa fa-trash""></span></button></li>';
                 $action = '<div class="action-overlay">
                              <ul class="icon-actions-set flex space-x-4">

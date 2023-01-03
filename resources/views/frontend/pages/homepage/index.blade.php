@@ -53,7 +53,7 @@
                             </svg>
                         </div>
                         <span tabindex="-1" class="bg-white block rounded-md" style="">
-                            <input id="findStudent" name="search" class="findStudent block w-full pl-10 pr-3 py-2 findStudent border border-transparent rounded-md leading-5  text-gray-400 focus:ring-0 focus:text-gray-900 sm:text-sm" placeholder="Search Cities" type="text" data-role="autocomplete" autocomplete="off" role="combobox" aria-expanded="false" aria-disabled="false" aria-readonly="false" aria-owns="findStudent_listbox" aria-autocomplete="list" aria-controls="findStudent_listbox" aria-busy="false">
+                            <input id="search" name="search" class="findStudent block w-full pl-10 pr-3 py-2 findStudent border border-transparent rounded-md leading-5  text-gray-400 focus:ring-0 focus:text-gray-900 sm:text-sm" placeholder="Search Cities" type="text" data-role="autocomplete" autocomplete="off" role="combobox" aria-expanded="false" aria-disabled="false" aria-readonly="false" aria-owns="findStudent_listbox" aria-autocomplete="list" aria-controls="findStudent_listbox" aria-busy="false">
                         </span>
                         </div>
                     </div>
@@ -117,5 +117,16 @@
             </div>
         </div>
     </div>
+
+<script type="text/javascript">
+    var route = "{{ url('home') }}";
+    $('#search').typeahead({
+        source:  function (term, process) {
+        return $.get(route, { term: term }, function (data) {
+                return process(data);
+            });
+        }
+    });
+</script>
 
 @endsection

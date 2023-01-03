@@ -46,6 +46,7 @@ Route::match(['get', 'post'], 'local-ad-preview/{id}',                          
 Route::match(['get', 'post'], 'multiple-ad-post',                                ['as' => 'multiple-ad-post',       'uses' => 'frontend\PostController@multipleAdPost']);
 Route::match(['get', 'post'], 'multiple-ad-preview/{id}',                        ['as' => 'multiple-ad-preview',    'uses' => 'frontend\PostController@multipleAdPreview']);
 Route::match(['get', 'post'], 'edit-free-ad-post-data/{id}',                     ['as' => 'edit-free-ad-post-data', 'uses' => 'frontend\AccountController@editFreeAdPost']);
+Route::match(['get', 'post'], 'view-post-details/{id}',                          ['as' => 'view-post-details',      'uses' => 'frontend\AccountController@viewPostDetails']);
 Route::match(['get', 'post'], 'view-post/{cityId}/{subcategoryId}',              ['as' => 'view-post',              'uses' => 'frontend\PostController@viewPost']);
 Route::match(['get', 'post'], 'posts-details/{cityId}/{subcategoryId}/{postId}', ['as' => 'posts-details',          'uses' => 'frontend\PostController@postsDetails']);
 Route::match(['get', 'post'], 'disclamier/{cityId}/{subcategoryId}',             ['as' => 'disclamier',             'uses' => 'frontend\PostController@disclamier']);

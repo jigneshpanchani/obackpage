@@ -123,4 +123,17 @@ class AccountController extends Controller
         }
         exit;
     }
+
+    public function viewPostDetails($pid){
+
+        $objviewpost = new posts();
+        $data['posts'] = $objviewpost->getViewPostDetail($pid);
+        $objpostpreview = new PostsAttechment();
+        $data['postAttechment'] = $objpostpreview->getPostAttechment($pid);
+        $data['title'] = 'View posts Details Page';
+        $data['css'] = array();
+        $data['js'] = array();
+        $data['funinit'] = array();
+        return view('frontend.pages.account.view-post-details',$data);        
+    }
 }
