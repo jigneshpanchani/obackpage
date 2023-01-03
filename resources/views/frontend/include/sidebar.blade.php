@@ -3,7 +3,7 @@
 @endphp
 
 
-@if ($currRoute == 'category' || $currRoute == 'view-post')
+@if ($currRoute == 'category' || $currRoute == 'view-post' || $currRoute == 'disclamier')
     <div class="citySidebar duration-1000 toggelfilter transition-all flex w-48 bg-white px-0">
         <div class="flex flex-col w-full p-1">
             @if (Route::has('login'))
@@ -74,12 +74,6 @@
 </div>
 
 
-
-
-
-
-
-
 @else
 
 <div class="citySidebar duration-1000 toggelfilter transition-all flex w-48 bg-white px-0">
@@ -100,28 +94,28 @@
             @endauth
         @endif
         <ul class="overflow-y-auto w-full">
-            <li class="aside-menu bg-gray-100 p-2">
+            <li class="aside-menu bg-g0 p-2">
                 <a href="{{ route('home') }}">
                     <div class="flex justify-center items-center">
                         <p class="text-gray-800 text-sm font-bold">Home</p>
                     </div>
                 </a>
             </li>
-            <li class="aside-menu bg-gray-100 p-2">
+            <li class="aside-menu bg-g0 p-2">
                 <a href="{{ route('manage-ads') }}">
                     <div class="flex justify-center items-center">
                         <p class="text-gray-800 text-sm font-bold">My Account</p>
                     </div>
                 </a>
             </li>
-            <li class="aside-menu bg-gray-100 p-2">
+            <li class="aside-menu bg-g0 p-2">
                 <a href="{{ route('add-credit') }}">
                     <div class="flex justify-center items-center">
                         <p class="text-gray-800 text-sm font-bold">Buy Credits</p>
                     </div>
                 </a>
             </li>
-            <li class="aside-menu bg-gray-100 p-2">
+            <li class="aside-menu bg-g0 p-2">
                 <form method="POST" class="flex justify-center items-center" action="{{ route('logout') }}" x-data>
                     @csrf
                     <button type="submit" class="">

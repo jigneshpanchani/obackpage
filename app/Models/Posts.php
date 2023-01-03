@@ -140,7 +140,7 @@ class Posts extends Model
     }
 
     public function updatePosts($request, $id){
-        
+
         $objService = Posts::find($id);
         $objService->user_id = Auth::user()->id;
         $objService->title = $request->input('title');
@@ -151,7 +151,7 @@ class Posts extends Model
         $objService->mobile_number = $request->input('mobile_number');
         $objService->update();
 
-        // $objService =new PostsAttechment; 
+        // $objService =new PostsAttechment;
         // if($request->hasfile('file_path')){
 
         //     $file = $request->file('file_path');
@@ -160,7 +160,7 @@ class Posts extends Model
         //     $file->move('uploads/', $filename);
         //     $objService->file_path = $filename;
         // }
-        
+
 
         // $data=new PostsAttechment;
         //     if($files=$request->file('file')){
@@ -244,7 +244,7 @@ class Posts extends Model
 
         $array=Posts::from('posts')
             ->where('id', $pid)
-            ->select('id', 'title', 'description', 'location', 'age', 'created_at', 'contact_email', 'mobile_number', 'category')
+            ->select('id', 'title', 'description', 'location', 'age', 'created_at', 'contact_email', 'mobile_number')
             ->get()
             ->toArray();
         return $array;
@@ -418,6 +418,19 @@ class Posts extends Model
             return false;
         }
 
+    }
+
+
+    public function deletePost($request){
+        $returnpost = Posts::where('id','=', $request->id)
+                    ->delete();
+        if($returnpost){
+            $request->session()->flash('session_success', 'Post Data Deleted Sucessfuly.');
+            return redirect(route('manage-ads', $returnpost));
+        }else{
+            $request->session()->flash('session_error', 'Something will be wrong. Please try again.');
+            return redirect(route('manage-ads'))->withInput();
+        }
     }
 
 }

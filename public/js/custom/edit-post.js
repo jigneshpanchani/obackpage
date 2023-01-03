@@ -12,13 +12,13 @@ var PostsEdit = function () {
         .catch(error => {
             console.error(error);
         });
-        
+
         setTimeout(function() {
             $('#country-dropdown').trigger('change');
             $('#category-dropdown').trigger('change');
         }, 200);
 
-        
+
         $("body").on("change", ".selectCountry", function () {
             var id = $('#country-dropdown').val();
             $.ajax({
@@ -41,7 +41,7 @@ var PostsEdit = function () {
                     }, 200);
                 }
             });
-  
+
         });
 
         $("body").on("change", ".selectstate", function () {
@@ -115,7 +115,7 @@ var PostsEdit = function () {
         } else {
             console.log("Your browser does not support File API");
         }
-           
+
     }
 
     return {
@@ -123,5 +123,5 @@ var PostsEdit = function () {
             edit();
         },
     }
-    
+
 }();

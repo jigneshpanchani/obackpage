@@ -178,7 +178,7 @@ class PostController extends Controller
         $data['getPostPath'] = $objCity->getPostPath($id);
         $objSubCategory = new SubCategory();
         $data['getSubCat'] = $objSubCategory->getSubCat($sid);
-       
+
         $data['cityId'] = $id;
         $data['postId'] = $id;
         $data['subId'] = $sid;
@@ -237,6 +237,8 @@ class PostController extends Controller
 
             $objSubCategory = new SubCategory();
             $data['getSubCat'] = $objSubCategory->getSubCat($sid);
+            $objCity = new City();
+            $data['nearByCities'] = $objCity->getNearByCities($id);
             $data['css'] = array();
             $data['cityId'] = $id;
             $data['subId'] = $sid;
