@@ -31,6 +31,7 @@ Route::middleware([
 // Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'handleGoogleCallback']);
 
 Route::match(['get', 'post'], '/',                          ['as' => 'home',                      'uses' => 'frontend\HomeController@index']);
+Route::match(['get', 'post'], 'autocomplete-ajax',          ['as' => 'autocomplete-ajax',         'uses' => 'frontend\HomeController@Autocomplete']);
 Route::match(['get', 'post'], 'authorized/google',          ['as' => 'authorized/google',         'uses' => 'LoginWithGoogleController@redirectToGoogle']);
 Route::match(['get', 'post'], 'authorized/google/callback', ['as' => 'authorized/google/callback','uses' => 'LoginWithGoogleController@handleGoogleCallback']);
 Route::match(['get', 'post'], 'category/{city}',            ['as' => 'category',                  'uses' => 'frontend\CategoryController@index']);
