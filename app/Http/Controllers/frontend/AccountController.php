@@ -55,7 +55,7 @@ class AccountController extends Controller
                 return redirect(route('add-credit'))->withInput();
             }
         }
-      
+
         $data['css'] = array();
         $data['js'] = array();
         $data['funinit'] = array();
@@ -82,10 +82,10 @@ class AccountController extends Controller
         $data['continents'] =  $objContinents->getContinents();
         $objCategory = new Category();
         $data['categories'] = $objCategory->getCategories();
-        $objpostpreview = new posts();
-        $data['posts'] =  $objpostpreview ->geteditPostData($id);
-        $objpostpreview = new PostsAttechment();
-        $data['postAttechment'] = $objpostpreview->getPostAttechment($id);
+        $objpostDetails = new Posts();
+        $data['posts'] =  $objpostDetails->geteditPostData($id);
+        $objpostAttechment = new PostsAttechment();
+        $data['postAttechment'] = $objpostAttechment->getPostAttechment($id);
         $data['postId'] =  $id;
         $data['css'] = array();
         $data['js'] = array('edit-post.js');
@@ -133,7 +133,7 @@ class AccountController extends Controller
         $data['css'] = array();
         $data['js'] = array();
         $data['funinit'] = array();
-        return view('frontend.pages.account.view-post-details',$data);        
+        return view('frontend.pages.account.view-post-details',$data);
     }
-    
+
 }

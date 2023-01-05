@@ -186,7 +186,6 @@ class Posts extends Model
                 ->leftJoin('city', 'city.id', '=', 'ps.city_id')
                 ->leftJoin('category', 'category.id', '=', 'ps.category_id')
                 ->leftjoin('sub_category as sc', 'sc.id', '=', 'ps.sub_category_id')
-                ->join('post_attechment as pa', 'pa.id', '=', 'ps.id')
                 ->where('ps.id', $id)
                 ->select('ps.id', 'ps.title', 'ps.description', 'ps.location', 'ps.contact_email', 'continents.continent as country_name', 'country_state.country_state as state', 'city.city as city_name', 'category.category as category', 'sc.sub_category as sub_category', 'ps.age', 'ps.mobile_number')
                 ->get()
