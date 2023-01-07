@@ -51,6 +51,7 @@ Route::match(['get', 'post'], 'view-post-details/{id}',                         
 Route::match(['get', 'post'], 'view-post/{cityId}/{subcategoryId}',              ['as' => 'view-post',              'uses' => 'frontend\PostController@viewPost']);
 Route::match(['get', 'post'], 'posts-details/{cityId}/{subcategoryId}/{postId}', ['as' => 'posts-details',          'uses' => 'frontend\PostController@postsDetails']);
 Route::match(['get', 'post'], 'disclamier/{cityId}/{subcategoryId}',             ['as' => 'disclamier',             'uses' => 'frontend\PostController@disclamier']);
+Route::match(['get', 'post'], 'report-ad/{cityId}/{postId}',                     ['as' => 'report-ad',              'uses' => 'frontend\PostController@reportAd']);
 
 Route::match(['get', 'post'], 'manage-ads',                 ['as' => 'manage-ads',                'uses' => 'frontend\AccountController@manageAds']);
 Route::match(['get', 'post'], 'manage-ads-ajax',            ['as' => 'manage-ads-ajax',           'uses' => 'frontend\AccountController@ajaxAction']);
