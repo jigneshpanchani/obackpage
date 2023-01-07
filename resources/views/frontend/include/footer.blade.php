@@ -9,6 +9,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
 
+{{-- fancybox --}}
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+   
+
 
 @if (!empty($js))
 @foreach ($js as $value)
@@ -27,8 +31,15 @@
     });
 </script>
 
+<script>
+      // Customization example
+      Fancybox.bind('[data-fancybox="gallery"]', {
+        infinite: false
+      });
+    </script>
 
 <script>
+
 
 $(document).ready(function() {
     $("body").on("click", ".openSidebarBtn", function() {
