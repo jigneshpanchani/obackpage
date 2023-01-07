@@ -30,7 +30,7 @@
             </div>
             <div class="px-6 space-6">
                 @foreach($nearByCities as $city)
-                    <a href="{{ route('view-post',  array('cityId' => $city['id'], 'subcategoryId' => $subId)) }}"><span class="text-red-800 text-base font-semibold">{{  $city['city'] }}</span></a> |
+                    <a href="{{ route('view-post',  array('cityId' => $cityId, 'subcategoryId' => $subId)) }}"><span class="text-red-800 text-base font-semibold">{{  $city['city'] }}</span></a> |
                 @endforeach
             </div>
             <div class="p-6 space-y-6 m-6 rounded">
