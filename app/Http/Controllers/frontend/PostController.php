@@ -35,7 +35,6 @@ class PostController extends Controller
             $objPosts = new Posts();
             $postSave = $objPosts->saveposts($request);
 
-
             // $this -> validate($request, [
             //     'g-recaptcha-response' =>
             //     ['required', new Recaptcha()]]);
@@ -187,7 +186,7 @@ class PostController extends Controller
         $objSubCategory = new SubCategory();
         $data['getSubCat'] = $objSubCategory->getSubCat($sid);
         $data['cityId'] = $id;
-        $data['postId'] = $id;
+        $data['postId'] = $pid;
         $data['subId'] = $sid;
         $data['css'] = array();
         $data['js'] = array();
@@ -260,19 +259,15 @@ class PostController extends Controller
         return view('frontend.pages.posts.disclamier',$data);
     }
 
-    public function reportAd($id, $pid){
-
+    public function reportAd($pid){
+        
         $objviewpost = new posts();
         $data['posts'] = $objviewpost->getPostsDetails($pid);
-        $data['title'] = 'Report-ad';
-        $objCity = new City();
-        $data['nearByCities'] = $objCity->getNearByCities($id);
-        $data['cityId'] = $id;
         $data['postId'] = $pid;
         $data['css'] = array();
         $data['js'] = array();
         $data['funinit'] = array();
-        // print_r($data);exit;
+        
         return view('frontend.pages.posts.report-ad', $data);
     }
 

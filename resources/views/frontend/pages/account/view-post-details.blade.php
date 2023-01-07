@@ -55,14 +55,18 @@
                     <div class="flex flex grid grid-cols-2 gap-10 w-1/3">
                         @foreach($postAttechment as $postAttechments)
                         <div class="flex">
-                            <img src="{{ asset($postAttechments['file_path'])}}" alt="searchIcon" />
+                            <a data-fancybox="gallery" data-src="{{ asset($postAttechments['file_path'])}}">
+                                <img src="{{ asset($postAttechments['file_path'])}}" />
+                            </a>
                         </div>
                         @endforeach
                     </div>
                 </div>
                 <div class="">
-                    <button type="submit" class="bg-red-500 flex justify-center items-center p-1 rounded">
-                        <p class="text-base font-bold text-white"><i class="fa fa-ban"></i> &nbsp;Report ad </p>
+                    <button type="submit" class="bg-red-500 flex justify-center items-center px-2 py-1 rounded">
+                        <a href="{{ route('report-ad', $posts[0]['id']) }}">
+                            <span class="text-base font-bold text-white"><i class="fa fa-ban"></i> &nbsp;Report ad </span>
+                        </a>
                     </button>
                 </div>
             </div>
