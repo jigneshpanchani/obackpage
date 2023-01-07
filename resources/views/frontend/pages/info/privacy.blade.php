@@ -1,4 +1,7 @@
 @extends('frontend.layout.home')
+@section('title', 'Privacy Policy - obackpage')
+@section('description', "If you are ready to use obackpage then must read privacy policy of obackpage before posting your first ad.")
+@section('keywords', "privacy policy of obackpage")
 @section('content')
 
     <div class="">

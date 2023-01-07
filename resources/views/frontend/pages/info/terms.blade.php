@@ -1,4 +1,7 @@
 @extends('frontend.layout.home')
+@section('title', 'Terms - obackpage')
+@section('description', "obackpage is a site similar to backpage for posting ads if you also want to post your ads on this site then read terms of fbackpage and start posting your ads.")
+@section('keywords', "terms of obackpage")
 @section('content')
 
     <div class="">

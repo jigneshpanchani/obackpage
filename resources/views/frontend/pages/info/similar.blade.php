@@ -1,4 +1,7 @@
 @extends('frontend.layout.home')
+@section('title', 'Sites Similar to Backpage - obackpage.com')
+@section('description', "obackpage is site similar to backpage and the alternative of backpage. People love us as the best backpage replacement or sites similar to backpage.")
+@section('keywords', "sites similar to backpage, backpage similar website")
 @section('content')
 
     <div class="">

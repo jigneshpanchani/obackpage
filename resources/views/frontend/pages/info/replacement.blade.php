@@ -1,4 +1,7 @@
 @extends('frontend.layout.home')
+@section('title', 'Backpage Replacement - obackpage.com')
+@section('description', "obackpage.com is the best replacement of backpage. if you are looking for backpage replacement then you can visit obackpage.com.")
+@section('keywords', "backpage replacement,obackpage ,back page replacement")
 @section('content')
 
     <div class="">
