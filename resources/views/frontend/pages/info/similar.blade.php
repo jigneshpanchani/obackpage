@@ -53,7 +53,7 @@
                 <div class="text-gray-800 text-xl font-bold">What Sets obackpage Apart as a site similar to Backpage</div><br>
                 <div class="concls text-sm font-bold">
                     <p>Backpage had been around for years associated had fully grown to become an simple advertising tool till it had been suddenly confiscate. A web site similar to Backpage was what businesses were searching for to stay up with the promotional activities.</p><br>
-                    <p>While there have been several <a class="text-gray-700 underline" href="#">site similar to Backpage</a>, obackpage stood out among them giving services that might meet all the advertising wants of growing businesses conversant in Backpage.</p><br>
+                    <p>While there have been several <a class="text-gray-700 underline" href="{{ route('website-similar-to-backpage') }}">site similar to Backpage</a>, obackpage stood out among them giving services that might meet all the advertising wants of growing businesses conversant in Backpage.</p><br>
                     <p>Here square measure some points that place obackpage as a site similar to Backpage.</p><br>
 
                     <div class="text-gray-800 text-base font-bold">Seamless options</div><br>
@@ -71,7 +71,7 @@
                     <div class="text-gray-800 text-base font-bold">Safe Advertising atmosphere</div><br>
 
                     <p>This Backpage replacement is gaining quality because of the main target on making a secure advertising atmosphere free from legal problems. obackpage promotes legitimate ad postings through its strict structure of rules and rules.</p><br>
-                    <p>Hopefully, that answered all of your queries concerning the exceptional web site just like Backpage. If you wish to remain prior the competition, confirm you utilize <a class="text-gray-700 underline" href="#">obackpage</a> to post advertisements.</p><br>
+                    <p>Hopefully, that answered all of your queries concerning the exceptional web site just like Backpage. If you wish to remain prior the competition, confirm you utilize <a class="text-gray-700 underline" href="{{ route('home') }}">obackpage</a> to post advertisements.</p><br>
                 </div>
                 </div>
                 </div>

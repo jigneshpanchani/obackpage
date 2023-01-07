@@ -10,6 +10,6 @@
     </div>
     <div class="footerlistdata text-center">
         <span class="text-gray-800 text-sm font-semibold">obackpage.com is an interactive computer service that enables access by multiple users and should not be treated as the publisher or speaker of any information provided by another information content provider.
-            ©&nbsp;2019&nbsp;</span><a href=""><span class="text-gray-900 text-sm font-semibold underline">obackpage.com</span></a>
+            ©&nbsp;2019&nbsp;</span><a href="{{ route('home') }}"><span class="text-gray-900 text-sm font-semibold underline">obackpage.com</span></a>
     </div>
 </div>

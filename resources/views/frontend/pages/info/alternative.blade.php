@@ -51,7 +51,7 @@
                     <br><br>
                 <div class="concls text-sm font-bold">
                 <p>
-            Obackpage is the biggest <a class="text-gray-700 underline" href="#">Backpage Replacement</a> now! Are trying to find the simplest backpage
+            Obackpage is the biggest <a class="text-gray-700 underline" href="{{ route('backpage-replacement') }}">Backpage Replacement</a> now! Are trying to find the simplest backpage
             alternative websites? Well, you are not alone! Obackpage is here to make you satisfied like Backpages.
             Once reigned supreme because the perfect online destination for classified or personal ads, backpage had
             everything be it electronics, events, vacancy alerts, land , and more. But from later, the location also
@@ -75,7 +75,7 @@
         <br>
         <div class="text-gray-800 text-xl font-bold">What are the Backpage Alternatives &amp; Replacements?</div><br>
         <ol>
-            <li>&emsp;1.&emsp;Where backpage girls post now – <a class="text-gray-700 underline" href="#">obackpage.com</a></li><br>
+            <li>&emsp;1.&emsp;Where backpage girls post now – <a class="text-gray-700 underline" href="{{ route('home') }}">obackpage.com</a></li><br>
             <li>&emsp;2.&emsp;Best adult directories with sexy entertainers – obackpage</li><br>
             <li>&emsp;3.&emsp;All the Social medias 100% friendly towards sex worker – obackpage.com</li><br>
             <li>&emsp;4.&emsp;Personal that attempt to be like Backpages – obackpage.com</li><br>
@@ -98,7 +98,7 @@
             like Backpage, though. You likely will not encounter free advertisement from the runaways or
             showboating prostitutes. Some of the users might be offering trim on the primary date freed from
             charge. Sounds good.</p><br>
-        <p>Since <a class="text-gray-700 underline" href="#">obackpage</a> may be a regular dating site, expect ordinary girls with typical profiles, unlike
+        <p>Since <a class="text-gray-700 underline" href="{{ route('home') }}">obackpage</a> may be a regular dating site, expect ordinary girls with typical profiles, unlike
             Backpage, where they dress up in cute emojis and keyboard font ornaments but look nothing just like
             the posting they portray</p>
         <br>
