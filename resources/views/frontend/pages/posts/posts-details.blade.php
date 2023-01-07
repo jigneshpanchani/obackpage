@@ -1,6 +1,7 @@
 @extends('frontend.layout.default')
 @section('content')
 
+
 <div class="flex flex-col z-10 flex-1">
     <nav class="navbar">
         <div class="flex bg-blue-900 w-full justify-between w-full items-center p-2">
@@ -59,14 +60,13 @@
                     <div class="flex flex grid grid-cols-2 gap-10 w-1/3">
                         @foreach($postAttechment as $postAttechments)
                         <div class="flex">
-                            <img src="{{ asset($postAttechments['file_path'])}}" alt="searchIcon" />
+                            <a data-fancybox="gallery" data-src="{{ asset($postAttechments['file_path'])}}">
+                                <img src="{{ asset($postAttechments['file_path'])}}" />
+                            </a>
                         </div>
                         @endforeach
                     </div>
-                 
                 </div>
-             
-              
                 <div class="">
                     <button type="submit" class="bg-red-500 flex justify-center items-center p-1 rounded">
                         <p class="text-base font-bold text-white"><i class="fa fa-ban"></i> &nbsp;Report ad </p>

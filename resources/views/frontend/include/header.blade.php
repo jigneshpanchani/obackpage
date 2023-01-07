@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="{{ asset('css/jquery.dataTables.min.css') }}" defer>
 
-
-
+    {{-- fancybox --}}
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+    
+    
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" defer>
     <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}" defer>
     <link rel="stylesheet" href="{{ asset('css/common.css') }}" defer>
