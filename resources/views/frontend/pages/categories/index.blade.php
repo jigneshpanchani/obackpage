@@ -34,9 +34,9 @@
                                 <div class="space-x-2 py-2">
                                     <i class='fa fa-caret-right'></i>
                                     @if($subcategory['category_id'] == '1'  || $subcategory['category_id'] == '5')
-                                        <a href="{{ route('disclamier',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['id']))}}">
+                                        <a href="{{ route('disclamier',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['slug']))}}">
                                     @else
-                                        <a href="{{ route('view-post',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['id'])) }}">
+                                        <a href="{{ route('view-post',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['slug'])) }}">
                                     @endif
                                     <span class="text-gray-800 text-sm font-bold underline">{{  $subcategory['sub_category'] }}</span><br/></a>
                                 </div>

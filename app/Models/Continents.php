@@ -33,7 +33,7 @@ class Continents extends Model
 
                 foreach($array_state as $key_1 => $arr_1) {
 
-                    $array_state[$key_1]['city'] = City::select('city.city', 'city.id')
+                    $array_state[$key_1]['city'] = City::select('city.city', 'city.id', 'city.slug')
                         ->where('city.country_state_id', '=', $arr_1['id'])
                         ->get()
                         ->toArray();

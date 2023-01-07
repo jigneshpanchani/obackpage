@@ -14,8 +14,6 @@ class HomeController extends Controller
 
         $objContinents = new Continents();
         $data['continents'] =  $objContinents->getContinents();
-        // $objCity = new City();
-        // $data['city'] = $objCity->getcitys();
         $data['css'] = array();
         $data['js'] = array('home.js');
         $data['funinit'] = array();

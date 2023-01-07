@@ -150,39 +150,42 @@ class PostController extends Controller
         }
     }
 
-    public function viewPost($id, $sid){
+    public function viewPost($cityName, $subcategoryName){
 
-        
-
+        $getcitynameid =City::where('city.slug', $cityName)->select('id')->get();
+        $id = $getcitynameid[0]->id;       
+        $getsubcategorynameid =SubCategory::where('sub_category.slug', $subcategoryName)->select('id')->get();
+        $sid = $getsubcategorynameid[0]->id;
         $objviewpost = new posts();
         $data['posts'] = $objviewpost->getViewPost($id, $sid);
-
         $objCity = new City();
         $data['nearByCities'] = $objCity->getNearByCities($id);
         $data['getPostPath'] = $objCity->getPostPath($id);
         $objSubCategory = new SubCategory();
         $data['getSubCat'] = $objSubCategory->getSubCat($sid);
         $data['title'] = 'View-Post Page';
-        $data['cityId'] = $id;
-        $data['subId'] = $sid;
+        $data['cityId'] = $cityName;
+        $data['subId'] = $subcategoryName;
         $data['css'] = array();
         $data['js'] = array();
         $data['funinit'] = array();
         return view('frontend.pages.posts.view-post', $data);
     }
 
-    public function postsDetails($id, $sid, $pid){
+    public function postsDetails($cityName, $subcategoryName, $pid){
 
+        $getcitynameid =City::where('city.slug', $cityName)->select('id')->get();
+        $id = $getcitynameid[0]->id;       
+        $getsubcategorynameid =SubCategory::where('sub_category.slug', $subcategoryName)->select('id')->get();
+        $sid = $getsubcategorynameid[0]->id;
         $objviewpost = new posts();
         $data['posts'] = $objviewpost->getPostsDetails($pid);
-        // $data['title'] = 'welcom';
         $objpostpreview = new PostsAttechment();
         $data['postAttechment'] = $objpostpreview->getPostAttechment($pid);
         $objCity = new City();
         $data['getPostPath'] = $objCity->getPostPath($id);
         $objSubCategory = new SubCategory();
         $data['getSubCat'] = $objSubCategory->getSubCat($sid);
-
         $data['cityId'] = $id;
         $data['postId'] = $id;
         $data['subId'] = $sid;
@@ -225,30 +228,35 @@ class PostController extends Controller
 
         }
 
-        public function multipleAdPreview($id){
-            $objpostpreview = new posts();
-            $data['postDetails'] = $objpostpreview->getPostPreviewDetails($id);
-            $objpostpreview = new PostsAttechment();
-            $data['postAttechment'] = $objpostpreview->getPostAttechment($id);
-            $data['css'] = array();
-            $data['js'] = array('posts.js');
-            $data['funinit'] = array('Posts.init()');
-            $data['title'] = 'Multiple Ad Preview Page';
+    public function multipleAdPreview($id){
+        $objpostpreview = new posts();
+        $data['postDetails'] = $objpostpreview->getPostPreviewDetails($id);
+        $objpostpreview = new PostsAttechment();
+        $data['postAttechment'] = $objpostpreview->getPostAttechment($id);
+        $data['css'] = array();
+        $data['js'] = array('posts.js');
+        $data['funinit'] = array('Posts.init()');
+        $data['title'] = 'Multiple Ad Preview Page';
         return view('frontend.pages.posts.multiple-ad-post-preview',$data);
     }
 
-        public function disclamier($id, $sid){
-            $objSubCategory = new SubCategory();
-            $data['getSubCat'] = $objSubCategory->getSubCat($sid);
-            $objCity = new City();
-            $data['nearByCities'] = $objCity->getNearByCities($id);
-            $data['cityname'] = $objCity->getPostPath($id);
-            $data['css'] = array();
-            $data['cityId'] = $id;
-            $data['subId'] = $sid;
-            $data['js'] = array('posts.js');
-            $data['funinit'] = array('Posts.init()');
-            $data['title'] = 'Disclamier';
+     public function disclamier($cityName, $subcategoryName){
+
+        $getcitynameid =City::where('city.slug', $cityName)->select('id')->get();
+        $id = $getcitynameid[0]->id;   
+        $getsubcategorynameid =SubCategory::where('sub_category.slug', $subcategoryName)->select('id')->get();
+        $sid = $getsubcategorynameid[0]->id;
+        $objSubCategory = new SubCategory();
+        $data['getSubCat'] = $objSubCategory->getSubCat($sid);
+        $objCity = new City();
+        $data['nearByCities'] = $objCity->getNearByCities($id);
+        $data['cityname'] = $objCity->getPostPath($id);
+        $data['css'] = array();
+        $data['cityId'] = $cityName;
+        $data['subId'] = $subcategoryName;
+        $data['js'] = array('posts.js');
+        $data['funinit'] = array('Posts.init()');
+        $data['title'] = 'Disclamier';
         return view('frontend.pages.posts.disclamier',$data);
     }
 

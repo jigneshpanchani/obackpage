@@ -1,4 +1,7 @@
 @extends('frontend.layout.default')
+@section('title', 'Report Ad')
+@section('description', "submit misuse report obackpage")
+@section('keywords', "obackpage misuse report")
 @section('content')
 
 <div class="flex flex-col z-10 flex-1">
