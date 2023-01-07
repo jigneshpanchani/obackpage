@@ -19,7 +19,14 @@
         <div class="flex flex-col">
             <div id="cookieCrumb" class="space-x-2 p-6">
                 <a href="{{route('home')}}"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i>
-                <a href="{{route('manage-ads')}}"><span class="text-gray-800 text-sm font-bold">My Account</span></a><i class='fa fa-chevron-right'></i>
+                @if (Route::has('login'))
+                @auth
+                    <a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a><i class='fa fa-chevron-right'></i>
+                @else
+                    <a href="{{ route('login') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a><i class='fa fa-chevron-right'></i>
+                @endauth
+            @endif
+                {{-- <a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a><i class='fa fa-chevron-right'></i> --}}
                 <a href=""><span class="text-gray-800 text-sm font-bold">View Posts Details</span></a>
             </div>
             <div class="p-6 space-y-6 bg-white m-6 rounded">

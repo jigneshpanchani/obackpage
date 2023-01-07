@@ -252,6 +252,22 @@ class PostController extends Controller
         return view('frontend.pages.posts.disclamier',$data);
     }
 
+    public function reportAd($id, $pid){
+
+        $objviewpost = new posts();
+        $data['posts'] = $objviewpost->getPostsDetails($pid);
+        $data['title'] = 'Report-ad';
+        $objCity = new City();
+        $data['nearByCities'] = $objCity->getNearByCities($id);
+        $data['cityId'] = $id;
+        $data['postId'] = $pid;
+        $data['css'] = array();
+        $data['js'] = array();
+        $data['funinit'] = array();
+        // print_r($data);exit;
+        return view('frontend.pages.posts.report-ad', $data);
+    }
+
 }
 
 
