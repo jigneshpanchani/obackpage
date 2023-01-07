@@ -1,4 +1,7 @@
 @extends('frontend.layout.home')
+@section('title', 'Free Classified Sites | Backpage Replacement | New Backpage Alternative')
+@section('description', 'obackpage is a site similar to backpage & free classified sites in this world. Everyone like a new backpage replacement or an alternative to obackpage.com')
+@section('keywords', 'backpage, backpage.com, back page, backpages, site similar to backpage, free classified site, new backpage alternative, female escorts, female models, jobs, buy and sell, post adult ads, dating for adults and escort services, backpage replacement, cityxguide, backpage com, craigslist personals, alternative to backpage, adlist24, ebekpage, bekpage, bedpage top classified sites, free directory sites, new backpage,  backpage personals, obackpage, free classified sites, craigslist personal alternative')
 @section('content')
 
 
@@ -19,7 +22,7 @@
                                 </form>
                             @else
                                 <a href="{{ route('login') }}"><span class="text-sm text-gray-700 font-semibold  dark:text-gray-700 underline">Log in</span></a>
-                                <a href="{{ route('login') }}"><span class="ml-4 text-sm text-gray-700 font-semibold dark:text-gray-700 underline">Register</span></a>
+                                {{-- <a href="{{ route('login') }}"><span class="ml-4 text-sm text-gray-700 font-semibold dark:text-gray-700 underline">Register</span></a> --}}
                             @endauth
                         @endif
                     </div>
@@ -52,15 +55,9 @@
                             <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
                             </svg>
                         </div>
-                        {{-- <span tabindex="-1" class="bg-white block rounded-md" style="">
-                            <input id="search" name="search" class="findStudent block w-full pl-10 pr-3 py-2 findStudent border border-transparent rounded-md leading-5  text-gray-400 focus:ring-0 focus:text-gray-900 sm:text-sm" placeholder="Search Cities" type="text" data-role="autocomplete" autocomplete="off" role="combobox" aria-expanded="false" aria-disabled="false" aria-readonly="false" aria-owns="findStudent_listbox" aria-autocomplete="list" aria-controls="findStudent_listbox" aria-busy="false">
-                        </span> --}}
                         <span tabindex="-1" class="bg-white block rounded-md" style="">
                             <input id="search-box" name="search" class="findCity block w-full pl-10 pr-3 py-2 findCity border border-transparent rounded-md leading-5  text-gray-400 focus:ring-0 focus:text-gray-900 sm:text-sm" placeholder="Search Cities" type="search" data-role="autocomplete" autocomplete="off" role="combobox" aria-expanded="false" aria-disabled="false" aria-readonly="false" aria-owns="findCity_listbox" aria-autocomplete="list" aria-controls="findCity_listbox" aria-busy="false">
                             <div id="suggesstion-box" class="text-gray-700 text-base"></div>
-                            {{-- @foreach($city as $city)
-                               <a href="{{ route('category', $city['id'] ) }}"></a>
-                            @endforeach --}}
                         </span>
                         </div>
                     </div>
@@ -85,7 +82,7 @@
                                             <span class="text-red-700 text-base font-bold">{{  $state['country_state'] }}<br/></span>
                                             @foreach($state['city'] as $city)
                                             <div class="px-2">
-                                                <a href="{{ route('category', $city['id'] ) }}"><span class="text-gray-700 text-sm font-semibold underline">{{  $city['city'] }}</span><br/></a>
+                                                <a href="{{ route('category', $city['id'])}}"><span class="text-gray-700 text-sm font-semibold underline">{{  $city['city'] }}</span><br/></a>
                                             </div>
                                             @endforeach
                                         @endforeach
@@ -109,7 +106,7 @@
                                             <span class="text-red-700 text-base font-bold">{{  $state['country_state'] }}<br/></span>
                                             @foreach($state['city'] as $city)
                                                 <div class="px-2">
-                                                    <a href="{{ route('category', $city['id'] ) }}"><span class="text-gray-700 text-sm font-semibold underline">{{  $city['city'] }}</span><br/></a>
+                                                    <a href="{{ route('category', $city['id'])}}"><span class="text-gray-700 text-sm font-semibold underline">{{  $city['city'] }}</span><br/></a>
                                                 </div>
                                             @endforeach
                                         @endforeach

@@ -1,4 +1,7 @@
 @extends('frontend.layout.default')
+@section('title','Backpage '. $getPostPath[0]['state'].'|'.$getSubCat[0]['sub_category'].' '.'Escorts'.' '. 'in'.' '.$getPostPath[0]['state'])
+@section('description', 'Find Escorts '. $getPostPath[0]['state'].' at obackpage '. $getPostPath[0]['state'].'. The best site for alternative to new backpage Escorts '. $getPostPath[0]['state'].'. Post '. $getPostPath[0]['state'].' Escorts ad on Backpage '. $getPostPath[0]['state'].' for free. Explore Backpage '. $getPostPath[0]['state'].' for endless exciting posting options. if you are looking for cityxguide '. $getPostPath[0]['state'].' escorts or adultsearch '. $getPostPath[0]['state'].' escorts or adult search '. $getPostPath[0]['state'].' escorts then obackpage is the best site to visit')
+@section('keywords', 'Backpage Escorts, '. $getPostPath[0]['state'].' Escorts, Backpage '. $getPostPath[0]['state'].', Escorts in '. $getPostPath[0]['state'])
 @section('content')
 
 

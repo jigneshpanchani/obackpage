@@ -25,7 +25,8 @@ class CitySeeder extends Seeder
                     "id" => $data['0'],
                     "continent_id" => $data['1'],
                     "country_state_id" => $data['2'],
-                    "city" => $data['3']
+                    "city" => $data['3'],
+                    "slug" => $data['4']
                 ]);
             }
             $firstline = false;

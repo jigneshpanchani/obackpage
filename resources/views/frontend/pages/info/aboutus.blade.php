@@ -1,4 +1,7 @@
 @extends('frontend.layout.home')
+@section('title', 'About us- obackpage.com')
+@section('description', "about us obackpage")
+@section('keywords', "about us, backpage, obackpage")
 @section('content')
 
     <div class="">

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCityTable extends Migration
+class CreateSubCategoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateCityTable extends Migration
      */
     public function up()
     {
-        Schema::create('city', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('continent_id');
-            $table->integer('country_state_id');
-            $table->string('city');
+        Schema::create('sub_category', function (Blueprint $table) {
+            $table->id();
+            $table->integer('category_id');
+            $table->string('sub_category');
+            $table->string('slug');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateCityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('city');
+        Schema::dropIfExists('sub_category');
     }
 }

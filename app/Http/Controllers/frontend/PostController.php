@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
+    public $title;
+
     public function postAd(){
         $data['css'] = array();
         $data['js'] = array();
@@ -150,6 +152,8 @@ class PostController extends Controller
 
     public function viewPost($id, $sid){
 
+        
+
         $objviewpost = new posts();
         $data['posts'] = $objviewpost->getViewPost($id, $sid);
 
@@ -171,7 +175,7 @@ class PostController extends Controller
 
         $objviewpost = new posts();
         $data['posts'] = $objviewpost->getPostsDetails($pid);
-        $data['title'] = 'posts Details Page';
+        // $data['title'] = 'welcom';
         $objpostpreview = new PostsAttechment();
         $data['postAttechment'] = $objpostpreview->getPostAttechment($pid);
         $objCity = new City();
@@ -234,11 +238,11 @@ class PostController extends Controller
     }
 
         public function disclamier($id, $sid){
-
             $objSubCategory = new SubCategory();
             $data['getSubCat'] = $objSubCategory->getSubCat($sid);
             $objCity = new City();
             $data['nearByCities'] = $objCity->getNearByCities($id);
+            $data['cityname'] = $objCity->getPostPath($id);
             $data['css'] = array();
             $data['cityId'] = $id;
             $data['subId'] = $sid;

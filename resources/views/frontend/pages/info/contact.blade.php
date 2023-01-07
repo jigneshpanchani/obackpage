@@ -1,4 +1,7 @@
 @extends('frontend.layout.home')
+@section('title', 'Contact us - obackpage.com')
+@section('description', "obackpage.com is the best replacement of backpage. If you have any queries related to this site then visit contact us page and contact to our customer support team.")
+@section('keywords', "contct us,obackpage")
 @section('content')
 
     <div class="">

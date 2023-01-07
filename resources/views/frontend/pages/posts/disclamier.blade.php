@@ -1,4 +1,7 @@
 @extends('frontend.layout.default')
+@section('title', $cityname[0]['city'].' '.'Escorts'.  '|' .'Female'.' '.'Escorts'.  '|' . $getSubCat[0]['sub_category'].','.$cityname[0]['state'])
+@section('description', 'obackpage personals for ' . $getSubCat[0]['sub_category'].'. Backpage ' . $getSubCat[0]['sub_category'].' category is for you to post your ads. Browse postings with multiple pics to find men for date and post ads easily.')
+@section('keywords', 'Backpage ' . $getSubCat[0]['sub_category'].', Cracker ' . $getSubCat[0]['sub_category'].', obackpage ' . $getSubCat[0]['sub_category'].', Backpage obackpage, obackpage personals, Back page obackpage')
 @section('content')
 
 

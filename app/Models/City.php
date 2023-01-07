@@ -15,11 +15,10 @@ class City extends Model
     ];
 
     public function getNearByCities($id) {
-
         $getCountryStateId = City::where('city.id', $id)->select('country_state_id')->get()->toArray();
 
         $countryStateId = $getCountryStateId[0]['country_state_id'];
-
+        
         $getNearByCities = City::where('city.country_state_id', $countryStateId)->select('id', 'city')->get()->toArray();
 
         return $getNearByCities;
@@ -37,7 +36,7 @@ class City extends Model
     function getcitys(){
 
         $array=city::from('city')
-            ->select('id', 'city',)
+            ->select('id', 'city', 'slug')
             ->get()
             ->toArray();
         return $array;
@@ -55,8 +54,6 @@ class City extends Model
     }
 
     public function getPostPath($cid){
-
-
         $array = City::from('city')
               ->join('continents', 'continents.id', '=', 'city.continent_id')
               ->join('country_state', 'country_state.id', '=', 'city.country_state_id')
@@ -68,4 +65,5 @@ class City extends Model
          return $array;
             
     }
+
 }

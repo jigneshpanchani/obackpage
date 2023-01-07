@@ -24,7 +24,8 @@ class SubCategorySeeder extends Seeder
                 SubCategory::create([
                     "id" => $data['0'],
                     "category_id" => $data['1'],
-                    "sub_category" => $data['2']
+                    "sub_category" => $data['2'],
+                    "slug" => $data['3']
                 ]);
             }
             $firstline = false;

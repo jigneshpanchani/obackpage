@@ -11,7 +11,7 @@ use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\PostsAttechment;
 use App\Models\Transaction;
-use App\Models\user;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -41,7 +41,7 @@ class AccountController extends Controller
 
         if ($request->isMethod('post')) {
 
-            $objUser = new user();
+            $objUser = new User();
             $UserUpdate = $objUser->updateUser($request);
 
             $objtransaction = new transaction();
@@ -97,7 +97,7 @@ class AccountController extends Controller
     public function ajaxAction(Request $request)
     {
 
-        $userId = Auth::user()->id;
+        $userId = Auth::User()->id;
         $action    = $request->input('action');
 
         switch ($action) {

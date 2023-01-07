@@ -1,4 +1,9 @@
 @extends('frontend.layout.default')
+@section('title', 'Backpage'. ' '. $cityname[0]['city'].'|'. $cityname[0]['city'].' '.'Escorts'. '|'. $cityname[0]['state'].' '.'obackpage')
+@section('description', 'For '. $cityname[0]['city'].' Escorts obackpage is the best alternative to backpage. After backpage, obackpage is the most popular classified site for '. $cityname[0]['city'].' Escorts. Like backpage it is free directory site for '. $cityname[0]['city'].' Escorts or Escorts in '. $cityname[0]['city'].'.if you are looking for cityxguide '. $cityname[0]['city'].' escorts or adultsearch '. $cityname[0]['city'].' escorts or adult search '. $cityname[0]['city'].' escorts then obackpage is the best site to visit')
+@section('keywords', 'Backpage '. $cityname[0]['city'].', '. $cityname[0]['city'].' backpage, free classified site '. $cityname[0]['city'].',Beautiful Escorts in '. $cityname[0]['city'].','. $cityname[0]['city'].' Escort,independent escort '. $cityname[0]['city'].',free classified sites in '. $cityname[0]['city'].', free directory site '. $cityname[0]['city'].', best classified site '. $cityname[0]['city'].', Escorts in '. $cityname[0]['city'].', best directory site '. $cityname[0]['city'].'')
+
+
 @section('content')
 
 
@@ -28,7 +33,7 @@
 
                                 <div class="space-x-2 py-2">
                                     <i class='fa fa-caret-right'></i>
-                                   @if($subcategory['category_id'] == '1'  || $subcategory['category_id'] == '5')
+                                    @if($subcategory['category_id'] == '1'  || $subcategory['category_id'] == '5')
                                         <a href="{{ route('disclamier',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['id']))}}">
                                     @else
                                         <a href="{{ route('view-post',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['id'])) }}">

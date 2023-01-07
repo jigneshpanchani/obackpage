@@ -1,4 +1,7 @@
 @extends('frontend.layout.default')
+@section('title', 'View - obackpage')
+@section('description', "obackpage is site similar to backpage and the alternative of backpage. People love us as the best backpage replacement or sites similar to backpage.")
+@section('keywords', "backpage, back page, sites similar to backpage, alternative to backpage, sites like backpage and craigslist personals, backpage replacement, backpage substitute, obackpage")
 @section('content')
 
 <div class="flex flex-col z-10 flex-1">

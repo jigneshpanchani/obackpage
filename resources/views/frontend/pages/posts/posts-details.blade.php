@@ -1,4 +1,9 @@
 @extends('frontend.layout.default')
+@section('title', $posts[0]['title'])
+@section('description', $posts[0]['title'])
+@section('keywords', 'backpage '.$getPostPath[0]['state'].' '.$getPostPath[0]['state'].' '.$getSubCat[0]['sub_category'].' '.$posts[0]['title'])
+{{-- @section('city', $getPostPath[0]['city'])
+@section('sub_category', $getSubCat[0]['sub_category']) --}}
 @section('content')
 
 <div class="flex flex-col z-10 flex-1">
