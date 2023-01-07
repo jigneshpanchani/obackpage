@@ -47,19 +47,17 @@
 
                 <div class="py-6">
                     <span class="text-gray-800 text-2xl font-bold">Contact Us</span>
-                <div class="col-md-12"><br>
-                <div class="concls text-sm font-bold">
+                    <div class="col-md-12"><br>
+                        <div class="concls text-sm font-bold"><br>
+                            <p>We're Always Happy to Hear From You. let us know what we can do for you! obackpage customer support is available free of charge. 24/7/365 Support Means We're Always Available To Help !!!</p><br>
+                            <div class="text-base font-bold">Live Chat</div><br>
+                            <p>Our live representatives are available 24/7 to assist you with any and all questions you may have.</p><br>
 
-                    <br>
-                    <p>We're Always Happy to Hear From You. let us know what we can do for you! obackpage customer support is available free of charge. 24/7/365 Support Means We're Always Available To Help !!!</p><br>
-                    <div class="font-bold">Live Chat</div><br>
-                        <p>Our live representatives are available 24/7 to assist you with any and all questions you may have.</p><br>
-
-                        <div class="font-bold">Contact Us</div><br>
-                        <b>OBACKPAGE CLASSIFIEDS PVT LTD</b>
-                        <div class="full-width-xs col-xs-5 col-sm-12 col-md-5"><span class="blue-bold ph-type"><b>Email - obackpage@yahoo.com</b></span></div>
+                            <div class="text-base font-bold">Contact Us</div><br>
+                            <b>OBACKPAGE CLASSIFIEDS PVT LTD</b>
+                            <div class="full-width-xs col-xs-5 col-sm-12 col-md-5"><span class="blue-bold ph-type"><b>Email - obackpage@yahoo.com</b></span></div>
+                        </div>
                     </div>
-                </div>
                 </div>
 
                 <div class="flex justify-between w-full items-center mt-4 border-b-2 border-gray-900"></div>
