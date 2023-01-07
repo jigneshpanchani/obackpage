@@ -55,7 +55,7 @@
                 <p>
                     Do you know about the backpage replacement? Yes, you are listening to the right thing, It’s highly
                     replaced by Obackpage! Now this is the biggest platform to make you satisfied like backpages. Obackpage
-                    is the biggest <a class="text-gray-700 underline" href="#">Backpage Replacement</a> now! This is the best site <a class="text-gray-700 underline" href="#">Similar to Backpage</a>. Are trying to
+                    is the biggest <a class="text-gray-700 underline" href="{{ route('backpage-replacement') }}">Backpage Replacement</a> now! This is the best site <a class="text-gray-700 underline" href="{{ route('website-similar-to-backpage') }}">Similar to Backpage</a>. Are trying to
                     find the simplest backpage alternative websites? Well, you are not alone! Obackpage is here to make you
                     satisfied like Backpages. Once reigned supreme because the perfect online destination for classified or
                     personal ads, backpage had everything be it electronics, events, vacancy alerts, land , and more. But from
@@ -71,7 +71,7 @@
 
                 <p>When Backpage.com totally shut down, then all the web user collectively went on the look for
                 subsequent. Legally the classified ad platforms on the online. And therein spirit, here’s a better check
-                out the highest 10 best and extraordinarily reliable <a class="text-gray-700 underline" href="#">Backpage Replacement</a> websites to
+                out the highest 10 best and extraordinarily reliable <a class="text-gray-700 underline" href="{{ route('backpage-replacement') }}">Backpage Replacement</a> websites to
                 obackpage that we expect provides the simplest experiences – but sans the deceit, gross crimes,
                 and untrustworthiness. Before urging the list, please make sure to have a glance at the emerging
                 backpage alternative websites as well.
@@ -80,9 +80,9 @@
                 <div class="text-gray-800 text-base font-bold">What are the Best Backpage Replacement Sites?</div><br>
                 <ol>
 
-                <li>&emsp;1.&emsp;Where girls post now – <a class="text-gray-700 underline" href="#">obackpage.com</a></li><br>
+                <li>&emsp;1.&emsp;Where girls post now – <a class="text-gray-700 underline" href="{{ route('home') }}">obackpage.com</a></li><br>
 
-                <li>&emsp;2.&emsp;Best adult directories with sexy entertainers – obackpage</li><br>
+                <li>&emsp;2.&emsp;Best adult directories with sexy entertainers – obackpage.com</li><br>
 
                 <li>&emsp;3.&emsp;All the Social medias 100% friendly towards sex worker – obackpage.com</li><br>
 
@@ -90,9 +90,9 @@
 
                 <li>&emsp;5.&emsp;World-classic escort who take their career choice seriously – obackpage</li><br>
 
-                <li>&emsp;6.&emsp;Best site for massage ‘experts’ – obackpage</li><br>
+                <li>&emsp;6.&emsp;Best site for massage ‘experts’ – obackpage.com</li><br>
 
-                <li>&emsp;7.&emsp;Plethora of escorts worldwide – obackpage</li>
+                <li>&emsp;7.&emsp;Plethora of escorts worldwide – obackpage.com</li>
 
                 </ol>
                 <br>
@@ -112,13 +112,13 @@
                 <div class="text-gray-800 text-base font-bold">Which is the Backpage Replacement to Getting Laid?</div><br>
                 <p>
                     obackpage is that the #1 Backpage replacement thanks to a lower risk of security. No pimps. No
-                    enforcement stings. However, the women want to attach for free of charges. <a class="text-gray-700 underline" href="#">obackpage</a> is nothing
+                    enforcement stings. However, the women want to attach for free of charges. <a class="text-gray-700 underline" href="{{ route('home') }}">obackpage</a> is nothing
                     like Backpage, though. You likely will not encounter free advertisement from the runaways or
                     showboating prostitutes. Some of the users might be offering trim on the primary date freed from
                     charge. Sounds good.
                 </p><br>
                 <p>
-                    Since <a class="text-gray-700 underline" href="#">obackpage</a> may be a regular dating site, expect ordinary girls with typical profiles, unlike
+                    Since <a class="text-gray-700 underline" href="{{ route('home') }}">obackpage</a> may be a regular dating site, expect ordinary girls with typical profiles, unlike
                     Backpage, where they dress up in cute emojis and keyboard font ornaments but look nothing just like
                     the posting they portray.
                 </p><br>

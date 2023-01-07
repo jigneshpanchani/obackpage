@@ -55,7 +55,7 @@
                 <br><br>
                 <div class="text-gray-800 text-xl font-bold">Backpage to obackpage: FAQs</div><br>
                 <div class="concls text-sm font-bold">
-                    <p>When it involves growing your business, on-line <a class="text-gray-700 underline" href="#">classified sites like Backpage</a> will do wonders. however to seize the opportunities of thousands of business homeowners, Backpage close up its web site. This unexpected close up has created an enormous vacuum within the marketplace for the sites like Backpage which might link up the standards of the ex-giant of sales promotions.</p><br>
+                    <p>When it involves growing your business, on-line <a class="text-gray-700 underline" href="{{ route('home') }}">classified sites like Backpage</a> will do wonders. however to seize the opportunities of thousands of business homeowners, Backpage close up its web site. This unexpected close up has created an enormous vacuum within the marketplace for the sites like Backpage which might link up the standards of the ex-giant of sales promotions.</p><br>
 
                     <p>While many of us have embraced obackpage as a real various of Backpage, several have scores of queries in their mind. Here ar most often asked questions on obackpage answered.</p><br>
 
@@ -77,7 +77,7 @@
 
                     <p>Although there ar several on-line classified websites within the market, obackpage has emerged as a sheer winner with its approach and options.</p><br>
 
-                    <p>To know a lot of concerning the page or post a commercial, visit North American country at <a class="text-gray-700 underline" href="#">obackpage.com</a></p>
+                    <p>To know a lot of concerning the page or post a commercial, visit North American country at <a class="text-gray-700 underline" href="{{ route('home') }}">obackpage.com</a></p>
                 </div>
                 </div>
 
