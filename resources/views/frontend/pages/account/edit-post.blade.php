@@ -93,9 +93,12 @@
                             <div id='displayUploadedImg' class="flex grid grid-cols-4 gap-10 py-6">
                             </div>
 
-                            <div class="flex grid grid-cols-4 gap-10 py-6">
+                            <div class="flex grid sm:grid-cols-2 md:grid-cols-3 grid-cols-3 gap-10 py-6">
                                 @foreach($postAttechment as $postAttechments)
-                                <img src="{{ asset($postAttechments['file_path'])}}" alt="searchIcon" />
+                                <div class="img-wrap a{{$postAttechments['id']}}">
+                                    <img id="image"  src="{{ asset($postAttechments['file_path'])}}"  alt="searchIcon" />
+                                    <span class="close" data-id="{{$postAttechments['id']}}">&times;</span>
+                               </div>
 
                             @endforeach
                             </div>

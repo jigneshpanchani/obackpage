@@ -116,6 +116,23 @@ var PostsEdit = function () {
             console.log("Your browser does not support File API");
         }
 
+        $('.img-wrap .close').on('click', function() {
+            var id = $(this).attr('data-id');
+            $.ajax({
+                method: "POST",
+                url:  base_url + "manage-ads-ajax",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {'action': 'deleteImage', 'id': id},
+                type: "json",
+                success: function(data) {
+                    console.log('hello');
+                    $('.a'+id).remove();
+                }
+            });
+        });
+
     }
 
     return {

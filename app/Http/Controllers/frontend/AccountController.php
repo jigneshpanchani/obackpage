@@ -66,6 +66,7 @@ class AccountController extends Controller
     public function editFreeAdPost(Request $request,$id){
 
         if ($request->isMethod('post')) {
+
             $objPosts = new Posts();
             $postUpdate = $objPosts->updatePosts($request, $id);
 
@@ -118,6 +119,12 @@ class AccountController extends Controller
                 $objtransactionData = new Transaction();
                 $arrTransactionList = $objtransactionData->getTransactionList($userId, $request);
                 echo json_encode($arrTransactionList);
+                break;
+            case 'deleteImage':
+                $objpost  = new PostsAttechment();
+                $arrpost = $objpost->deleteAttechment($request);
+                $result = ['status'=>'success', 'message'=>'Data Deleted Successfully.'];
+                echo json_encode($result);
                 break;
         }
         exit;

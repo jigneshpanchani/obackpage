@@ -151,31 +151,18 @@ class Posts extends Model
         $objService->mobile_number = $request->input('mobile_number');
         $objService->update();
 
-        // $objService =new PostsAttechment;
-        // if($request->hasfile('file_path')){
-
-        //     $file = $request->file('file_path');
-        //     $extension = $file->getimages();
-        //     $filename = time() . '.' . $extension;
-        //     $file->move('uploads/', $filename);
-        //     $objService->file_path = $filename;
-        // }
-
-
-        // $data=new PostsAttechment;
-        //     if($files=$request->file('file')){
-        //         foreach ($files as $file) {
-        //             $name= date('YmdHis').$file->getClientOriginalName();
-        //             $destinationPath = public_path('/uploads/');
-        //             $file->move($destinationPath, $name);
-        //             $data->file_name=$name;
-        //             $data->post_id=$objService->id;
-        //             $data->file_path="/uploads/.$name";
-        //         }
-
-        //     }
-        // $data->update();
-        // print_r($data);exit;
+        if($files=$request->file('file')){
+            foreach ($files as $file) {
+                $data=new PostsAttechment;
+                $name= date('YmdHis').$file->getClientOriginalName();
+                $destinationPath = public_path('/uploads/');
+                $file->move($destinationPath, $name);
+                $data->file_name=$name;
+                $data->post_id=$objService->id;
+                $data->file_path="/uploads/$name";
+                $data->save();
+            }
+        }
         return true;
     }
 
