@@ -4,7 +4,7 @@
 @section('keywords', "backpage, back page, sites similar to backpage, alternative to backpage, sites like backpage and craigslist personals, backpage replacement, backpage substitute, obackpage")
 @section('content')
 
-<div class="flex flex-col z-10 flex-1">
+<div class="flex flex-col z-10 flex-1 w-full">
     <nav class="navbar">
         <div class="flex bg-blue-900 w-full justify-between w-full items-center p-2">
             <div class="flex flex-row items-center justify-start space-x-4">
@@ -21,15 +21,15 @@
                 <a href="{{ route('home') }}"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i><a href="{{ route('post-ad') }}"><span class="text-gray-800 text-sm font-bold">Post Ad</span></a>
             </div>
             <div class="m-6 bg-white flex flex-col">
-                <div class="flex items-center justify-between p-6">
+                <div class="flex flex-col sm:flex-row items-center justify-between p-6">
                     <div class="border border-green-600 rounded p-2">
                         <span class="text-green-600 font-bold text-lg">Credits :</span><span class="text-green-600 font-bold text-lg"> ${{ Auth::user()->credits  }}</span>
                     </div>
-                    <div class=""> 
+                    <div class="">
                         <span class="w-60 text-gray-900 text-lg font-bold">{{ Auth::user()->email  }}</span>
                     </div>
                 </div>
-                <div class="flex items-center justify-between bg-blue-900 rounded p-4">
+                <div class="flex flex-col sm:flex-row   items-center justify-between bg-blue-900 rounded p-4">
                     <div class="border border-blue-900 rounded space-x-6">
                         <a href="{{route('manage-ads')}}">
                         <span class="bg-blue-900 text-white font-bold">My Account</span>
@@ -39,7 +39,7 @@
                         </a>
                     </div>
                     <div class="">
-                        <a href="{{route('add-credit')}}"> 
+                        <a href="{{route('add-credit')}}">
                             <span class="bg-blue-900 text-white font-bold">Buy Credits</span>
                         </a>
                     </div>

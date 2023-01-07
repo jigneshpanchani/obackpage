@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="">
-        <div class="flex px-60">
+        <div class="flex px-0 xl:px-60">
             <div class="flex flex-col w-full p-4">
                 <div class="flex justify-between w-full items-center">
                     <div id="items-center justify-start">
@@ -63,12 +63,12 @@
                     thrilled! So after more allegations surfaced that were happening behind all the digital-seams, the govt
                     finally pulled the connect fall, getting the FBI to destroy the location permanently .
                 </p><br>
-                
+
                 <p>But wait a while, does the age of backpages and like the websites are finally really over, and totally
                     done for?</p>
                 <br>
                 <div class="text-gray-800 text-base font-bold">Lets know about Backpage Replacement</div><br>
-            
+
                 <p>When Backpage.com totally shut down, then all the web user collectively went on the look for
                 subsequent. Legally the classified ad platforms on the online. And therein spirit, here’s a better check
                 out the highest 10 best and extraordinarily reliable <a class="text-gray-700 underline" href="#">Backpage Replacement</a> websites to
@@ -79,34 +79,34 @@
                 <br>
                 <div class="text-gray-800 text-base font-bold">What are the Best Backpage Replacement Sites?</div><br>
                 <ol>
-                
+
                 <li>&emsp;1.&emsp;Where girls post now – <a class="text-gray-700 underline" href="#">obackpage.com</a></li><br>
-                
+
                 <li>&emsp;2.&emsp;Best adult directories with sexy entertainers – obackpage</li><br>
-                
+
                 <li>&emsp;3.&emsp;All the Social medias 100% friendly towards sex worker – obackpage.com</li><br>
-                
+
                 <li>&emsp;4.&emsp;Personal that attempt to be like Backpages – obackpage.com</li><br>
-                
+
                 <li>&emsp;5.&emsp;World-classic escort who take their career choice seriously – obackpage</li><br>
-                
+
                 <li>&emsp;6.&emsp;Best site for massage ‘experts’ – obackpage</li><br>
-                
+
                 <li>&emsp;7.&emsp;Plethora of escorts worldwide – obackpage</li>
-            
+
                 </ol>
                 <br>
                 <div class="text-gray-800 text-base font-bold">Which are the Top Backpage Replacement Sites now?</div><br>
                 <ol>
-                
+
                 <li>&emsp;1.&emsp;obackpage.com</li><br>
-                
+
                 <li>&emsp;2.&emsp;backpage.com</li><br>
-                
+
                 <li>&emsp;3.&emsp;starbackpage.com</li><br>
-                
+
                 <li>&emsp;4.&emsp;backpage.com</li>
-            
+
                 </ol>
                 <br>
                 <div class="text-gray-800 text-base font-bold">Which is the Backpage Replacement to Getting Laid?</div><br>
@@ -122,7 +122,7 @@
                     Backpage, where they dress up in cute emojis and keyboard font ornaments but look nothing just like
                     the posting they portray.
                 </p><br>
-                <div class="text-gray-800 text-base font-bold">obackpage sports the following filters:</div><br>         
+                <div class="text-gray-800 text-base font-bold">obackpage sports the following filters:</div><br>
                 <ol>
                     <li>&emsp;1.&emsp;New Members</li><br>
                     <li>&emsp;2.&emsp;Members Nearby</li><br>

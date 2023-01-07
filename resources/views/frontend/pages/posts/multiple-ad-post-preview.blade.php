@@ -4,7 +4,7 @@
 @section('keywords', "backpage, back page, sites similar to backpage, alternative to backpage, sites like backpage and craigslist personals, backpage replacement, backpage substitute, obackpage")
 @section('content')
 
-<div class="flex flex-col z-10 flex-1">
+<div class="flex flex-col z-10 flex-1 w-full">
     <nav class="navbar">
         <div class="flex bg-blue-900 w-full justify-between w-full items-center p-2">
             <div class="flex flex-row items-center justify-start space-x-4">
@@ -15,7 +15,7 @@
             </div>
         </div>
     </nav>
-    <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
+    <main class="flex-1 relative focus:outline-none mt-2" tabindex="0">
         <div class="flex flex-col">
             <div id="cookieCrumb" class="space-x-2 p-6">
                 <a href="{{ route('home') }}"><span class="text-gray-800 text-sm font-bold">Home</span></a><i class='fa fa-chevron-right'></i>
@@ -33,19 +33,19 @@
                     <a href="{{ route('manage-ads') }}" class="bg-blue-900 w-48 flex justify-center items-center p-2 rounded">
                         <p class="text-xl font-bold text-white">Place Ad Now</p>
                     </a>
-                    <div class="flex">
+                    <div class="flex flex-col sm:flex-row">
                         <span class="w-60 text-red-900 text-lg font-bold">Title :</span><span class="w-60 text-gray-800 text-base font-bold">{{$postDetails[0]['title']}}</span>
                     </div>
-                    <div class="flex">
+                    <div class="flex flex-col sm:flex-row">
                         <span class="w-60 text-red-900 text-lg font-bold">Description : </span><span class="w-60 text-gray-800 text-base font-bold">{!!$postDetails[0]['description']!!}</span>
                     </div>
-                    <div class="flex">
+                    <div class="flex flex-col sm:flex-row">
                         <span class="w-60 text-red-900 text-lg font-bold">Contact Email : </span><span class="w-60 text-gray-800 text-base font-bold">{{$postDetails[0]['contact_email']}}</span>
                     </div>
-                    <div class="flex">
+                    <div class="flex flex-col sm:flex-row">
                         <span class="w-60 text-red-900 text-lg font-bold">Contact mobaile Number : </span><span class="w-60 text-gray-800 text-base font-bold">{{$postDetails[0]['mobile_number']}}</span>
                     </div>
-                    <div class="flex">
+                    <div class="flex flex-col sm:flex-row">
                         <span class="w-60 text-red-900 text-lg font-bold"> Category : </span><span class="w-60 text-gray-800 text-base font-bold">{{$postDetails[0]['sub_category']}}</span>
                     </div>
                     <div class="flex flex grid grid-cols-4 gap-10">
@@ -59,6 +59,6 @@
             </div>
         </div>
     </main>
-</div>    
+</div>
 
 @endsection

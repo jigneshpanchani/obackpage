@@ -11,7 +11,7 @@
 
 {{-- fancybox --}}
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-   
+
 
 
 @if (!empty($js))
@@ -43,8 +43,15 @@
 
 $(document).ready(function() {
     $("body").on("click", ".openSidebarBtn", function() {
-        $('.toggelfilter').toggleClass('widthzero');
+        $('.citySidebar').toggleClass('widthzero');
         $('.toggelfilter').toggleClass('px-0');
+        $('.sidebar-background').toggleClass('widthzero');
+    });
+
+    $("body").on("click", ".sidebar-background", function() {
+        $('.citySidebar').toggleClass('widthzero');
+        $('.toggelfilter').toggleClass('px-0');
+        $('.sidebar-background').toggleClass('widthzero');
     });
 });
 

@@ -4,7 +4,7 @@
 @section('keywords', "backpage, back page, sites similar to backpage, alternative to backpage, sites like backpage and craigslist personals, backpage replacement, backpage substitute, obackpage")
 @section('content')
 
-    <div class="flex flex-col z-10 flex-1">
+    <div class="flex flex-col z-10 flex-1 w-full">
         <nav class="navbar">
             <div class="flex bg-blue-900 w-full justify-between w-full items-center p-2">
                 <div class="flex flex-row items-center justify-start space-x-4">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="space-y-6">
                     <div class="m-6 bg-white flex flex-col">
-                        <div class="flex items-center justify-between p-6">
+                        <div class="flex flex-col sm:flex-row items-center justify-between p-6">
                             <div class="border border-green-600 rounded p-2">
                                 <span class="text-green-600 font-bold text-lg">Credits :</span><span class="text-green-600 font-bold text-lg"> ${{ Auth::user()->credits  }}</span>
                             </div>
@@ -30,7 +30,7 @@
                                 <span class="w-60 text-gray-900 text-lg font-bold">{{ Auth::user()->email  }}</span>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between bg-blue-900 rounded p-4">
+                        <div class="flex flex-col sm:flex-row  items-center justify-between bg-blue-900 rounded p-4">
                             <div class="border border-blue-900 rounded space-x-6">
                                 <a href="{{route('manage-ads')}}">
                                 <span class="bg-blue-900 text-white font-bold">My Account</span>
@@ -50,7 +50,7 @@
                                 <br class="text-gray-900"> Add credits in your obackpage account to post top page ( Premium/Sponsor ) your ads, After one ads promotion, Remaining credits/balance will be still available in your account for future ads promotions!
                             </div>
                             <div class="flex space-x-4 items-center justify-center">
-                                <form name="addform" id="addform" class="w-1/2" method="post" action="{{url('add-credit')}}" enctype="multipart/form-data">
+                                <form name="addform" id="addform" class="w-full sm:w-1/2" method="post" action="{{url('add-credit')}}" enctype="multipart/form-data">
                                     @csrf
                                 <div class="border-2 border-gray-200 p-6 bg-white space-y-6">
                                     <div class="border-1 border-gray-200 p-2 bg-gray-200">

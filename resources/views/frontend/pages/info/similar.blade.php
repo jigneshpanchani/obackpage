@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="">
-        <div class="flex px-60">
+        <div class="flex px-0 xl:px-60">
             <div class="flex flex-col w-full p-4">
                 <div class="flex justify-between w-full items-center">
                     <div id="items-center justify-start">
@@ -63,11 +63,11 @@
                     <div class="text-gray-800 text-base font-bold">Multiple categories &amp; Locations</div><br>
 
                     <p>Most different Backpage alternatives provide restricted class and site listing. this is often not the case with obackpage. obackpage features a large list of classes and locations that permits you to list your ad to achieve the targeted audience.</p><br>
-                    
+
                     <div class="text-gray-800 text-base font-bold">Security</div><br>
 
                     <p>The site similar to Backpage additionally ensures information security by eliminating third-party sharing apart from shipping, selling and business wants.</p><br>
-                    
+
                     <div class="text-gray-800 text-base font-bold">Safe Advertising atmosphere</div><br>
 
                     <p>This Backpage replacement is gaining quality because of the main target on making a secure advertising atmosphere free from legal problems. obackpage promotes legitimate ad postings through its strict structure of rules and rules.</p><br>

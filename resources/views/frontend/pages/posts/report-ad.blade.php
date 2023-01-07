@@ -5,7 +5,7 @@
 @section('keywords', "obackpage misuse report")
 @section('content')
 
-<div class="flex flex-col z-10 flex-1">
+<div class="flex flex-col z-10 flex-1 w-full">
     <nav class="navbar">
         <div class="flex bg-blue-900 w-full justify-between w-full items-center p-2">
             <div class="flex flex-row items-center justify-start space-x-4">

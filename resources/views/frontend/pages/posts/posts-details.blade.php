@@ -7,7 +7,7 @@
 @section('content')
 
 
-<div class="flex flex-col z-10 flex-1">
+<div class="flex flex-col z-10 flex-1 w-full">
     <nav class="navbar">
         <div class="flex bg-blue-900 w-full justify-between w-full items-center p-2">
             <div class="flex flex-row items-center justify-start space-x-4">
@@ -35,7 +35,7 @@
                     <span class="text-gray-900 text-4xl font-bold">{{$posts[0]['title']}}!</span><br>
                     <span class="text-gray-700 text-base font-semibold">Posted:{{  date('d-m-y', strtotime($posts[0]['created_at']))}}</span>
                 </div>
-                <div class="flex space-x-4">
+                <div class="flex flex-col sm:flex-sm  space-y-2 space-x-0 sm:space-x-4">
                 <button type="submit" class="bg-blue-500 flex justify-center items-center p-1">
                     <p class="text-base font-bold text-white"><i class="fa fa-envelope-square"></i> {{$posts[0]['contact_email']}}</p>
                 </button>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="border-2 border-red-500 p-4 bg-yellow-100">
                     <div class="infobox"><span class="text-red-500 text-base font-semibold">SCAM Alert!!!</span>
-                        <br> if ad poster asks for money or tells you to verify in another website by 
+                        <br> if ad poster asks for money or tells you to verify in another website by
                         <span class="text-gray-800 text-base font-bold">Gift Card, Cash app, Venmo, Zelle app, Bitcoin, Debit Card, Credit Card</span>
                         <span class=""> or by any other way, consider its a Total </span>
                         <span class="text-gray-800 text-base font-bold">SCAM</span>
@@ -53,8 +53,8 @@
                         <span class="text-red-500 text-base font-semibold">obackpage won’t be responsible for any fraud if you ignore this warning.</span>
                     </div>
                 </div>
-                <div class="w-full flex">
-                    <div class="w-2/3">
+                <div class="w-full flex flex-col sm:flex-sm">
+                    <div class="w-full sm:w-2/3">
                           <div class="space-y-2">
                             <span class="text-gray-700 text-base font-bold">{!!$posts[0]['description']!!}</span><br>
                             <span class="text-gray-700 text-base font-bold">Location: </span><span class="text-gray-900 text-base font-bold capitalize">{{$posts[0]['location']}}</span><br>
@@ -62,9 +62,9 @@
                             <span class="text-gray-700 text-base font-bold">Post ID: </span><span class="text-gray-900 text-base font-bold">{{$posts[0]['id']}}</span><br>
                         </div>
                     </div>
-                    <div class="flex flex grid grid-cols-2 gap-10 w-1/3">
+                    <div class="flex flex grid grid-cols-2 gap-10 w-full sm:w-1/3 ">
                         @foreach($postAttechment as $postAttechments)
-                        <div class="flex">
+                        <div class="flex mt-3">
                             <a data-fancybox="gallery" data-src="{{ asset($postAttechments['file_path'])}}">
                                 <img src="{{ asset($postAttechments['file_path'])}}" />
                             </a>
@@ -78,7 +78,7 @@
                             <span class="text-base font-bold text-white"><i class="fa fa-ban"></i> &nbsp;Report ad </span>
                         </a>
                     </button>
-                    
+
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="">
-        <div class="flex px-60">
+        <div class="flex px-0 xl:px-60">
             <div class="flex flex-col w-full p-4">
                 <div class="flex justify-between w-full items-center">
                     <div id="items-center justify-start">
@@ -45,7 +45,7 @@
                     @endif
                 </div>
 
-                
+
 
 
                 <div class="py-6">

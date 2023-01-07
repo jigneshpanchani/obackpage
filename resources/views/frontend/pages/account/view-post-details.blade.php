@@ -4,7 +4,7 @@
 @section('keywords', "backpage, back page, sites similar to backpage, alternative to backpage, sites like backpage and craigslist personals, backpage replacement, backpage substitute, obackpage")
 @section('content')
 
-<div class="flex flex-col z-10 flex-1">
+<div class="flex flex-col z-10 flex-1 w-full">
     <nav class="navbar">
         <div class="flex bg-blue-900 w-full justify-between w-full items-center p-2">
             <div class="flex flex-row items-center justify-start space-x-4">
@@ -34,7 +34,7 @@
                     <span class="text-gray-900 text-4xl font-bold">{{$posts[0]['title']}}!</span><br>
                     <span class="text-gray-700 text-base font-semibold">Posted:{{  date('d-m-y', strtotime($posts[0]['created_at']))}}</span>
                 </div>
-                <div class="flex space-x-4">
+                <div class="flex flex-col sm:flex-row  space-x-0 space-y-2 sm:space-x-4">
                 <button type="submit" class="bg-blue-500 flex justify-center items-center p-1">
                     <p class="text-base font-bold text-white"><i class="fa fa-envelope-square"></i> {{$posts[0]['contact_email']}}</p>
                 </button>
@@ -42,8 +42,8 @@
                     <p class="text-base font-bold text-white"><i class="fa fa-phone-square"></i> {{$posts[0]['mobile_number']}}</p>
                 </button>
                 </div>
-                <div class="w-full flex">
-                    <div class="w-2/3">
+                <div class="w-full flex flex-col space-y-2 sm:flex-row">
+                    <div class="w-full sm:w-2/3">
                           <div class="space-y-2">
                             <span class="text-gray-700 text-base font-bold">{!!$posts[0]['description']!!}</span>
                             <span class="text-gray-700 text-base font-bold">Location: </span><span class="text-gray-900 text-base font-bold">{{$posts[0]['location']}}</span><br>
@@ -52,7 +52,7 @@
                             <span class="text-gray-700 text-base font-bold">Category: </span><span class="text-gray-900 text-base font-bold">{{$posts[0]['category']}}</span><br>
                         </div>
                     </div>
-                    <div class="flex flex grid grid-cols-2 gap-10 w-1/3">
+                    <div class="flex flex grid grid-cols-2 gap-10 w-full  sm:w-1/3">
                         @foreach($postAttechment as $postAttechments)
                         <div class="flex">
                             <a data-fancybox="gallery" data-src="{{ asset($postAttechments['file_path'])}}">

@@ -67,7 +67,7 @@
 }
 </style>
 
-<div class="flex flex-col z-10 flex-1">
+<div class="flex flex-col z-10 flex-1 w-full">
     <nav class="navbar">
         <div class="flex bg-blue-900 w-full justify-between w-full items-center p-2">
             <div class="flex flex-row items-center justify-start space-x-4">
@@ -94,7 +94,7 @@
                 <div class="">
                     <span class="text-red-900 text-xl font-bold">Choose locations</span>
                 </div>
-                <div class="flex grid grid-cols-2 gap-10 px-6">
+                <div class="flex grid md:grid-cols-2 gap-5 md:gap-10 px-6">
                     <div class="form-group">
                         <span for="country" class="text-gray-800 text-base font-bold">Continent/Country</span>
                         <select class="form-control selectCountry" name="continent_id" id="country-dropdown">
@@ -131,14 +131,14 @@
                 <div class="form-group px-6">
                     <span class="text-gray-800 text-base font-bold">City : $</span><span class="text-gray-800 text-base font-bold"  id="totla__amount"></span>
                         <input type="hidden" name="totla__amount_value" id="totla__amount_value" />
-                        <div class="flex grid grid-cols-4 gap-2" id="city-checkbox">
+                        <div class="flex grid  sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-2" id="city-checkbox">
 
                     </div>
                 </div>
                 <div class="">
                     <span class="text-red-900 text-xl font-bold">Choose Category</span>
                 </div>
-                <div class="flex grid grid-cols-2 gap-10 px-6">
+                <div class="flex grid md:grid-cols-2 gap-5 md:gap-10 px-6">
                     <div class="form-group">
                         <span for="country" class="text-gray-800 text-base font-bold">Category</span>
                         <select class="form-control selectCategory" name="category_id" id="category-dropdown">
@@ -158,7 +158,7 @@
                 <div class="">
                     <span class="text-red-900 text-xl font-bold">Post Details</span>
                 </div>
-                <div class="space-y-6 px-6 pb-6 w-2/3">
+                <div class="space-y-6 px-6 w-full md:w-2/3">
                     <div class="form-group">
                         <span class="text-gray-800 text-base font-bold">Title:</span>
                         <input type="text" id="title" name="title" class="form-control">

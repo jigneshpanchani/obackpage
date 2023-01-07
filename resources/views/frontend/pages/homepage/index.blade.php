@@ -6,7 +6,7 @@
 
 
     <div class="">
-        <div class="flex px-60">
+        <div class="flex px-0 xl:px-60">
             <div class="flex flex-col bg-gray-100  w-full p-4">
                 <div class="flex justify-between w-full items-center">
                     <div id="items-center justify-start">
@@ -65,14 +65,15 @@
                 @php
                     $i = 0;
                 @endphp
-                <div class="flex grid grid-cols-2 space-x-4 mt-4">
+                <div class="flex grid grid-cols-1 md:grid-cols-2 space-x-0 sm:space-x-4 mt-4">
                     @foreach($continents as $country)
                         @if($i == 0)
-                            <div class="">
+                            <div class="mb-2 sm:mb-0">
                                 <div class="bg-blue-900 rounded p-1 text-center">
                                     <span class="text-white text-xl px-2 font-bold leading-7">{{  $country['continent'] }}<br/></span>
                                 </div>
-                                <div class="flex grid grid-cols-3 p-2">
+                                <div class="hidden sm:block">
+                                <div class=" grid grid-cols-2 sm:grid-cols-3 p-2 ">
                                     @php
                                     $stateData = array_chunk($country['state'],(count($country['state']) / 3));
                                     @endphp
@@ -89,13 +90,15 @@
                                         </div>
                                     @endforeach
                                 </div>
+                                </div>
                             </div>
                         @else
                             @if($i == 1)<div class="space-y-2">@endif
                                 <div class="bg-blue-900 rounded p-1 text-center">
                                     <span class="text-white text-xl px-2 font-bold leading-7">{{  $country['continent'] }}<br/></span>
                                 </div>
-                                <div class="flex grid grid-cols-3 p-2">
+                                <div class="hidden sm:block">
+                                <div class="flex grid grid-cols-2 sm:grid-cols-3 p-2">
                                     @php
                                     $stateData = array_chunk($country['state'], (count($country['state']) / 2.5));
                                     @endphp
@@ -112,6 +115,7 @@
                                         </div>
                                     @endforeach
                                 </div>
+                                </div>
                             @if($i == count($continents)) </div> @endif
                         @endif
                         @php $i++; @endphp
@@ -121,7 +125,7 @@
         </div>
     </div>
 
-    <div class="concls text-sm bg-gray-200 w-full py-2 px-10 font-semibold">
+    <div class="concls text-sm bg-gray-200 w-full py-2 px-10 font-semibold  text-justify	">
         {{-- <div class="concls text-sm"> --}}
             <div class="font-bold text-base py-2">Are you a service provider trying to find the best classified site?</div>
             <p>If you're a worldwide service provider and in sorting out one among the most <a class="font-bold">Free Classified Sites</a> within the world, you're at the proper place. For growing your business and taking it to a full new level, put up for sale on the <a class="font-bold">obackpage</a>. this fashion you'll be able to connect together with your target market and simply get business on-line.</p>

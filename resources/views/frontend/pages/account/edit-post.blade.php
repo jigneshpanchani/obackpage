@@ -4,7 +4,7 @@
 @section('keywords', "obackpage, back page, sites similar to backpage, alternative to backpage, sites like backpage and craigslist personals, backpage replacement, backpage substitute, obackpage")
 @section('content')
 
-    <div class="flex flex-col z-10 flex-1">
+    <div class="flex flex-col z-10 flex-1 w-full">
         <nav class="navbar">
             <div class="flex bg-blue-900 w-full justify-between w-full items-center p-2">
                 <div class="flex flex-row items-center justify-start space-x-4">
@@ -27,11 +27,11 @@
                     <a href=""><span class="text-gray-800 text-sm font-bold">Edit Post</span></a>
                 </div>
                 <div class="p-6 space-y-6 bg-white m-6 rounded">
-                  
+
                     <div class="">
                         <span class="text-red-900 text-xl font-bold">Choose locations</span>
                     </div>
-                    <div class="flex grid grid-cols-3 gap-10 px-6">
+                    <div class="flex grid md:grid-cols-3 gap-5 md:gap-10 px-6">
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Continent/Country:</span>
                             <input value=" {{$data['country_name']}}" id="continent_id" name="country_name"  class="form-control" readonly>
@@ -48,10 +48,10 @@
                     <div class="">
                         <span class="text-red-900 text-xl font-bold">Choose Category</span>
                     </div>
-                    <div class="flex grid grid-cols-2 gap-10 px-6">
+                    <div class="flex grid md:grid-cols-2 gap-5 md:gap-10 px-6">
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Category:</span>
-                            <input value=" {{$data['category']}}" id="category_id" name="category"  class="form-control" readonly>        
+                            <input value=" {{$data['category']}}" id="category_id" name="category"  class="form-control" readonly>
                         </div>
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Sub Category:</span>
@@ -61,8 +61,8 @@
                     <div class="">
                         <span class="text-red-900 text-xl font-bold">Edit Post Details</span>
                     </div>
-                    <div class="space-y-6 px-6 pb-6 w-2/3">
-                     
+                    <div class="space-y-6 px-6 w-full md:w-2/3">
+
                         <div class="form-group">
                             <span class="text-gray-800 text-base font-bold">Title:</span>
                             <input type="text" value=" {{$data['title']}}" id="title" name="title"  class="form-control">
@@ -92,11 +92,11 @@
                             <input method="POST" type="file" id="files" name="file[]" accept=".jpg, .jpeg, .png" multiple>
                             <div id='displayUploadedImg' class="flex grid grid-cols-4 gap-10 py-6">
                             </div>
-                            
+
                             <div class="flex grid grid-cols-4 gap-10 py-6">
                                 @foreach($postAttechment as $postAttechments)
                                 <img src="{{ asset($postAttechments['file_path'])}}" alt="searchIcon" />
-                                
+
                             @endforeach
                             </div>
                         </div>

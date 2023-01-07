@@ -1,8 +1,4 @@
-.widthzero {
-    width: 0px;
-    opacity: 0;
-    /* display: none; */
-}
+
 .fa-bars{
     font-size: 32px;
     color: #fff;
@@ -44,3 +40,34 @@
     border-color: #80bdff;
     outline: 0;
 }
+
+.widthzero.citySidebar{
+    width: 0;
+    opacity: 0;
+    left: -100px;
+}
+
+ .citySidebar {
+    position: fixed;
+    height: 100vh;
+    z-index: 99;
+    left: 0px;
+}
+
+ .sidebar-background{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    opacity: 0.5;
+    left: 0;
+    top: 0;
+    z-index: 22;
+    transition: 0.5 linear;
+}
+
+.widthzero.sidebar-background{
+    width: 0;
+    opacity: 0;
+}
+

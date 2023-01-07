@@ -19,7 +19,7 @@
             </div>
         </nav>
         <main class="flex-1 relative overflow-y-auto focus:outline-none mt-2" tabindex="0">
-            <div class="flex grid grid-cols-4 space-x-4 m-4">
+            <div class="flex grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 space-x-4 m-4">
                 @php
                 $categories = array_chunk($category,(count($category) / 3));
                 @endphp

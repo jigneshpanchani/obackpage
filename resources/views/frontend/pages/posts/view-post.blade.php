@@ -33,7 +33,7 @@
                     <a href="{{ route('view-post',  array('cityId' => $city['id'], 'subcategoryId' => $subId)) }}"><span class="text-red-800 text-base font-semibold">{{  $city['city'] }}</span></a> |
                 @endforeach
             </div>
-            <div class="p-6 space-y-6 m-6 rounded">
+            <div class="p-6 space-y-6 m-0 md:m-6 rounded">
                 <div class="">
                     <a href="#"><span class="text-green-700 text-base font-bold">Top</span></a> |
                 </div>
