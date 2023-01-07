@@ -73,9 +73,12 @@
                     </div>
                 </div>
                 <div class="">
-                    <button type="submit" class="bg-red-500 flex justify-center items-center p-1 rounded">
-                        <a href="{{ route('report-ad', array('cityId' => $cityId, 'postId' => $postId) ) }}"><span class="text-base font-bold text-white"><i class="fa fa-ban"></i> &nbsp;Report ad </span></a>
+                    <button type="submit" class="bg-red-500 flex justify-center items-center px-2 py-1 rounded">
+                        <a href="{{ route('report-ad', $postId) }}">
+                            <span class="text-base font-bold text-white"><i class="fa fa-ban"></i> &nbsp;Report ad </span>
+                        </a>
                     </button>
+                    
                 </div>
             </div>
         </div>

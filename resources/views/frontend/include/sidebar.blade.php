@@ -37,7 +37,7 @@
                 </li>
                 @foreach($nearByCities as $nearByCity)
                 <li class="aside-menu bg-gray-100 p-2">
-                    <a href="{{ route('category', $nearByCity['id'] ) }}">
+                    <a href="{{ route('category', $nearByCity['slug'] ) }}">
                         <div class="flex justify-center items-center">
                             <p class="text-gray-800 text-sm font-bold">{{  $nearByCity['city'] }}</p>
                         </div>

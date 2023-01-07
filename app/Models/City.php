@@ -19,7 +19,7 @@ class City extends Model
 
         $countryStateId = $getCountryStateId[0]['country_state_id'];
         
-        $getNearByCities = City::where('city.country_state_id', $countryStateId)->select('id', 'city')->get()->toArray();
+        $getNearByCities = City::where('city.country_state_id', $countryStateId)->select('id', 'city', 'slug')->get()->toArray();
 
         return $getNearByCities;
 

@@ -82,7 +82,7 @@
                                                 <span class="text-red-700 text-base font-bold">{{  $state['country_state'] }}<br/></span>
                                                 @foreach($state['city'] as $city)
                                                 <div class="px-2">
-                                                    <a href="{{ route('category', $city['id'])}}"><span class="text-gray-700 text-sm font-semibold underline">{{  $city['city'] }}</span><br/></a>
+                                                    <a href="{{ route('category', $city['slug'])}}"><span class="text-gray-700 text-sm font-semibold underline">{{  $city['city'] }}</span><br/></a>
                                                 </div>
                                                 @endforeach
                                             @endforeach
@@ -105,7 +105,7 @@
                                                 <span class="text-red-700 text-base font-bold">{{  $state['country_state'] }}<br/></span>
                                                 @foreach($state['city'] as $city)
                                                     <div class="px-2">
-                                                        <a href="{{ route('category', $city['id'] ) }}"><span class="text-gray-700 text-sm font-semibold underline">{{  $city['city'] }}</span><br/></a>
+                                                        <a href="{{ route('category', $city['slug'] ) }}"><span class="text-gray-700 text-sm font-semibold underline">{{  $city['city'] }}</span><br/></a>
                                                     </div>
                                                 @endforeach
                                             @endforeach

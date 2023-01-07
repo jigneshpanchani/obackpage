@@ -34,9 +34,9 @@
                                 <div class="space-x-2 py-2">
                                     <i class='fa fa-caret-right'></i>
                                     @if($subcategory['category_id'] == '1'  || $subcategory['category_id'] == '5')
-                                        <a href="{{ route('disclamier',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['id']))}}">
+                                        <a href="{{ route('disclamier',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['slug']))}}">
                                     @else
-                                        <a href="{{ route('view-post',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['id'])) }}">
+                                        <a href="{{ route('view-post',  array('cityId' => $cityId, 'subcategoryId' => $subcategory['slug'])) }}">
                                     @endif
                                     <span class="text-gray-800 text-sm font-bold underline">{{  $subcategory['sub_category'] }}</span><br/></a>
                                 </div>
@@ -54,7 +54,7 @@
         <div class="concls text-sm bg-gray-200 w-full py-2 px-10 font-semibold">
             <div>
                 <br/>
-                <div class="text-base py-2">Are you on the hunt for&nbsp;<a class="font-bold">free classified sites in Morocco Escorts?</a></div>
+                <div class="text-base py-2">Are you on the hunt for&nbsp;<a class="font-bold">free classified sites in <span>{{$cityname[0]['city']}}</span> Escorts?</a></div>
                 <p>Are you trying forward to promoting your business on the <a class="font-bold">best classified sites</a>  within the world? Well, in this case, you're within the right place. we might perpetually offer you with the foremost cheap nevertheless effective choices to induce your ads announce on high free classified sites in with none hassles. All you've got to try and do is keep your religion in United States of America and allow us to guide you thru the whole procedure of making certain your business growth.</p>
                 <p>With the newest developments within the digital selling trade, new and reformed SEO tools ar developing day by day. As a business owner, you'd get the chance to unfold awareness concerning your whole and gather new leads by obtaining your commercials announce in <a class="font-bold">free directory sites</a>.</p>
                 <p>obackpage works laborious to attach numerous organizations and totally different service partners to use their platform as a promotional dynamic. With the assistance of obackpage, that could be a <a class="font-bold">backpage replacement site</a>, you'd acquire the freedom to counterpoint your business profile and attract the purchasers. this can be exclusively as a result of the purchasers tend to believe the short and crisp commercials and click on on them to understand a lot of concerning the whole and product. during this approach, your web site would receive higher traffic and the next ranking on the assorted search engines.</p>

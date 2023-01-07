@@ -1,4 +1,8 @@
 @extends('frontend.layout.default')
+@section('title', $posts[0]['title'])
+@section('title', 'Report Ad')
+@section('description', "submit misuse report obackpage")
+@section('keywords', "obackpage misuse report")
 @section('content')
 
 <div class="flex flex-col z-10 flex-1">
@@ -17,7 +21,7 @@
             <div id="cookieCrumb" class="space-x-2 p-6">
                 <a href="{{ route('home') }}"><span class="text-gray-800 text-sm font-bold">Home</span></a>
             </div>
-            <span class="text-gray-900 text-2xl font-bold px-6">Report Ad!</span>
+            <span class="text-red-900 text-2xl font-bold px-6">Report Ad!</span>
             <div class="space-y-2 p-6">
                 <span class="text-2xl font-bold">{{$posts[0]['title']}}!</span><br>
                 <span class="text-gray-700 text-base font-semibold">Posted:{{  date('d-m-y', strtotime($posts[0]['created_at']))}}</span>

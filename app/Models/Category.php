@@ -25,7 +25,7 @@ class Category extends Model
 
             foreach($array as $key => $arr) {
 
-                $subCategory = SubCategory::select('sub_category.sub_category', 'sub_category.id', 'sub_category.category_id')
+                $subCategory = SubCategory::select('sub_category.sub_category', 'sub_category.id', 'sub_category.category_id', 'sub_category.slug')
                     ->where('sub_category.category_id', '=', $key)
                     ->get()
                     ->toArray();
