@@ -78,6 +78,7 @@
                             <span class="text-base font-bold text-white"><i class="fa fa-ban"></i> &nbsp;Report ad </span>
                         </a>
                     </button>
+                    
                 </div>
             </div>
         </div>
