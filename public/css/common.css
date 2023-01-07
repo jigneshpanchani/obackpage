@@ -71,3 +71,26 @@
     opacity: 0;
 }
 
+.open {
+    display: block !important;
+}
+
+.search-menu{
+    padding: 10px;
+    min-height: 50px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.search-menu li {
+    padding: 5px 0px;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.suggesstion-box{
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0px 11px 17px -8px rgba(0,0,0,0.47);
+}

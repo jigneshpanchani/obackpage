@@ -50,15 +50,16 @@
                 <div class="flex justify-center w-full lg:justify-end mt-4">
                     <div class="w-full">
                         <div class="relative text-gray-500">
-                        <div class="absolute inset-y-0 pl-3 flex items-center">
-                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                        <span tabindex="-1" class="bg-white block rounded-md" style="">
+
+                        <span tabindex="-1" class="bg-white block rounded-md relative" style="">
+                            <div class="absolute inset-y-0 pl-3 flex items-center">
+                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
                             <input id="search-box" name="search" class="findCity block w-full pl-10 pr-3 py-2 findCity border border-transparent rounded-md leading-5  text-gray-400 focus:ring-0 focus:text-gray-900 sm:text-sm" placeholder="Search Cities" type="search" data-role="autocomplete" autocomplete="off" role="combobox" aria-expanded="false" aria-disabled="false" aria-readonly="false" aria-owns="findCity_listbox" aria-autocomplete="list" aria-controls="findCity_listbox" aria-busy="false">
-                            <div id="suggesstion-box" class="text-gray-700 text-base"></div>
                         </span>
+                        <div id="suggesstion-box" class="text-gray-700 text-base suggesstion-box"></div>
                         </div>
                     </div>
                 </div>
@@ -69,11 +70,11 @@
                     @foreach($continents as $country)
                         @if($i == 0)
                             <div class="mb-2 sm:mb-0">
-                                <div class="bg-blue-900 rounded p-1 text-center">
+                                <div class="bg-blue-900 rounded p-1 text-center accordions">
                                     <span class="text-white text-xl px-2 font-bold leading-7">{{  $country['continent'] }}<br/></span>
                                 </div>
                                 <div class="hidden sm:block">
-                                <div class=" grid grid-cols-2 sm:grid-cols-3 p-2 ">
+                                <div class=" grid grid-cols-3 sm:grid-cols-3 p-2 ">
                                     @php
                                     $stateData = array_chunk($country['state'],(count($country['state']) / 3));
                                     @endphp
@@ -94,11 +95,11 @@
                             </div>
                         @else
                             @if($i == 1)<div class="space-y-2">@endif
-                                <div class="bg-blue-900 rounded p-1 text-center">
+                                <div class="bg-blue-900 rounded p-1 text-center accordions">
                                     <span class="text-white text-xl px-2 font-bold leading-7">{{  $country['continent'] }}<br/></span>
                                 </div>
                                 <div class="hidden sm:block">
-                                <div class="flex grid grid-cols-2 sm:grid-cols-3 p-2">
+                                <div class="flex grid grid-cols-3 sm:grid-cols-3 p-2">
                                     @php
                                     $stateData = array_chunk($country['state'], (count($country['state']) / 2.5));
                                     @endphp

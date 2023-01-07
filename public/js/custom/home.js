@@ -13,10 +13,12 @@ $(document).ready(function() {
                 },
                 success: function(data) {
                     var output = JSON.parse(data);
-                    $('#suggesstion-box').fadeIn();  
-                    $('#suggesstion-box').html(output);    
+                    $('#suggesstion-box').fadeIn();
+                    $('#suggesstion-box').html(output);
                 }
-            });  
+            });
+        } else {
+            $('#suggesstion-box').hide();
         }
 	});
 });

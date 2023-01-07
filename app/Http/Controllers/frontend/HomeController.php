@@ -28,13 +28,13 @@ class HomeController extends Controller
                 $idArr = $request->id;
                 $search = $request->input('keyword');
                 $result = city::where('city', 'LIKE', '%'. $search. '%')->select('city')->get();
-                $output ='<ul class="dropdown-menu" style="display:block; position:relative">';
+                $output ='<ul class="dropdown-menu search-menu" style="display:block; position:relative">';
                 foreach($result as $row){
                  $output .='<li><a href="#">'.$row->city.'</a></li>';
                 }
                 $output .='</ul>';
                 return json_encode($output);
-                break; 
+                break;
         }
-    }                    
+    }
 }

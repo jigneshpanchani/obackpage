@@ -34,7 +34,7 @@
                     <span class="text-gray-900 text-4xl font-bold">{{$posts[0]['title']}}!</span><br>
                     <span class="text-gray-700 text-base font-semibold">Posted:{{  date('d-m-y', strtotime($posts[0]['created_at']))}}</span>
                 </div>
-                <div class="flex flex-col sm:flex-row  space-x-0 space-y-2 sm:space-x-4">
+                <div class="flex flex-col sm:flex-row  space-y-2 sm:space-y-0 space-x-0 sm:space-x-4">
                 <button type="submit" class="bg-blue-500 flex justify-center items-center p-1">
                     <p class="text-base font-bold text-white"><i class="fa fa-envelope-square"></i> {{$posts[0]['contact_email']}}</p>
                 </button>

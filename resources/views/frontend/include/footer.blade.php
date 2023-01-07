@@ -53,6 +53,19 @@ $(document).ready(function() {
         $('.toggelfilter').toggleClass('px-0');
         $('.sidebar-background').toggleClass('widthzero');
     });
+
+
+    $("body").on("click", ".accordions", function() {
+
+        if($(this).next().hasClass("open")){
+            $(this).next().removeClass("open")
+        } else {
+            $(".hidden").removeClass("open")
+            $(this).next().addClass("open")
+        }
+    })
+
+
 });
 
 </script>
