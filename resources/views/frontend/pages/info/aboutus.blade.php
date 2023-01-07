@@ -51,7 +51,7 @@
                     <br>
                 <div class="concls text-sm font-bold">
                 <p>
-                    Obackpage is the biggest <a href="#" class="text-gray-700 underline">Backpage Replacement</a> now! Are trying to find the simplest backpage
+                    Obackpage is the biggest <a href="{{route('backpage-replacement')}}" class="text-gray-700 underline">Backpage Replacement</a> now! Are trying to find the simplest backpage
                     alternative websites? Well, you are not alone! Obackpage is here to make you satisfied like Backpages.
                     Once reigned supreme because the perfect online destination for classified or personal ads, backpage had
                     everything be it electronics, events, vacancy alerts, land , and more. But from later, the location also

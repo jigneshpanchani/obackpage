@@ -54,7 +54,7 @@
         <div class="col-md-12 mycont">
         <br>
         <div class="font-bold text-base">Last Revised: April 28, 2021</div><br>
-        <p><a class="text-gray-700 underline" href="#">obackpage.com</a> and its affiliates (together, the"Website") honor your own privacy. Recorded
+        <p><a class="text-gray-700 underline" href="{{ route('home') }}">obackpage.com</a> and its affiliates (together, the"Website") honor your own privacy. Recorded
             below is our Online Privacy Policy for This Website:
         </p>
         <br>

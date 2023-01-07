@@ -57,7 +57,7 @@
             <div class="concls text-sm font-bold">
             <p>
                 The Site reserves the privilege to alter the Terms at any time and for almost any reason. Updated
-                versions of the Conditions will undoubtedly be submitted to the Site in <a class="text-gray-700 underline" href="#">obackpage.com</a> and also
+                versions of the Conditions will undoubtedly be submitted to the Site in <a class="text-gray-700 underline" href="{{route('home')}}">obackpage.com</a> and also
                 you should visit this page periodically to keep apprised of any changes. By continuing to make
                 use of the Site after any such change, you accept and agree on the modified Terms. You agree
                 that the website will not be responsible for you personally or some other third party for

@@ -63,15 +63,25 @@ Route::match(['get', 'post'], 'add-credit',                 ['as' => 'add-credit
 
 
 //footerpages
-Route::match(['get', 'post'], 'about-us',                      ['as' => 'about-us',                     'uses' => 'frontend\InfoController@aboutus']);
-Route::match(['get', 'post'], 'contact',                       ['as' => 'contact',                      'uses' => 'frontend\InfoController@contact']);
-Route::match(['get', 'post'], 'privacy-policy',                ['as' => 'privacy-policy',               'uses' => 'frontend\InfoController@privacyPolicy']);
-Route::match(['get', 'post'], 'terms-of-use',                  ['as' => 'terms-of-use',                 'uses' => 'frontend\InfoController@termsOfUse']);
-Route::match(['get', 'post'], 'blog',                          ['as' => 'blog',                         'uses' => 'frontend\InfoController@blog']);
-Route::match(['get', 'post'], 'alternative-to-backpage',       ['as' => 'alternative-to-backpage',      'uses' => 'frontend\InfoController@alternativeToBackpage']);
-Route::match(['get', 'post'], 'website-similar-to-backpage',   ['as' => 'website-similar-to-backpage',  'uses' => 'frontend\InfoController@websiteSimilarToBackpage']);
-Route::match(['get', 'post'], 'best-sites-like-backpage',      ['as' => 'best-sites-like-backpage',     'uses' => 'frontend\InfoController@bestSitesLikeBackpage']);
-Route::match(['get', 'post'], 'backpage-replacement',          ['as' => 'backpage-replacement',         'uses' => 'frontend\InfoController@backpageReplacement']);
+Route::match(['get', 'post'], 'about-us',                                                                   ['as' => 'about-us',                                                                'uses' => 'frontend\InfoController@aboutus']);
+Route::match(['get', 'post'], 'contact',                                                                    ['as' => 'contact',                                                                 'uses' => 'frontend\InfoController@contact']);
+Route::match(['get', 'post'], 'privacy-policy',                                                             ['as' => 'privacy-policy',                                                          'uses' => 'frontend\InfoController@privacyPolicy']);
+Route::match(['get', 'post'], 'terms-of-use',                                                               ['as' => 'terms-of-use',                                                            'uses' => 'frontend\InfoController@termsOfUse']);
+Route::match(['get', 'post'], 'blog',                                                                       ['as' => 'blog',                                                                    'uses' => 'frontend\InfoController@blog']);
+Route::match(['get', 'post'], 'alternative-to-backpage',                                                    ['as' => 'alternative-to-backpage',                                                 'uses' => 'frontend\InfoController@alternativeToBackpage']);
+Route::match(['get', 'post'], 'website-similar-to-backpage',                                                ['as' => 'website-similar-to-backpage',                                             'uses' => 'frontend\InfoController@websiteSimilarToBackpage']);
+Route::match(['get', 'post'], 'best-sites-like-backpage',                                                   ['as' => 'best-sites-like-backpage',                                                'uses' => 'frontend\InfoController@bestSitesLikeBackpage']);
+Route::match(['get', 'post'], 'backpage-replacement',                                                       ['as' => 'backpage-replacement',                                                    'uses' => 'frontend\InfoController@backpageReplacement']);
+Route::match(['get', 'post'], 'blog/alternative-to-craigslist-personals',                                   ['as' => 'alternative-to-craigslist-personals',                                     'uses' => 'frontend\InfoController@alternativeToCraigslistPersonals']);
+Route::match(['get', 'post'], 'blog/backpage-alternatives',                                                 ['as' => 'backpage-alternatives',                                                   'uses' => 'frontend\InfoController@backpageAlternatives']);
+Route::match(['get', 'post'], 'blog/craigslist-personals',                                                  ['as' => 'craigslist-personals',                                                    'uses' => 'frontend\InfoController@craigslistPersonals']);
+Route::match(['get', 'post'], 'blog/similar-to-backpage',                                                   ['as' => 'similar-to-backpage',                                                     'uses' => 'frontend\InfoController@similarToBackpage']);
+Route::match(['get', 'post'], 'blog/new-backpage',                                                          ['as' => 'new-backpage',                                                            'uses' => 'frontend\InfoController@newBackpage']);
+Route::match(['get', 'post'], 'blog/sites-like-craigslis',                                                  ['as' => 'sites-like-craigslis',                                                    'uses' => 'frontend\InfoController@sitesLikeCraigslis']);
+Route::match(['get', 'post'], 'blog/top-alternative-to-backpage',                                           ['as' => 'top-alternative-to-backpage',                                             'uses' => 'frontend\InfoController@topAlternativeToBackpage']);
+Route::match(['get', 'post'], 'blog/new-backpage-replacement',                                              ['as' => 'new-backpage-replacement',                                                'uses' => 'frontend\InfoController@newBackpageReplacement']);
+Route::match(['get', 'post'], 'blog/the-best-escort-sites-to-help-you-find-the-perfect-companion',          ['as' => 'the-best-escort-sites-to-help-you-find-the-perfect-companion',            'uses' => 'frontend\InfoController@theBestEscortSites']);
+
 
 
 //backend
