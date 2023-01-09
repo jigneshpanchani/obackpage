@@ -52,7 +52,7 @@
     </div>
     <div class="widthzero sidebar-background">
     </div>
-@elseif($currRoute == 'posts-details')
+@elseif($currRoute == 'posts-details' || $currRoute == 'report-ad')
 
 <div class="widthzero citySidebar duration-1000 toggelfilter transition-all flex w-48 bg-white px-0">
     <div class="flex flex-col w-full p-1">

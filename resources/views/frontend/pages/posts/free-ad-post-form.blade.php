@@ -115,7 +115,7 @@
                         </div>
                         <div class="form-group space-x-2">
                             <input type="checkbox" id="is_premium_ad" name="is_premium_ad"  value="">
-                            <label for="is_premium_ad" class="text-gray-700 text-base leading-7 font-semibold">By Placing this ad I agree to the <a href="url">terms of use</a> and <a href="url">privacy policy</a></label>
+                            <label for="is_premium_ad" class="text-gray-700 text-base leading-7 font-semibold">By Placing this ad I agree to the <a  href="{{route('terms-of-use')}}" class="text-red-700 text-base font-bold  underline " >terms of use</a> and <a href="{{route('privacy-policy')}}" class="text-red-700 text-base font-bold  underline ">privacy policy</a></label>
                         </div>
                         <div class="g-recaptcha" id="feedback-recaptcha"
                                 data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}">
