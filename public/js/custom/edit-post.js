@@ -1,8 +1,6 @@
 let myEditor1;
 var PostsEdit = function () {
 
-
-
     var edit = function () {
         ClassicEditor.create(document.querySelector('#ckeditor1'))
         .then(editor => {

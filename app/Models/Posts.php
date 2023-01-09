@@ -67,8 +67,11 @@ class Posts extends Model
         $getCurrentCredit= User::select('credits')->where('id', $user_id)->get()->toArray();
 
         if($getCurrentCredit[0]['credits']>=$request->input('totla__amount_value')){
-
-            $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value');
+            if($request->input('is_premium_ad') == "1"){
+                $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value') -4;
+            } else{
+                $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value');
+            }
             $objUser = user::find($user_id);
             $objUser->credits = $updatedCredit;
             $objUser->update();
@@ -76,7 +79,12 @@ class Posts extends Model
             $objTransaction = new Transaction();
             $objTransaction->status = "debit";
             $objTransaction->code = "ABC123";
-            $objTransaction->amount = $request->input('totla__amount_value');
+            if($request->input('is_premium_ad') == "1"){
+                $updateTransactionAmount = $request->input('totla__amount_value') + 4;
+            } else{
+                $updateTransactionAmount = $request->input('totla__amount_value');
+            }
+            $objTransaction->amount = $updateTransactionAmount;
             $objTransaction->user_id = Auth::user()->id;
             $objTransaction->save();
 
@@ -337,8 +345,11 @@ class Posts extends Model
         $getCurrentCredit= User::select('credits')->where('id', $user_id)->get()->toArray();
 
         if($getCurrentCredit[0]['credits']>=$request->input('totla__amount_value')){
-
-            $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value');
+            if($request->input('is_premium_ad') == "1"){
+                $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value') -4;
+            } else{
+                $updatedCredit = $getCurrentCredit[0]['credits'] - $request->input('totla__amount_value');
+            }
             $objUser = user::find($user_id);
             $objUser->credits = $updatedCredit;
             $objUser->update();
@@ -346,7 +357,12 @@ class Posts extends Model
             $objTransaction = new Transaction();
             $objTransaction->status = "debit";
             $objTransaction->code = "ABC123";
-            $objTransaction->amount = $request->input('totla__amount_value');
+            if($request->input('is_premium_ad') == "1"){
+                $updateTransactionAmount = $request->input('totla__amount_value') + 4;
+            } else{
+                $updateTransactionAmount = $request->input('totla__amount_value');
+            }
+            $objTransaction->amount = $updateTransactionAmount;
             $objTransaction->user_id = Auth::user()->id;
             $objTransaction->save();
 

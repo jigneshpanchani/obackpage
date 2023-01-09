@@ -21,7 +21,7 @@
                                 </form>
                             @else
                                 <a href="{{ route('login') }}"><span class="text-sm text-gray-700 font-semibold  dark:text-gray-700 underline">Log in</span></a>
-                                <a href="{{ route('login') }}"><span class="ml-4 text-sm text-gray-700 font-semibold dark:text-gray-700 underline">Register</span></a>
+                               
                             @endauth
                         @endif
                     </div>

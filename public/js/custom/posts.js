@@ -257,6 +257,7 @@ var Posts = function () {
         .catch(error => {
             console.error(error);
         });
+        
 
         setTimeout(function() {
             $('#country-dropdown').trigger('change');
@@ -322,6 +323,7 @@ var Posts = function () {
                     var totalAmount = CheckedCheckBox * 2;
                     $('#totla__amount_value').val(totalAmount);
                     $('#totla__amount').append(totalAmount);
+                    
 
                 }
             });
@@ -333,9 +335,8 @@ var Posts = function () {
             $('#totla__amount_value').val(totalAmount);
             $('#totla__amount').empty();
             $('#totla__amount').append(totalAmount);
+
         })
-
-
 
         $("body").on("click", ".selectCategory", function () {
             var id = $('#category-dropdown').val();
@@ -384,98 +385,93 @@ var Posts = function () {
             console.log("Your browser does not support File API");
           }
 
-        }
+    }
 
-        // ckeditor4.editorConfig = function( ckeditor4 ) {
-        //     ckeditor4.enterMode = CKEDITOR.ENTER_BR; // pressing the ENTER KEY input <br/>
-        //     ckeditor4.shiftEnterMode = CKEDITOR.ENTER_P; //pressing the SHIFT + ENTER KEYS input <p>
-        //     ckeditor4.autoParagraph = false; // stops automatic insertion of <p> on focus
-        //      };
+    var validateForm = function () {
 
-        var validateForm = function () {
-
-            $("#addform").validate({
-                // Specify validation rules
-                rules: {
-                    title: "required",
-                    description: "required",
-                    location: "required",
-                    contact_email: {
-                        required: true,
-                         contact_email:true,
-                        // regEmail:/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g,
-                        contact_email:focus(),
-                    },
-                    mobile_number: {
-                        required: true,
-                        digits: true,
-                        minlength: 10,
-                        maxlength: 10,
-                    },
-                     age: {
-                        required: true,
-                        digits: true,
-                        maxlength: 03,
-                    },
-                    continent_id:"required",
+        $("#addform").validate({
+            // Specify validation rules
+            rules: {
+                title: "required",
+                description: "required",
+                location: "required",
+                contact_email: {
+                    required: true,
+                    contact_email:true,
+                    // regEmail:/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g,
+                    contact_email:focus(),
+                
                 },
-                messages: {
-                 title: {
+                terms_condition:{
+                    required: true,
+                    terms_condition: "checked",
+                },
+                mobile_number: {
+                    required: true,
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 10,
+                },
+                    age: {
+                    required: true,
+                    digits: true,
+                    maxlength: 03,
+                },
+                continent_id:"required",
+            },
+            messages: {
+                title: {
                     required: "Please enter title",
-                 },
-                 description: {
+                },
+                description: {
                     required: "Please enter description",
-                 },
-                 location: {
+                },
+                location: {
                     required: "Please enter location",
-                 },
-                 mobile_number: {
+                },
+                mobile_number: {
                     required: "Please enter phone number",
                     digits: "Please enter valid phone number",
                     minlength: "Phone number field accept only 10 digits",
                     maxlength: "Phone number field accept only 10 digits",
-                 },
-                 contact_email: {
+                },
+                contact_email: {
                     required: "Please enter email address",
                     contact_email: "Please enter a valid email address.",
-                    // regEmail:"Please enter a valid email address",
-
-                 },
-                 age: {
+                },
+                age: {
                     required: "Please enter age",
                     digits: "Please enter valid  age",
                     maxlength: "age field accept only 2 digits",
-                   },
-                   continent_id: {
-                    required: "Please select Continent/country",
-
-                 },
                 },
-
-              });
-        }
-
-            $('input[name="is_premium_ad"]').click(function(){
-                if ( $( is_premium_ad ).prop( "checked" ) ) {
-                    $('#is_premium_ad').val(1);
-                } else {
-                    $('#is_premium_ad').val(0);
+                continent_id: {
+                    required: "Please select Continent/country",
+                },
+                terms_condition:{
+                    required: "",
+                    terms_condition:focus(),
                 }
-            });
+            },
 
-
-
+        });
+    }
+        
+    $('input[name="is_premium_ad"]').click(function(){
+        if ( $( is_premium_ad ).prop( "checked" ) ) {
+            $('#is_premium_ad').val(1);
+        } else {
+            $('#is_premium_ad').val(0);
+        }
+    });
+    
     return {
         init: function () {
             list();
             validateForm();
-
         },
         localPost: function () {
             localpost();
             validateForm();
-
-
         },
         multiplePost: function(){
             multiplePost();
