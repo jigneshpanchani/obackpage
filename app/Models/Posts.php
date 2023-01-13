@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\PostsAttechment;
 use App\Models\User;
+use Carbon\Carbon;
 
 
 use Illuminate\Support\Facades\DB;
@@ -199,12 +200,37 @@ class Posts extends Model
             ->toArray();
         return $array;
     }
+    public function getViewPostPremium($id, $sid){
 
+        $query = Posts::from('posts')
+            ->where('city_id', $id)
+            ->where('sub_category_id', $sid)
+            ->where('is_premium_ad', '1')
+            ->select('id','title','age', 'location', DB::raw("DATE_FORMAT(created_at, '%d %b %Y') as posted_date"))
+            ->orderBy('created_at', 'DESC')
+            ->groupBy('created_at')
+            ->get()
+            ->toArray();
+        // print_r( $query );exit;
+        $results = [];
+        foreach ($query as $item) {
+            $results[$item['posted_date']][] = [
+                'id' => $item['id'],
+                'title' => $item['title'],
+                'age' => $item['age'],
+                'location' => $item['location']
+            ];
+        }
+
+        return $results;
+    }
+    
     public function getViewPost($id, $sid){
 
         $query = Posts::from('posts')
             ->where('city_id', $id)
             ->where('sub_category_id', $sid)
+            ->where('is_premium_ad', '0')
             ->select('id','title','age', 'location', DB::raw("DATE_FORMAT(created_at, '%d %b %Y') as posted_date"))
             ->orderBy('created_at', 'DESC')
             ->groupBy('created_at')
@@ -223,6 +249,9 @@ class Posts extends Model
 
         return $results;
     }
+
+    
+
 
     public function getPostPreviewDetails($id) {
         $query = Posts::from('posts as ps')
@@ -317,13 +346,13 @@ class Posts extends Model
                 $nestedData[] = $row["category"];
                 $nestedData[] = $row["is_premium_ad"];
                 $nestedData[] = $row["is_sponsor_ad"];
-                $nestedData[] = (isset($row["is_expire"]) && $row["is_expire"] == '1') ? '<span class="text-lg leading-5 font-bold text-red-700">Expired</span>' : '<span class="text-lg leading-5 font-bold text-green-700">Active</span>';
+                $nestedData[] = (isset($row["is_expire"]) && $row["is_expire"] == '1') ? '<span class="text-sm leading-5 font-bold text-red-700">Expired</span>' : '<span class="text-sm leading-5 font-bold text-green-700">Active</span>';
                 
                 $actionHtml .= '<li><a href="'. route('edit-free-ad-post-data', array('id' => $row['id'])) .'" class="link-black text-sm" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil  "></i></a></li>';
                 $actionHtml .= '<li><a href="'. route('view-post-details', array('id' => $row['id'])) .'" class="link-black text-sm" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-eye"></i></a></li>';
                 $actionHtml .= '<li><button type="button" class="delete openDeleteModal" data-id="'.$row['id'].'" ><span class="fa fa-trash""></span></button></li>';
                 if($row["is_expire"] == 1){
-                    $actionHtml .= '<li><button type="button" class="update updateStatus" data-id="'.$row['id'].'" ><span class="text-lg leading-5 font-bold text-green-800">Activate</span></button></li>';
+                    $actionHtml .= '<li><button type="button" class="update updateStatus" data-id="'.$row['id'].'" ><span class="text-base leading-5 font-bold text-green-800">Activate</span></button></li>';
                 }
                 $action = '<div class="action-overlay">
                              <ul class="icon-actions-set flex space-x-4">
@@ -464,4 +493,5 @@ class Posts extends Model
         return response()->json(['success'=>'Status change successfully.']);
     }
 
+   
 }

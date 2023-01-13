@@ -49,15 +49,17 @@ Route::match(['get', 'post'], 'multiple-ad-preview/{id}',                       
 Route::match(['get', 'post'], 'edit-free-ad-post-data/{id}',                     ['as' => 'edit-free-ad-post-data', 'uses' => 'frontend\AccountController@editFreeAdPost']);
 Route::match(['get', 'post'], 'view-post-details/{id}',                          ['as' => 'view-post-details',      'uses' => 'frontend\AccountController@viewPostDetails']);
 Route::match(['get', 'post'], 'view-post/{cityId}/{subcategoryId}',              ['as' => 'view-post',              'uses' => 'frontend\PostController@viewPost']);
-Route::match(['get', 'post'], 'posts-details/{cityId}/{subcategoryId}/{postId}.html', ['as' => 'posts-details',          'uses' => 'frontend\PostController@postsDetails']);
+Route::match(['get', 'post'], 'posts-details/{cityId}/{subcategoryId}/{postId}.html', ['as' => 'posts-details',      'uses' => 'frontend\PostController@postsDetails']);
 Route::match(['get', 'post'], 'disclamier/{cityId}/{subcategoryId}',             ['as' => 'disclamier',             'uses' => 'frontend\PostController@disclamier']);
 Route::match(['get', 'post'], 'report-ad/{postId}',                              ['as' => 'report-ad',              'uses' => 'frontend\PostController@reportAd']);
+Route::match(['get', 'post'], 'post-expire-status-update',                       ['as' => 'post-expire-status-update',   'uses' => 'frontend\PostController@postExpireStatusUpdate']);
 
-Route::match(['get', 'post'], 'manage-ads',                 ['as' => 'manage-ads',                'uses' => 'frontend\AccountController@manageAds']);
-Route::match(['get', 'post'], 'manage-ads-ajax',            ['as' => 'manage-ads-ajax',           'uses' => 'frontend\AccountController@ajaxAction']);
-Route::match(['get', 'post'], 'transaction',                ['as' => 'transaction',               'uses' => 'frontend\AccountController@transaction']);
-Route::match(['get', 'post'], 'transaction-ads-ajax',       ['as' => 'transaction-ads-ajax',      'uses' => 'frontend\AccountController@ajaxAction']);
-Route::match(['get', 'post'], 'add-credit',                 ['as' => 'add-credit',                'uses' => 'frontend\AccountController@addCredit']);
+
+Route::match(['get', 'post'], 'manage-ads',                                     ['as' => 'manage-ads',              'uses' => 'frontend\AccountController@manageAds']);
+Route::match(['get', 'post'], 'manage-ads-ajax',                                ['as' => 'manage-ads-ajax',          'uses' => 'frontend\AccountController@ajaxAction']);
+Route::match(['get', 'post'], 'transaction',                                    ['as' => 'transaction',               'uses' => 'frontend\AccountController@transaction']);
+Route::match(['get', 'post'], 'transaction-ads-ajax',                           ['as' => 'transaction-ads-ajax',      'uses' => 'frontend\AccountController@ajaxAction']);
+Route::match(['get', 'post'], 'add-credit',                                     ['as' => 'add-credit',                 'uses' => 'frontend\AccountController@addCredit']);
 
 
 

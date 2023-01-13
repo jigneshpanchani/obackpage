@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use App\Rules\Recaptcha;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 
 class PostController extends Controller
@@ -156,6 +157,8 @@ class PostController extends Controller
         $getsubcategorynameid =SubCategory::where('sub_category.slug', $subcategoryName)->select('id')->get();
         $sid = $getsubcategorynameid[0]->id;
         $objviewpost = new posts();
+        $data['postpremium'] = $objviewpost->getViewPostPremium($id, $sid);
+        $objviewpost = new posts();
         $data['posts'] = $objviewpost->getViewPost($id, $sid);
         $objCity = new City();
         $data['nearByCities'] = $objCity->getNearByCities($id);
@@ -269,6 +272,18 @@ class PostController extends Controller
         $data['funinit'] = array();
         
         return view('frontend.pages.posts.report-ad', $data);
+    }
+
+   public function postExpireStatusUpdate(Request $request){
+        $date = Carbon::now()->subDays(7);
+        $posts = Posts::where('created_at', '>=', $date)->get()->toArray();
+        foreach( $posts as $post){
+            $objPost = Posts::find($post['id']);
+            $objPost->is_expire = '1';
+            $objPost->update();
+        }
+        $objPost = "last 7 days posts has been Expired!";
+        return $objPost;
     }
 
 }

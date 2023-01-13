@@ -4,7 +4,6 @@
 @section('keywords', 'Backpage Escorts, '. $getPostPath[0]['state'].' Escorts, Backpage '. $getPostPath[0]['state'].', Escorts in '. $getPostPath[0]['state'])
 @section('content')
 
-
 <div class="flex flex-col z-10 flex-1">
     <nav class="navbar">
         <div class="flex bg-blue-900 w-full justify-between w-full items-center p-2">
@@ -48,8 +47,30 @@
                 <div class="">
                     <a href="#"><span class="text-green-700 text-base font-bold">Top</span></a> |
                 </div>
-                @foreach ($posts as $date=>$postList)
-                <div class="space-y-2">
+                <div class="p-4 bg-primary-blue-50 rounded">
+                    <div class="">
+                        <a href="#"><span class="text-red-700 text-base font-bold">Premimum Ad</span></a> |
+                    </div>
+                    @foreach ($postpremium as $date=>$postList1)
+                        <div class="space-y-2">
+                        <div class="bg-gradient-to-r from-blue-900  rounded">
+                            <span class="text-white text-base font-semibold leading-7 pl-2 date">{{ $date }}</span>
+                        </div>
+                    @foreach ($postList1 as $post)
+                        <div class="px-4">
+                            <a href="{{ route('posts-details',  array('cityId' => $cityId, 'subcategoryId' => $subId, 'postId' => $post['id'])) }}">
+                                <span class="text-red-800 text-base font-semibold">{{ $post['title'] }}</span>
+                                <span class="text-gray-800 text-base font-bold">-{{ $post['age'] }}  ({{ $post['location'] }})</span></a>
+                        </div>
+                    @endforeach
+                        </div>
+                    @endforeach
+                </div>
+                <div class="">
+                    <a href="#"><span class="text-green-700 text-base font-bold"></span></a> 
+                </div>
+                    @foreach ($posts as $date=>$postList)
+                    <div class="space-y-2  px-4">
                     <div class="bg-gradient-to-r from-blue-900  rounded">
                         <span class="text-white text-base font-semibold leading-7 pl-2 date">{{ $date }}</span>
                     </div>
@@ -60,10 +81,9 @@
                             <span class="text-gray-800 text-base font-bold">-{{ $post['age'] }}  ({{ $post['location'] }})</span></a>
                     </div>
                     @endforeach
+                    </div>
+                    @endforeach
                 </div>
-                @endforeach
-
-            </div>
         </div>
     </main>
 </div>
