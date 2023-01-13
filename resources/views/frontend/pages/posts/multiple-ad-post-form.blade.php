@@ -212,13 +212,6 @@
                             <span class="text-gray-800 text-base leading-7 font-semibold"> Make this ad Premium for ( Premium ad will be shown on top of all Ads. ) $4 </span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <span class="text-gray-800 text-lg font-bold">Sponsor Ads :</span>
-                        <div class="space-x-2 flex flex-col">
-                            <span class="text-gray-800 text-sm leading-6 font-semibold"> Your ad will appear highlighted (Top and Bottom).</span>
-                            <span class="text-gray-800 text-base leading-7 font-semibold"> Number of weeks: 1 week ($2)</span>
-                        </div>
-                    </div>
                     <div class="form-group space-x-2">
                         <input type="checkbox" id="" name=""  value="">
                         <span class="text-gray-800 text-base leading-7 font-semibold">By Placing this ad I agree to the <a href="{{route('terms-of-use')}}" class="text-red-700 text-base font-bold  underline ">terms of use</a> and <a href="{{route('privacy-policy')}}" class="text-red-700 text-base font-bold  underline ">privacy policy</a></span>
