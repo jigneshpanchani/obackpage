@@ -129,6 +129,23 @@ var manageAcount = function() {
             
         });  
 
+        $("body").on("click", ".updateStatus", function () {
+            let dataid = $(this).attr('data-id');
+            $.ajax({
+                    method: "POST",
+                    url:  base_url + "manage-ads-ajax",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {'action': 'updateStatusData', 'id':  dataid},
+                    type: "json",
+                    success: function(data) {
+                        var data = JSON.parse(data);
+                        location.reload();
+                    }
+                });
+        });    
+
     };
     return{
         manageAds: function() {

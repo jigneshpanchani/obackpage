@@ -90,6 +90,7 @@
                                     <th>Category</th>
                                     <th>Primium</th>
                                     <th>Sponsor</th>
+                                    <th>Expire</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>

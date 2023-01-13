@@ -235,8 +235,7 @@ class Posts extends Model
 
 
     public function getPostsDetails($pid){
-
-        $array=Posts::from('posts')
+         $array=Posts::from('posts')
             ->where('id', $pid)
             ->select('id', 'title', 'description', 'location', 'age', 'created_at', 'contact_email', 'mobile_number')
             ->get()
@@ -265,7 +264,8 @@ class Posts extends Model
             3 => 'sc.category',
             4 => 'ps.is_premium_ad',
             5 => 'ps.is_sponsor_ad',
-            6 => 'ps.created_at',
+            6 => 'ps.is_expire',
+            7 => 'ps.created_at',
 
         );
         $query = Posts::from('posts as ps')
@@ -302,7 +302,7 @@ class Posts extends Model
 
         $resultArr = $query->skip($requestData['start'])
                 ->take($requestData['length'])
-                ->select('ps.id','ps.created_at', 'ps.title', 'city.city','sc.category','ps.is_premium_ad','ps.is_sponsor_ad')
+                ->select('ps.id','ps.created_at', 'ps.title', 'city.city','sc.category','ps.is_premium_ad','ps.is_sponsor_ad','ps.is_expire')
                 ->get();
 
         $data = array();
@@ -317,9 +317,14 @@ class Posts extends Model
                 $nestedData[] = $row["category"];
                 $nestedData[] = $row["is_premium_ad"];
                 $nestedData[] = $row["is_sponsor_ad"];
+                $nestedData[] = (isset($row["is_expire"]) && $row["is_expire"] == '1') ? '<span class="text-lg leading-5 font-bold text-red-700">Expired</span>' : '<span class="text-lg leading-5 font-bold text-green-700">Active</span>';
+                
                 $actionHtml .= '<li><a href="'. route('edit-free-ad-post-data', array('id' => $row['id'])) .'" class="link-black text-sm" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil  "></i></a></li>';
                 $actionHtml .= '<li><a href="'. route('view-post-details', array('id' => $row['id'])) .'" class="link-black text-sm" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-eye"></i></a></li>';
                 $actionHtml .= '<li><button type="button" class="delete openDeleteModal" data-id="'.$row['id'].'" ><span class="fa fa-trash""></span></button></li>';
+                if($row["is_expire"] == 1){
+                    $actionHtml .= '<li><button type="button" class="update updateStatus" data-id="'.$row['id'].'" ><span class="text-lg leading-5 font-bold text-green-800">Activate</span></button></li>';
+                }
                 $action = '<div class="action-overlay">
                              <ul class="icon-actions-set flex space-x-4">
                               ' . $actionHtml . '
@@ -338,6 +343,7 @@ class Posts extends Model
 
         return $json_data;
     }
+
 
     public function saveMultipleAdposts($request) {
 
@@ -420,8 +426,7 @@ class Posts extends Model
             return false;
         }
 
-    }
-
+    } 
 
     public function deletePost($request){
         $returnpost = Posts::where('id','=', $request->id)
@@ -433,6 +438,30 @@ class Posts extends Model
             $request->session()->flash('session_error', 'Something will be wrong. Please try again.');
             return redirect(route('manage-ads'))->withInput();
         }
+    }
+
+    public function updateIsExpired($request)
+    {
+        $status =(isset($row["is_expire"]) && $row["is_expire"] == '1') ? 'Expired' : '-';
+        $status = Posts::find($request->id);
+        $status->is_expire = '0';
+        $status->update();
+        $user_id = Auth::user()->id;
+        $getCurrentCredit= User::select('credits')->where('id', $user_id)->get()->toArray();
+        if($status){
+            $creditUpdated = $getCurrentCredit[0]['credits']-2;
+            $objUser = user::find($user_id);
+            $objUser->credits = $creditUpdated;
+            $objUser->update();
+
+            $objTransaction = new Transaction();
+            $objTransaction->status = "debit";
+            $objTransaction->code = "ABC123";
+            $objTransaction->amount = '2';
+            $objTransaction->user_id = Auth::user()->id;
+            $objTransaction->save();
+        }
+        return response()->json(['success'=>'Status change successfully.']);
     }
 
 }

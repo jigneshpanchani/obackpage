@@ -126,6 +126,12 @@ class AccountController extends Controller
                 $result = ['status'=>'success', 'message'=>'Data Deleted Successfully.'];
                 echo json_encode($result);
                 break;
+             case 'updateStatusData':
+                $dataArr     = $request->input('data');
+                $objpost  = new posts();
+                $arrpost = $objpost->updateIsExpired($request);
+                echo json_encode($arrpost);
+                break;
         }
         exit;
     }
