@@ -75,6 +75,17 @@
                 <a href="{{ route('home') }}">
                     <img style="width: 158px; height: 40px; padding-top: 2px;" alt="obackpage" title="obackpage" class="logow" src="https://obackpage.com/assets/frontend/img/logo_white.png">
                 </a>
+                @if (Route::has('login'))
+                    @auth
+                        <div class="btn btn-primary bg-red-700 rounded-sm font-bold text-white p-1">
+                            <a class="p-1" href="{{route('post-ad')}}"><i class="fa fa-paper-plane"></i> Post ad </a>
+                        </div>
+                    @else
+                        <div class="btn btn-primary bg-red-700 rounded-sm font-bold text-white p-1">
+                            <a class="p-1" href="{{route('login')}}"><i class="fa fa-paper-plane"></i> Post ad </a>
+                        </div>
+                    @endauth
+                @endif
             </div>
         </div>
     </nav>
