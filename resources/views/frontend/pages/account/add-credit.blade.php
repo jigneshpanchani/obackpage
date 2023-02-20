@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="panel-body space-y-5">
                                         <div class="flex flex-col">
-                                            <input type="number" class="form-control" name="credit_amount" placeholder="Input USD amount">
+                                            <input type="text" class="form-control" name="credit_amount" placeholder="Input USD amount">
                                         </div>
                                         <div class="flex justify-center">
                                             <button type="submit" class="bg-green-500 flex justify-center items-center p-2 rounded">

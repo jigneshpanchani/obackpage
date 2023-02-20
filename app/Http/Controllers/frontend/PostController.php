@@ -15,21 +15,24 @@ use App\Rules\Recaptcha;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 
 class PostController extends Controller
 {
     public $title;
 
-    public function postAd(){
+    public function postAd()
+    {
         $data['css'] = array();
         $data['js'] = array();
         $data['funinit'] = array();
         $data['title'] = 'Post Ad';
-        return view('frontend.pages.posts.post-ad',$data);
+        return view('frontend.pages.posts.post-ad', $data);
     }
 
-    public function freeAdPost(Request $request){
+    public function freeAdPost(Request $request)
+    {
 
         if ($request->isMethod('post')) {
 
@@ -40,10 +43,10 @@ class PostController extends Controller
             //     'g-recaptcha-response' =>
             //     ['required', new Recaptcha()]]);
 
-            if($postSave){
+            if ($postSave) {
                 $request->session()->flash('session_success', 'Contract Funding Source is Saved.');
                 return redirect(route('free-ad-preview', $postSave));
-            }else{
+            } else {
                 $request->session()->flash('session_error', 'Something will be wrong. Please try again.');
                 return redirect(route('free-ad-post'))->withInput();
             }
@@ -58,11 +61,11 @@ class PostController extends Controller
         $data['js'] = array('posts.js');
         $data['funinit'] = array('Posts.init()');
         $data['title'] = 'Home Page';
-        return view('frontend.pages.posts.free-ad-post-form',$data);
-
+        return view('frontend.pages.posts.free-ad-post-form', $data);
     }
 
-    public function freeAdPreview($id){
+    public function freeAdPreview($id)
+    {
         $objpostpreview = new posts();
         $data['postDetails'] = $objpostpreview->getPostPreviewDetails($id);
         $objpostpreview = new PostsAttechment();
@@ -71,10 +74,11 @@ class PostController extends Controller
         $data['js'] = array('posts.js');
         $data['funinit'] = array('Posts.init()');
         $data['title'] = 'Home Page';
-        return view('frontend.pages.posts.free-ad-post-preview',$data);
+        return view('frontend.pages.posts.free-ad-post-preview', $data);
     }
 
-    public function localAdPost(Request $request){
+    public function localAdPost(Request $request)
+    {
 
         if ($request->isMethod('post')) {
 
@@ -85,10 +89,10 @@ class PostController extends Controller
             //     'g-recaptcha-response' =>
             //     ['required', new Recaptcha()]]);
 
-            if($postSave){
+            if ($postSave) {
                 $request->session()->flash('session_success', 'Contract Funding Source is Saved.');
                 return redirect(route('local-ad-preview', $postSave));
-            }else{
+            } else {
                 $request->session()->flash('session_error', 'Something will be wrong. Please try again.');
                 return redirect(route('add-credit'))->withInput();
             }
@@ -101,11 +105,11 @@ class PostController extends Controller
         $data['js'] = array('posts.js');
         $data['funinit'] = array('Posts.localPost()');
         $data['title'] = 'Home Page';
-        return view('frontend.pages.posts.local-ad-post-form',$data);
-
+        return view('frontend.pages.posts.local-ad-post-form', $data);
     }
 
-    public function localAdPreview($id){
+    public function localAdPreview($id)
+    {
         $objpostpreview = new posts();
         $data['postDetails'] = $objpostpreview->getPostPreviewDetails($id);
         $objpostpreview = new PostsAttechment();
@@ -114,12 +118,13 @@ class PostController extends Controller
         $data['js'] = array('posts.js');
         $data['funinit'] = array('Posts.init()');
         $data['title'] = 'Home Page';
-        return view('frontend.pages.posts.local-ad-post-preview',$data);
+        return view('frontend.pages.posts.local-ad-post-preview', $data);
     }
 
-    public function postAdds(Request $request){
+    public function postAdds(Request $request)
+    {
         $action = $request->input('action');
-        switch($action){
+        switch ($action) {
             case 'getCountryStateByContinent':
                 $objStore = new CountryState();
                 $result = $objStore->getCountryState($request->input('id'));
@@ -150,11 +155,12 @@ class PostController extends Controller
         }
     }
 
-    public function viewPost($cityName, $subcategoryName){
+    public function viewPost($cityName, $subcategoryName)
+    {
 
-        $getcitynameid =City::where('city.slug', $cityName)->select('id')->get();
-        $id = $getcitynameid[0]->id;       
-        $getsubcategorynameid =SubCategory::where('sub_category.slug', $subcategoryName)->select('id')->get();
+        $getcitynameid = City::where('city.slug', $cityName)->select('id')->get();
+        $id = $getcitynameid[0]->id;
+        $getsubcategorynameid = SubCategory::where('sub_category.slug', $subcategoryName)->select('id')->get();
         $sid = $getsubcategorynameid[0]->id;
         $objviewpost = new posts();
         $data['postpremium'] = $objviewpost->getViewPostPremium($id, $sid);
@@ -174,11 +180,12 @@ class PostController extends Controller
         return view('frontend.pages.posts.view-post', $data);
     }
 
-    public function postsDetails($cityName, $subcategoryName, $pid){
+    public function postsDetails($cityName, $subcategoryName, $pid)
+    {
 
-        $getcitynameid =City::where('city.slug', $cityName)->select('id')->get();
-        $id = $getcitynameid[0]->id;       
-        $getsubcategorynameid =SubCategory::where('sub_category.slug', $subcategoryName)->select('id')->get();
+        $getcitynameid = City::where('city.slug', $cityName)->select('id')->get();
+        $id = $getcitynameid[0]->id;
+        $getsubcategorynameid = SubCategory::where('sub_category.slug', $subcategoryName)->select('id')->get();
         $sid = $getsubcategorynameid[0]->id;
         $objviewpost = new posts();
         $data['posts'] = $objviewpost->getPostsDetails($pid);
@@ -197,7 +204,8 @@ class PostController extends Controller
         return view('frontend.pages.posts.posts-details', $data);
     }
 
-    public function multipleAdPost(Request $request){
+    public function multipleAdPost(Request $request)
+    {
 
         if ($request->isMethod('post')) {
 
@@ -209,28 +217,28 @@ class PostController extends Controller
             //     'g-recaptcha-response' =>
             //     ['required', new Recaptcha()]]);
 
-            if($postSave){
+            if ($postSave) {
                 $request->session()->flash('session_success', 'Contract Funding Source is Saved.');
                 return redirect(route('multiple-ad-preview', $postSave));
-            }else{
+            } else {
                 $request->session()->flash('session_error', 'Something will be wrong. Please try again.');
                 return redirect(route('multiple-ad-post'))->withInput();
             }
         }
 
-            $objContinents = new Continents();
-            $data['continents'] =  $objContinents->getContinents();
-            $objCategory = new Category();
-            $data['categories'] = $objCategory->getCategories();
-            $data['css'] = array();
-            $data['js'] = array('posts.js');
-            $data['funinit'] = array('Posts.multiplePost()');
-            $data['title'] = 'Multiple Ad Page';
-            return view('frontend.pages.posts.multiple-ad-post-form', $data);
+        $objContinents = new Continents();
+        $data['continents'] =  $objContinents->getContinents();
+        $objCategory = new Category();
+        $data['categories'] = $objCategory->getCategories();
+        $data['css'] = array();
+        $data['js'] = array('posts.js');
+        $data['funinit'] = array('Posts.multiplePost()');
+        $data['title'] = 'Multiple Ad Page';
+        return view('frontend.pages.posts.multiple-ad-post-form', $data);
+    }
 
-        }
-
-    public function multipleAdPreview($id){
+    public function multipleAdPreview($id)
+    {
         $objpostpreview = new posts();
         $data['postDetails'] = $objpostpreview->getPostPreviewDetails($id);
         $objpostpreview = new PostsAttechment();
@@ -239,14 +247,15 @@ class PostController extends Controller
         $data['js'] = array('posts.js');
         $data['funinit'] = array('Posts.init()');
         $data['title'] = 'Multiple Ad Preview Page';
-        return view('frontend.pages.posts.multiple-ad-post-preview',$data);
+        return view('frontend.pages.posts.multiple-ad-post-preview', $data);
     }
 
-     public function disclamier($cityName, $subcategoryName){
+    public function disclamier($cityName, $subcategoryName)
+    {
 
-        $getcitynameid =City::where('city.slug', $cityName)->select('id')->get();
-        $id = $getcitynameid[0]->id;   
-        $getsubcategorynameid =SubCategory::where('sub_category.slug', $subcategoryName)->select('id')->get();
+        $getcitynameid = City::where('city.slug', $cityName)->select('id')->get();
+        $id = $getcitynameid[0]->id;
+        $getsubcategorynameid = SubCategory::where('sub_category.slug', $subcategoryName)->select('id')->get();
         $sid = $getsubcategorynameid[0]->id;
         $objSubCategory = new SubCategory();
         $data['getSubCat'] = $objSubCategory->getSubCat($sid);
@@ -259,25 +268,26 @@ class PostController extends Controller
         $data['js'] = array('posts.js');
         $data['funinit'] = array('Posts.init()');
         $data['title'] = 'Disclamier';
-        return view('frontend.pages.posts.disclamier',$data);
+        return view('frontend.pages.posts.disclamier', $data);
     }
 
-    public function reportAd($pid){
-        
+    public function reportAd($pid)
+    {
+
         $objviewpost = new posts();
         $data['posts'] = $objviewpost->getPostsDetails($pid);
         $data['postId'] = $pid;
         $data['css'] = array();
         $data['js'] = array();
         $data['funinit'] = array();
-        
+
         return view('frontend.pages.posts.report-ad', $data);
     }
 
-   public function postExpireStatusUpdate(Request $request){
-        $date = Carbon::now()->subDays(7);
-        $posts = Posts::where('created_at', '>=', $date)->get()->toArray();
-        foreach( $posts as $post){
+    public function postExpireStatusUpdate(Request $request)
+    {
+        $posts = Posts::where('created_at', '<=', Carbon::now()->subWeek())->get()->toArray();
+        foreach ($posts as $post) {
             $objPost = Posts::find($post['id']);
             $objPost->is_expire = '1';
             $objPost->update();
@@ -285,7 +295,4 @@ class PostController extends Controller
         $objPost = "last 7 days posts has been Expired!";
         return $objPost;
     }
-
 }
-
-

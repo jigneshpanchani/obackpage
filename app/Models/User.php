@@ -65,18 +65,20 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    function getUser(){
+    function getUser()
+    {
 
-        $array=user::from('users')
+        $array = user::from('users')
             ->select('id', 'name', 'email', 'credits')
             ->get()->toArray();
         return $array;
     }
 
-    public function updateUser($request){
+    public function updateUser($request)
+    {
 
         $user_id = Auth::user()->id;
-        $getCurrentCredit= User::select('credits')->where('id', $user_id)->get()->toArray();
+        $getCurrentCredit = User::select('credits')->where('id', $user_id)->get()->toArray();
         $updatedCredit = $getCurrentCredit[0]['credits'] + $request->input('credit_amount');
         $objService = user::find($user_id);
         $objService->credits =  $updatedCredit;
